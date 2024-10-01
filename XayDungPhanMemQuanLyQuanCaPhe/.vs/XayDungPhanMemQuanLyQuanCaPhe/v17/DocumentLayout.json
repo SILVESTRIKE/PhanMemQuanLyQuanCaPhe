@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CNPM_LTWEB\\CongNgheNet\\CongNgheNet-PhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\",
+  "WorkspaceRootPath": "D:\\hufi\\hk5\\.Net\\\u0110\u1ED3 \u00E1n\\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{083596D6-6617-4355-A6E2-820FBC3D114A}|PhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe.csproj|d:\\cnpm_ltweb\\congnghenet\\congnghenet-phanmemquanlyquancaphe\\xaydungphanmemquanlyquancaphe\\phanmemquanlyquancaphe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{083596D6-6617-4355-A6E2-820FBC3D114A}|PhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe.csproj|d:\\hufi\\hk5\\.net\\\u0111\u1ED3 \u00E1n\\congnghephanmem-xaydungphanmemquanlyquancaphe\\xaydungphanmemquanlyquancaphe\\phanmemquanlyquancaphe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{083596D6-6617-4355-A6E2-820FBC3D114A}|PhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe.csproj|solutionrelative:phanmemquanlyquancaphe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\CNPM_LTWEB\\CongNgheNet\\CongNgheNet-PhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe\\Form1.cs",
+              "DocumentMoniker": "D:\\hufi\\hk5\\.Net\\\u0110\u1ED3 \u00E1n\\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe\\Form1.cs",
               "RelativeDocumentMoniker": "PhanMemQuanLyQuanCaPhe\\Form1.cs",
-              "ToolTip": "D:\\CNPM_LTWEB\\CongNgheNet\\CongNgheNet-PhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe\\Form1.cs [Design]",
+              "ToolTip": "D:\\hufi\\hk5\\.Net\\\u0110\u1ED3 \u00E1n\\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\\XayDungPhanMemQuanLyQuanCaPhe\\PhanMemQuanLyQuanCaPhe\\Form1.cs [Design]",
               "RelativeToolTip": "PhanMemQuanLyQuanCaPhe\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T05:53:18.143Z",
