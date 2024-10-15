@@ -113,18 +113,17 @@ Dưới đây là nội dung bản viết lại cho file `README.md` mới, phù
 
 ### **II. Thiết Kế Cơ Sở Dữ Liệu**
 
-1. **Các bảng chính trong cơ sở dữ liệu**  
-   - **NhanVien (Nhân viên)**: IDNhanVien, Ten, SDT, GTinh, NgSinh, IDChucVu.  
-   - **ChucVu (Chức vụ)**: IDChucVu, Ten.  
-   - **NguoiDung (Người dùng)**: IDDN, Pass, IDChucVu.  
-   - **CaTruc (Ca trực)**: IDCa, TenCa, NgayTruc.  
-   - **ChiTietCaTruc (Chi tiết ca trực)**: IDCa, IDNhanVien.  
-   - **NguyenLieu (Nguyên liệu)**: IDNguyenLieu, TenNL, SLTon.  
-   - **Mon (Món)**: IDMon, TenMon, Gia.  
-   - **CongThuc (Công thức)**: IDMon, IDNguyenLieu, SoLuong.  
-   - **HoaDon (Hóa đơn)**: IDHoaDon, NgayLap, IDNhanVien, ThanhTien.  
-   - **ChiTietHD (Chi tiết hóa đơn)**: IDHoaDon, IDMon, SoLuong, DonGia.  
-   - **ThongKeDoanhThu (Thống kê doanh thu)**: IDThongKe, NgayLap, DoanhThu, IDHoaDon.
+- **NhanVien (Nhân viên)**: IDNhanVien, Ten, SDT, GTinh, NgSinh, IDChucVu.  
+- **ChucVu (Chức vụ)**: IDChucVu, Ten.  
+- **NguoiDung (Người dùng)**: IDDN, Pass, IDChucVu.  
+- **CaTruc (Ca trực)**: IDCa, TenCa, NgayTruc.  
+- **ChiTietCaTruc (Chi tiết ca trực)**: IDCa, IDNhanVien.  
+- **NguyenLieu (Nguyên liệu)**: IDNguyenLieu, TenNL, SLTon.  
+- **Mon (Món)**: IDMon, TenMon, Gia.  
+- **CongThuc (Công thức)**: IDMon, IDNguyenLieu, SoLuong.  
+- **HoaDon (Hóa đơn)**: IDHoaDon, NgayLap, IDNhanVien, ThanhTien.  
+- **ChiTietHD (Chi tiết hóa đơn)**: IDHoaDon, IDMon, SoLuong, DonGia.  
+- **ThongKeDoanhThu (Thống kê doanh thu)**: IDThongKe, NgayLap, DoanhThu, IDHoaDon.
 
 ---
 
