@@ -1,0 +1,77 @@
+CREATE TABLE ban
+(
+    Soban int not null,
+    Tinhtrang nvarchar(30) not null,
+    Constraint PK_ban Primary Key (Soban),
+)
+
+CREATE TABLE CATRUC
+(
+    ID int IDENTITY(1,1) not null,
+    ca nvarchar(20) null,
+    ngaytruc datetime null,
+    IDnhanvien int null,
+    Constraint PK_CATRUC Primary Key (ID),
+)
+
+CREATE TABLE douong
+(
+    ID int IDENTITY(1,1) not null,
+    tendouong nvarchar(30) not null,
+    ghichu nvarchar(30) not null,
+    Soluong int not null,
+    giatien float not null,
+    Constraint PK_douong Primary Key (ID),
+)
+
+CREATE TABLE hoadon
+(
+    ID int IDENTITY(1,1) not null,
+    soban int not null,
+    Constraint PK_hoadon Primary Key (ID),
+    Constraint FK_hoadon_ban Foreign Key (soban) References ban(Soban),
+)
+
+CREATE TABLE ct_hd
+(
+    ID int IDENTITY(1,1) not null,
+    MaHoaDon int not null,
+    MaSP int not null,
+    ngayban date not null,
+    soban int not null,
+    SoLuong int not null,
+    DonGia float not null,
+    ThanhTien float not null,
+    Constraint PK_ct_hd Primary Key (ID),
+    Constraint FK_ct_hd_hoadon Foreign Key (MaHoaDon) References hoadon(ID),
+    Constraint FK_ct_hd_douong Foreign Key (MaSP) References douong(ID),
+    Constraint FK_ct_hd_ban Foreign Key (soban) References ban(Soban),
+)
+
+CREATE TABLE nhanvien
+(
+    MANV int not null,
+    TENHANVIEN nvarchar(50) null,
+    GIOITINH nvarchar(10) null,
+    DIENTHOAI nvarchar(12) null,
+    Constraint PK_nhanvien Primary Key (MANV),
+)
+
+CREATE TABLE users
+(
+    UserName varchar(20) not null,
+    Name nvarchar(20) not null,
+    Password varchar(20) not null,
+    priority int null,
+    Constraint PK_users Primary Key (UserName),
+)
+
+CREATE TABLE thongke
+(
+    id int IDENTITY(1,1) not null,
+    TenSanPham nvarchar(30) null,
+    Soluong int null,
+    ngaylap date null,
+    doanhthu float null,
+    Constraint PK_thongke Primary Key (id),
+)
