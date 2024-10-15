@@ -1,7 +1,5 @@
-Dưới đây là nội dung bản viết lại cho file `README.md` mới, phù hợp với hệ thống quản lý quán cà phê bằng WinForms:
-
+#ĐỒ ÁN MÔN CÔNG NGHỆ .NET
 ---
-
 # **Phần Mềm Quản Lý Quán Cà Phê**
 
 ## **Chương I: Quy Trình Nghiệp Vụ**
