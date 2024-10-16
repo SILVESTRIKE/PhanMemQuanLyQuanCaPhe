@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmKho
     {
@@ -117,7 +117,7 @@
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.xoa;
+            this.btnXoa.Image = global::QLCF_GUI.Properties.Resources.xoa;
             this.btnXoa.Location = new System.Drawing.Point(394, 225);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
@@ -129,7 +129,7 @@
             // btnSua
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.sua;
+            this.btnSua.Image = global::QLCF_GUI.Properties.Resources.sua;
             this.btnSua.Location = new System.Drawing.Point(207, 225);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
@@ -141,7 +141,7 @@
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.them;
+            this.btnThem.Image = global::QLCF_GUI.Properties.Resources.them;
             this.btnThem.Location = new System.Drawing.Point(20, 225);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";

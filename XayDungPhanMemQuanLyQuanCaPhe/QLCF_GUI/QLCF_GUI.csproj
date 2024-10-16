@@ -203,5 +203,19 @@
   <ItemGroup>
     <None Include="Resources\menu2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLCF_BLL\QLCF_BLL.csproj">
+      <Project>{718decd0-7d1e-4e68-9c22-4f213beb4c31}</Project>
+      <Name>QLCF_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLCF_DAL\QLCF_DAL.csproj">
+      <Project>{a515e23c-f20d-457b-b8ed-7e21c9838d76}</Project>
+      <Name>QLCF_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLCF_DTO\QLCF_DTO.csproj">
+      <Project>{7d06bc94-17ae-4c28-a3a4-574114f5fae2}</Project>
+      <Name>QLCF_DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

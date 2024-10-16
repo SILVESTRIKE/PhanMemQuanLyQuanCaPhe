@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmDangNhap
     {
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.xtPass = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.txtIDDN = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.Notice = new System.Windows.Forms.Label();
@@ -61,14 +61,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
-            // xtPass
+            // txtPass
             // 
-            this.xtPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xtPass.Location = new System.Drawing.Point(297, 115);
-            this.xtPass.Name = "xtPass";
-            this.xtPass.PasswordChar = '*';
-            this.xtPass.Size = new System.Drawing.Size(187, 31);
-            this.xtPass.TabIndex = 3;
+            this.txtPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(297, 115);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(187, 31);
+            this.txtPass.TabIndex = 3;
             // 
             // txtIDDN
             // 
@@ -87,6 +87,7 @@
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // Notice
             // 
@@ -112,7 +113,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.pictureBox1.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.Menu;
+            this.pictureBox1.Image = global::QLCF_GUI.Properties.Resources.Menu;
             this.pictureBox1.Location = new System.Drawing.Point(9, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -131,7 +132,7 @@
             this.Controls.Add(this.Notice);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtIDDN);
-            this.Controls.Add(this.xtPass);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -148,7 +149,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox xtPass;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtIDDN;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label Notice;

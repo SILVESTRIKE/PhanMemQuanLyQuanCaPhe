@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmMon
     {
@@ -38,11 +38,12 @@
             this.btnXoa = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dgVMon = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVMon)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -123,7 +124,7 @@
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.xoa;
+            this.btnXoa.Image = global::QLCF_GUI.Properties.Resources.xoa;
             this.btnXoa.Location = new System.Drawing.Point(899, 349);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
@@ -135,7 +136,7 @@
             // btnSua
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.sua;
+            this.btnSua.Image = global::QLCF_GUI.Properties.Resources.sua;
             this.btnSua.Location = new System.Drawing.Point(738, 349);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
@@ -147,7 +148,7 @@
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.them;
+            this.btnThem.Image = global::QLCF_GUI.Properties.Resources.them;
             this.btnThem.Location = new System.Drawing.Point(577, 349);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
@@ -156,14 +157,13 @@
             this.btnThem.TabIndex = 24;
             this.btnThem.TabStop = false;
             // 
-            // listView1
+            // dgVMon
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(19, 77);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(530, 332);
-            this.listView1.TabIndex = 27;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dgVMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVMon.Location = new System.Drawing.Point(19, 77);
+            this.dgVMon.Name = "dgVMon";
+            this.dgVMon.Size = new System.Drawing.Size(547, 332);
+            this.dgVMon.TabIndex = 27;
             // 
             // frmMon
             // 
@@ -171,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(971, 421);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dgVMon);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
@@ -189,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVMon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +206,6 @@
         private System.Windows.Forms.PictureBox btnXoa;
         private System.Windows.Forms.PictureBox btnSua;
         private System.Windows.Forms.PictureBox btnThem;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridView dgVMon;
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PhanMemQuanLyQuanCaPhe
+namespace QLCF_GUI
 {
     public partial class frmNhanVien : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmDKTK
     {
@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
             this.notice = new System.Windows.Forms.Label();
             this.ckbQuanLy = new System.Windows.Forms.RadioButton();
             this.ckbNhanVien = new System.Windows.Forms.RadioButton();
@@ -75,21 +75,21 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Mật khẩu";
             // 
-            // txt
+            // txtTen
             // 
-            this.txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt.Location = new System.Drawing.Point(146, 115);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(318, 26);
-            this.txt.TabIndex = 6;
+            this.txtTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(146, 115);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(318, 26);
+            this.txtTen.TabIndex = 6;
             // 
-            // textBox3
+            // txtpass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(146, 166);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(318, 26);
-            this.textBox3.TabIndex = 7;
+            this.txtpass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpass.Location = new System.Drawing.Point(146, 166);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.Size = new System.Drawing.Size(318, 26);
+            this.txtpass.TabIndex = 7;
             // 
             // notice
             // 
@@ -181,8 +181,8 @@
             this.Controls.Add(this.ckbNhanVien);
             this.Controls.Add(this.ckbQuanLy);
             this.Controls.Add(this.notice);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txt);
+            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -198,8 +198,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.Label notice;
         private System.Windows.Forms.RadioButton ckbQuanLy;
         private System.Windows.Forms.RadioButton ckbNhanVien;

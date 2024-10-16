@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmCaTruc
     {
@@ -114,7 +114,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.sua;
+            this.pictureBox3.Image = global::QLCF_GUI.Properties.Resources.sua;
             this.pictureBox3.Location = new System.Drawing.Point(698, 209);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
@@ -126,7 +126,7 @@
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.them;
+            this.btnThem.Image = global::QLCF_GUI.Properties.Resources.them;
             this.btnThem.Location = new System.Drawing.Point(569, 209);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
@@ -149,7 +149,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.xoa;
+            this.pictureBox2.Image = global::QLCF_GUI.Properties.Resources.xoa;
             this.pictureBox2.Location = new System.Drawing.Point(825, 209);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";

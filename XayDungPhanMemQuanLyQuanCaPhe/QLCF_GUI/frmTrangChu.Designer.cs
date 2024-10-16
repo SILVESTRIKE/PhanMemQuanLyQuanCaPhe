@@ -1,4 +1,4 @@
-﻿namespace PhanMemQuanLyQuanCaPhe
+﻿namespace QLCF_GUI
 {
     partial class frmTrangChu
     {
@@ -148,7 +148,7 @@
             // 
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.ErrorImage = null;
-            this.pictureBox9.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.DX;
+            this.pictureBox9.Image = global::QLCF_GUI.Properties.Resources.DX;
             this.pictureBox9.Location = new System.Drawing.Point(24, 565);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
@@ -168,7 +168,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox10.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.DK;
+            this.pictureBox10.Image = global::QLCF_GUI.Properties.Resources.DK;
             this.pictureBox10.Location = new System.Drawing.Point(24, 496);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
@@ -211,7 +211,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.thongke;
+            this.pictureBox11.Image = global::QLCF_GUI.Properties.Resources.thongke;
             this.pictureBox11.Location = new System.Drawing.Point(24, 427);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
@@ -253,7 +253,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.Truc;
+            this.pictureBox12.Image = global::QLCF_GUI.Properties.Resources.Truc;
             this.pictureBox12.Location = new System.Drawing.Point(24, 358);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
@@ -295,7 +295,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox13.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.kho;
+            this.pictureBox13.Image = global::QLCF_GUI.Properties.Resources.kho;
             this.pictureBox13.Location = new System.Drawing.Point(24, 289);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
@@ -322,7 +322,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox14.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.billcoffe;
+            this.pictureBox14.Image = global::QLCF_GUI.Properties.Resources.billcoffe;
             this.pictureBox14.Location = new System.Drawing.Point(24, 220);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
@@ -349,7 +349,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox15.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.menu2;
+            this.pictureBox15.Image = global::QLCF_GUI.Properties.Resources.menu2;
             this.pictureBox15.Location = new System.Drawing.Point(24, 151);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
@@ -361,7 +361,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox16.Image = global::PhanMemQuanLyQuanCaPhe.Properties.Resources.NhanVien;
+            this.pictureBox16.Image = global::QLCF_GUI.Properties.Resources.NhanVien;
             this.pictureBox16.Location = new System.Drawing.Point(24, 82);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
