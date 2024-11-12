@@ -1,0 +1,6 @@
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\bin\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.csproj.AssemblyReference.cache
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.csproj.CoreCompileInputs.cache
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.pdb

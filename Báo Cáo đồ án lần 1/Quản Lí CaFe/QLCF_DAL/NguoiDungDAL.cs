@@ -11,7 +11,7 @@ namespace QLCF_DAL
 {
     public class NguoiDungDAL
     {
-        public static string strCon = @"Data Source=LIEM_PHONG\THCSDL;Initial Catalog=QL_QuanCafeV2;Integrated Security=True;TrustServerCertificate=True";
+        public static string strCon = @"Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;TrustServerCertificate=True";
         private SqlConnection conn;
         public NguoiDungDAL()
         {
@@ -90,7 +90,7 @@ namespace QLCF_DAL
                 conn.Open();
 
             
-            string sql = "select count(*) from NguoiDung where IDDN = '"+ nguoidung.IDDN +"' and Pass = '"+ nguoidung.Pass +"'";
+            string sql = "select count(*) from NhanVien where IDNhanVien = '"+ nguoidung.IDDN +"' and Pass = '"+ nguoidung.Pass +"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             int kq = (int)cmd.ExecuteScalar();

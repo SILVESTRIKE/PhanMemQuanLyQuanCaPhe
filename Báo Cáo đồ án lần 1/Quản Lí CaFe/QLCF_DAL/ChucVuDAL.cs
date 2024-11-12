@@ -10,7 +10,7 @@ namespace QLCF_DAL
 {
     public class ChucVuDAL
     {
-        public static string strCon = @"Data Source=LIEM_PHONG\THCSDL;Initial Catalog=QL_QuanCafeV2;Integrated Security=True;TrustServerCertificate=True";
+        public static string strCon = @"Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;TrustServerCertificate=True";
         private SqlConnection conn;
 
         public ChucVuDAL()

@@ -20,7 +20,7 @@ namespace QLCF_GUI
             this.username = username;
 
             // Cập nhật nội dung của Label để hiển thị lời chào
-            lbl_welcome.Text = "Chào mừng " + username + " quay trở lại!";
+            //lbl_welcome.Text = "Chào mừng " + username + " quay trở lại!";
             this.password = password;
         }
 
