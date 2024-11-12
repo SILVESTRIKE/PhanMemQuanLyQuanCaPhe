@@ -1,0 +1,41 @@
+# Ignore .vs (Visual Studio) folder
+.vs/
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.userprefs
+
+# Ignore database related files
+*.mdf
+*.ldf
+
+# Ignore crash logs, build logs, etc.
+*.log
+
+# Ignore packages folder (if using NuGet)
+packages/
+
+# Ignore Resharper files (if you're using it)
+_ReSharper*
+
+# Ignore Rider IDE files (if using it)
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore any compiled files
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Ignore specific files causing permission issues
+XayDungPhanMemQuanLyQuanCaPhe/.vs/
+XayDungPhanMemQuanLyQuanCaPhe/PhanMemQuanLyQuanCaPhe/obj/
