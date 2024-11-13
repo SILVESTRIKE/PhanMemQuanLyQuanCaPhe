@@ -51,6 +51,7 @@
     <Compile Include="ChiTietHDDAL.cs" />
     <Compile Include="ChucVuDAL.cs" />
     <Compile Include="CongThucDAL.cs" />
+    <Compile Include="dbContext.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="MonDAL.cs" />
     <Compile Include="NguoiDungDAL.cs" />

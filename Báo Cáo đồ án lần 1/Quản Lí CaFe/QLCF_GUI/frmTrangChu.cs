@@ -23,7 +23,22 @@ namespace QLCF_GUI
             //lbl_welcome.Text = "Chào mừng " + username + " quay trở lại!";
             this.password = password;
         }
-
+        private Form CurrentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (CurrentFormChild != null)
+            {
+                CurrentFormChild.Close();
+            }
+            CurrentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_body.Controls.Add(childForm);
+            panel_body.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             frmDangKy dangKyForm = new frmDangKy();
@@ -46,6 +61,34 @@ namespace QLCF_GUI
             frmmon.ShowDialog();
         }
 
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmNhanVien());
+        }
+        private void btnMenu_Click_1(object sender, EventArgs e)
+        {
 
+            OpenChildForm(new frmMon());
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCaTruc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmThongKe()); 
+        }
     }
 }

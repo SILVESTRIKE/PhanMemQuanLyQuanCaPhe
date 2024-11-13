@@ -11,17 +11,17 @@ namespace QLCF_DAL
 {
     public class NguoiDungDAL
     {
-        public static string strCon = @"Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;TrustServerCertificate=True";
+        dbContext dbContext = new dbContext();
         private SqlConnection conn;
         public NguoiDungDAL()
         {
-            conn = new SqlConnection(strCon);
+            conn = new SqlConnection(dbContext.Strcon);
         }
         public bool isExists(string iddn)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = ("select count(*) from NguoiDung where IDDN = '" +iddn + "'");
+            string sql = ("select count(*) from NhanVien where IDNhanVien = '" + iddn + "'");
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteScalar();
             conn.Close();

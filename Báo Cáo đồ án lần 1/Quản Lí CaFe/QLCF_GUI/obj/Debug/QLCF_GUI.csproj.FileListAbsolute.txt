@@ -18,3 +18,23 @@ D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QL
 D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
 D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
 D:\CNNET\CongNgheNet\CNNET_121124\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe.config
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.pdb
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.dll
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.pdb
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmDangKy.resources
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmMon.resources
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmTrangChu.resources
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frm_DangNhap.resources
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.Properties.Resources.resources
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.GenerateResource.cache
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
+D:\hufi\hk5\.Net\Đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb

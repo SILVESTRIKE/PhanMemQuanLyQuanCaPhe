@@ -7,12 +7,12 @@ namespace QLCF_DAL
 {
     public class CaTrucDAL
     {
-        public static string strCon = @"Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;TrustServerCertificate=True";
+        dbContext dbContext = new dbContext();
         private SqlConnection conn;
 
         public CaTrucDAL()
         {
-            conn = new SqlConnection(strCon);
+            conn = new SqlConnection(dbContext.Strcon);
         }
 
         public bool isExists(string idCa)

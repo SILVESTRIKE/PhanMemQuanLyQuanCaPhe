@@ -11,11 +11,11 @@ namespace QLCF_DAL
 {
     public class NguyenLieuDAL
     {
-        public static string strCon = @"Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;TrustServerCertificate=True";
+        dbContext dbContext = new dbContext();
         private SqlConnection conn;
         public NguyenLieuDAL()
         {
-            conn = new SqlConnection(strCon);
+            conn = new SqlConnection(dbContext.Strcon);
         }
         public bool isExists(string idNguyenLieu, string tenNL, int slTon)
         {
