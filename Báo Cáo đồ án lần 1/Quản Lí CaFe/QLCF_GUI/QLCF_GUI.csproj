@@ -102,11 +102,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCaTruc.resx">
+      <DependentUpon>frmCaTruc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKho.resx">
+      <DependentUpon>frmKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMon.resx">
       <DependentUpon>frmMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>

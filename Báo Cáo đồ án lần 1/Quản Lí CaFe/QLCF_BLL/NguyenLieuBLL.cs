@@ -7,7 +7,28 @@ using QLCF_DAL;
 using QLCF_DTO;
 namespace QLCF_BLL
 {
-    internal class NguyenLieuBLL
+    public class NguyenLieuBLL
     {
+        private NguyenLieuDAL nglieuDAL = new NguyenLieuDAL();
+
+        public List<NguyenLieuDTO> GetAllNgLieu()
+        {
+            return nglieuDAL.getALL();
+        }
+
+        public bool AddNguyenLieu(NguyenLieuDTO nl)
+        {
+            return nglieuDAL.insert(nl);
+        }
+
+        public bool UpdateNguyenLieu(NguyenLieuDTO nl)
+        {
+            return nglieuDAL.edit(nl);
+        }
+
+        public bool DeleteNguyenLieu(NguyenLieuDTO nl)
+        {
+            return nglieuDAL.delete(nl);
+        }
     }
 }

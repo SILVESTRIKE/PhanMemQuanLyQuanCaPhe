@@ -38,10 +38,10 @@
             this.rdoNam = new System.Windows.Forms.RadioButton();
             this.rdoNu = new System.Windows.Forms.RadioButton();
             this.txtIDNhanVien = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSua)).BeginInit();
@@ -57,7 +57,7 @@
             this.dgVNhanVien.Name = "dgVNhanVien";
             this.dgVNhanVien.RowHeadersWidth = 51;
             this.dgVNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVNhanVien.Size = new System.Drawing.Size(436, 194);
+            this.dgVNhanVien.Size = new System.Drawing.Size(1386, 315);
             this.dgVNhanVien.TabIndex = 3;
             // 
             // label1
@@ -87,7 +87,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(14, 177);
+            this.label3.Location = new System.Drawing.Point(519, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 29);
             this.label3.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(14, 228);
+            this.label4.Location = new System.Drawing.Point(519, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 29);
             this.label4.TabIndex = 7;
@@ -115,7 +115,7 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(138, 228);
+            this.txtSDT.Location = new System.Drawing.Point(643, 130);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(228, 33);
             this.txtSDT.TabIndex = 11;
@@ -125,7 +125,7 @@
             this.rdoNam.AutoSize = true;
             this.rdoNam.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoNam.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rdoNam.Location = new System.Drawing.Point(159, 177);
+            this.rdoNam.Location = new System.Drawing.Point(664, 79);
             this.rdoNam.Margin = new System.Windows.Forms.Padding(2);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(78, 33);
@@ -139,7 +139,7 @@
             this.rdoNu.AutoSize = true;
             this.rdoNu.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoNu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rdoNu.Location = new System.Drawing.Point(285, 177);
+            this.rdoNu.Location = new System.Drawing.Point(790, 79);
             this.rdoNu.Margin = new System.Windows.Forms.Padding(2);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(61, 33);
@@ -157,11 +157,22 @@
             this.txtIDNhanVien.Size = new System.Drawing.Size(228, 33);
             this.txtIDNhanVien.TabIndex = 15;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(12, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(170, 39);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "NHÂN VIÊN";
+            // 
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Image = global::QLCF_GUI.Properties.Resources.xoa;
-            this.btnXoa.Location = new System.Drawing.Point(383, 203);
+            this.btnXoa.Location = new System.Drawing.Point(305, 192);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(60, 60);
@@ -173,7 +184,7 @@
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Image = global::QLCF_GUI.Properties.Resources.sua;
-            this.btnSua.Location = new System.Drawing.Point(383, 139);
+            this.btnSua.Location = new System.Drawing.Point(162, 192);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(60, 60);
@@ -185,7 +196,7 @@
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLCF_GUI.Properties.Resources.them;
-            this.btnThem.Location = new System.Drawing.Point(383, 75);
+            this.btnThem.Location = new System.Drawing.Point(19, 192);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(60, 60);
@@ -193,23 +204,12 @@
             this.btnThem.TabIndex = 16;
             this.btnThem.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(131, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 37);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "NHÂN VIÊN";
-            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(458, 479);
+            this.ClientSize = new System.Drawing.Size(1410, 596);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);

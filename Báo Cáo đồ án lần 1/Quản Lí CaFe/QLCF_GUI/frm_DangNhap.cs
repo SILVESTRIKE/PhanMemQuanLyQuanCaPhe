@@ -19,6 +19,7 @@ namespace QLCF_GUI
         public frm_DangNhap()
         {
             InitializeComponent();
+            txt_username.Focus();
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
@@ -40,10 +41,10 @@ namespace QLCF_GUI
 
                 MessageBox.Show("Đăng nhập thành công! Xin chào " + user.IDDN, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                this.Hide();
                 frmTrangChu mainForm = new frmTrangChu(user.IDDN, user.Pass);
+                this.Hide();
                 mainForm.Show(); // Hiển thị form chính
+                mainForm.FormClosed += (s, args) => Application.Exit();
             }
             else
             {

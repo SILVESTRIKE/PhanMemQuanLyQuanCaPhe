@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoaDon));
-            this.tnThanhToan = new System.Windows.Forms.Button();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.cboMon = new System.Windows.Forms.ComboBox();
@@ -44,22 +44,22 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgVHoaDon = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
             this.SuspendLayout();
             // 
-            // tnThanhToan
+            // btnThanhToan
             // 
-            this.tnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tnThanhToan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tnThanhToan.Location = new System.Drawing.Point(573, 488);
-            this.tnThanhToan.Name = "tnThanhToan";
-            this.tnThanhToan.Size = new System.Drawing.Size(186, 45);
-            this.tnThanhToan.TabIndex = 12;
-            this.tnThanhToan.Text = "Thanh toán";
-            this.tnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnThanhToan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThanhToan.Location = new System.Drawing.Point(1220, 488);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(186, 45);
+            this.btnThanhToan.TabIndex = 12;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = false;
             // 
             // printPreviewDialog1
             // 
@@ -107,7 +107,7 @@
             this.lblTongTIen.AutoSize = true;
             this.lblTongTIen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTIen.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTIen.Location = new System.Drawing.Point(123, 496);
+            this.lblTongTIen.Location = new System.Drawing.Point(148, 496);
             this.lblTongTIen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTIen.Name = "lblTongTIen";
             this.lblTongTIen.Size = new System.Drawing.Size(38, 29);
@@ -122,9 +122,9 @@
             this.label3.Location = new System.Drawing.Point(11, 496);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 29);
+            this.label3.Size = new System.Drawing.Size(133, 29);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Giá tiền:";
+            this.label3.Text = "TỔNG TIỀN: ";
             // 
             // btnThem
             // 
@@ -179,33 +179,33 @@
             this.dgVHoaDon.Location = new System.Drawing.Point(11, 126);
             this.dgVHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.dgVHoaDon.Name = "dgVHoaDon";
-            this.dgVHoaDon.Size = new System.Drawing.Size(746, 357);
+            this.dgVHoaDon.Size = new System.Drawing.Size(1395, 357);
             this.dgVHoaDon.TabIndex = 25;
             this.dgVHoaDon.UseCompatibleStateImageBehavior = false;
             this.dgVHoaDon.View = System.Windows.Forms.View.Details;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(297, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 39);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "THANH TOÁN";
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "ID Hóa Đơn";
             this.columnHeader5.Width = 118;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(197, 39);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "THANH TOÁN";
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(773, 537);
+            this.ClientSize = new System.Drawing.Size(1417, 540);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTongTIen);
@@ -214,7 +214,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.cboMon);
             this.Controls.Add(this.dgVHoaDon);
-            this.Controls.Add(this.tnThanhToan);
+            this.Controls.Add(this.btnThanhToan);
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
@@ -225,7 +225,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button tnThanhToan;
+        private System.Windows.Forms.Button btnThanhToan;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.ComboBox cboMon;

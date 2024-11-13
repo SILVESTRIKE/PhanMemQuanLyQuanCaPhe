@@ -17,7 +17,7 @@ namespace QLCF_DAL
         {
             conn = new SqlConnection(dbContext.Strcon);
         }
-        public bool isExists(string idNguyenLieu, string tenNL, int slTon)
+        public bool isExists(string idNguyenLieu, string tenNL, decimal slTon, string dvTinh)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
@@ -29,11 +29,11 @@ namespace QLCF_DAL
                 return true;
             else return false;
         }
-        public bool insert(NguyenLieuDTO nguyenlieu)
+        public bool insert(NguyenLieuDTO nl)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "insert into NguyenLieu values('" + nguyenlieu.IDNguyenLieu + "',N'" + nguyenlieu.TenNL + "','" + nguyenlieu.SLTon + "')";
+            string sql = "insert into NguyenLieu values('" + nl.IDNguyenLieu + "',N'" + nl.TenNL + "','" + nl.SLTon + "','"+nl.DVTinh+"')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -41,11 +41,11 @@ namespace QLCF_DAL
                 return true;
             else return false;
         }
-        public bool delete(NguyenLieuDTO nguyenlieu)
+        public bool delete(NguyenLieuDTO nl)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "delete from NguyenLieu where IDNguyenLieu ='" + nguyenlieu.IDNguyenLieu + "'";
+            string sql = "delete from NguyenLieu where IDNguyenLieu ='" + nl.IDNguyenLieu + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -53,11 +53,11 @@ namespace QLCF_DAL
                 return true;
             else return false;
         }
-        public bool edit(NguyenLieuDTO nguyenlieu)
+        public bool edit(NguyenLieuDTO nl)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update NguyenLieu Set SLTon = '" + nguyenlieu.SLTon+ "' Where IDNGuyenLieu = '" + nguyenlieu.IDNguyenLieu+ "'";
+            string sql = "update NguyenLieu Set SLTon = '" + nl.SLTon+ "' Where IDNGuyenLieu = '" + nl.IDNguyenLieu+ "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -78,11 +78,28 @@ namespace QLCF_DAL
                 string idnl = rd[0].ToString();
                 string tennl = rd[1].ToString();
                 int slton = (int)rd[2];
-                NguyenLieuDTO nl = new NguyenLieuDTO(idnl, tennl, slton);
+                string dvtinh = rd[3].ToString();
+
+                NguyenLieuDTO nl = new NguyenLieuDTO(idnl, tennl, slton, dvtinh);
                 LstNguyenLieu.Add(nl);
             }
             conn.Close();
             return LstNguyenLieu;
+        }
+        public List<string> LoadDVTComboBox()
+        {
+            List<string> dvtList = new List<string>();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = "SELECT DISTINCT DVTinh FROM NguyenLieu";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                dvtList.Add(rd["DVTinh"].ToString());
+            }
+            conn.Close();
+            return dvtList;
         }
     }
 }

@@ -19,24 +19,29 @@ namespace QLCF_GUI
             InitializeComponent();
             this.username = username;
 
-            // Cập nhật nội dung của Label để hiển thị lời chào
-            //lbl_welcome.Text = "Chào mừng " + username + " quay trở lại!";
+            lblRole.Text = "Chào mừng " + username + " quay trở lại!";
             this.password = password;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            this.AutoScaleMode = AutoScaleMode.Dpi; // Hoặc AutoScaleMode.Dpi;
+
+            this.TopMost = true;
         }
         private Form CurrentFormChild;
         private void OpenChildForm(Form childForm)
         {
-            if (CurrentFormChild != null)
-            {
-                CurrentFormChild.Close();
-            }
-            CurrentFormChild = childForm;
+            //if (CurrentFormChild != null)
+            //{
+            //    CurrentFormChild.Close();
+            //}
+            //CurrentFormChild = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+            panel_body.Controls.Clear();
             panel_body.Controls.Add(childForm);
-            panel_body.Tag = childForm;
-            childForm.BringToFront();
+            //panel_body.Tag = childForm;
+            //childForm.BringToFront();
             childForm.Show();
         }
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -73,16 +78,19 @@ namespace QLCF_GUI
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmHoaDon());
 
         }
 
         private void btnKho_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmKho());
 
         }
 
         private void btnCaTruc_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmCaTruc());
 
         }
 
@@ -90,5 +98,14 @@ namespace QLCF_GUI
         {
             OpenChildForm(new frmThongKe()); 
         }
+
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
+            this.panelTitleBar.Dock = DockStyle.Top;
+            this.panel_body.Dock = DockStyle.Fill;
+            this.mnSMain.Dock = DockStyle.Top;
+
+        }
+
     }
 }
