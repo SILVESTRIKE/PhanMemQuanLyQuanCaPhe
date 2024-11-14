@@ -2,6 +2,8 @@
 using QLCF_DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QLCF_GUI
@@ -18,9 +20,9 @@ namespace QLCF_GUI
         // Validate input data
         private bool ValidateInput()
         {
-            // Collect all the missing fields in a list
             List<string> missingFields = new List<string>();
 
+            // Check required fields
             if (string.IsNullOrWhiteSpace(txtIDNhanVien.Text))
             {
                 missingFields.Add("Mã nhân viên");
@@ -33,12 +35,21 @@ namespace QLCF_GUI
             {
                 missingFields.Add("Số điện thoại");
             }
+            else
+            {
+                // Validate phone number format
+                string phonePattern = @"^(\+?\d{1,4}|\d{1,4})?\(?\d{1,4}\)?[\d\s\-]{3,}$";
+                if (!Regex.IsMatch(txtSDT.Text, phonePattern))
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!");
+                    return false;
+                }
+            }
             if (dTNgaySinh.Value == null || dTNgaySinh.Value == DateTime.MinValue)
             {
                 missingFields.Add("Ngày sinh");
             }
 
-            // If any fields are missing, show them all in one message box
             if (missingFields.Count > 0)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho các trường: " + string.Join(", ", missingFields));
@@ -47,8 +58,6 @@ namespace QLCF_GUI
 
             return true;
         }
-
-
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -87,14 +96,21 @@ namespace QLCF_GUI
         private void btnXoa_Click(object sender, EventArgs e)
         {
             var idNhanVien = txtIDNhanVien.Text;
-            if (nhanVienBLL.delete(new NhanVienDTO { IDNhanVien = idNhanVien }))
+            try
             {
-                MessageBox.Show("Xóa nhân viên thành công!");
-                RefreshGridView();
+                if (nhanVienBLL.delete(new NhanVienDTO { IDNhanVien = idNhanVien }))
+                {
+                    MessageBox.Show("Xóa nhân viên thành công!");
+                    RefreshGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: Không thể xóa nhân viên!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: Không thể xóa nhân viên!");
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}");
             }
         }
 
@@ -106,13 +122,11 @@ namespace QLCF_GUI
             BindControls();
         }
 
-        // Load data to DataGridView
         private void RefreshGridView()
         {
             dgVNhanVien.DataSource = nhanVienBLL.getALL();
         }
 
-        // Bind data from DataGridView to form controls
         private void BindControls()
         {
             txtIDNhanVien.DataBindings.Clear();
@@ -123,17 +137,33 @@ namespace QLCF_GUI
             txtSDT.DataBindings.Add("Text", dgVNhanVien.DataSource, "SDT");
             dTNgaySinh.DataBindings.Clear();
             dTNgaySinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "NgSinh");
-            rdoNam.DataBindings.Clear();
-            rdoNam.DataBindings.Add("Checked", dgVNhanVien.DataSource, "GTinh", true, DataSourceUpdateMode.OnPropertyChanged);
-            rdoNu.DataBindings.Clear();
-            rdoNu.DataBindings.Add("Checked", dgVNhanVien.DataSource, "GTinh", false, DataSourceUpdateMode.OnPropertyChanged);
+
+            // Bind radio buttons for gender (GTinh)
+            rdoNam.CheckedChanged -= rdoNam_CheckedChanged; // Remove previous event handler to avoid multiple subscriptions
+            rdoNu.CheckedChanged -= rdoNu_CheckedChanged;
+            if (dgVNhanVien.DataSource != null)
+            {
+                var gender = (dgVNhanVien.DataSource as DataRowView)?["GTinh"]?.ToString();
+                if (gender == "Nam")
+                {
+                    rdoNam.Checked = true;
+                }
+                else if (gender == "Nữ")
+                {
+                    rdoNu.Checked = true;
+                }
+            }
+            rdoNam.CheckedChanged += rdoNam_CheckedChanged;
+            rdoNu.CheckedChanged += rdoNu_CheckedChanged;
+
             cboTrangThai.DataBindings.Clear();
-            cboTrangThai.DataBindings.Add("Checked", dgVNhanVien.DataSource, "TrangThai");
+            cboTrangThai.DataBindings.Add("Text", dgVNhanVien.DataSource, "TrangThai");
             cboChucVu.DataBindings.Clear();
             cboChucVu.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDQuanLy");
             txtPass.DataBindings.Clear();
             txtPass.DataBindings.Add("Text", dgVNhanVien.DataSource, "Pass");
         }
+
         private void LoadTrangThaiComboBox()
         {
             List<string> trangThaiOptions = nhanVienBLL.GetTrangThaiOptions();
@@ -141,12 +171,14 @@ namespace QLCF_GUI
             cboTrangThai.Items.AddRange(trangThaiOptions.ToArray());
             cboTrangThai.SelectedIndex = 0;
         }
+
         private void LoadChucVuComboBox()
         {
             cboChucVu.Items.Clear();
             cboChucVu.Items.AddRange(nhanVienBLL.GetChucVuOptions());
-            cboChucVu.SelectedIndex = 0; 
+            cboChucVu.SelectedIndex = 0;
         }
+
         private NhanVienDTO GetNhanVienFromForm()
         {
             bool trangThai = cboTrangThai.SelectedItem.ToString() == "Hoạt động" ? true : false;
@@ -155,11 +187,10 @@ namespace QLCF_GUI
 
             if (chucVu == "Nhân viên" && string.IsNullOrEmpty(idQuanLy))
             {
-                // If "Nhân viên" is selected and IDQuanLy is not provided, ask for the manager's ID
+                // Ask for manager's ID if the user selects "Nhân viên" but no manager is assigned
                 if (MessageBox.Show("Vui lòng nhập ID Quản lý", "Nhập ID Quản lý", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    // Open a prompt to get IDQuanLy (can be a simple TextBox or input box)
-                    using (var frm = new frmIDQuanLi()) // Assuming InputBoxForm is a form to get user input
+                    using (var frm = new frmIDQuanLi()) // Assuming this form collects the manager ID
                     {
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
@@ -167,11 +198,12 @@ namespace QLCF_GUI
                         }
                         else
                         {
-                            return null; // Cancel if no input is provideds
+                            return null; // Cancel if no input is provided
                         }
                     }
                 }
             }
+
             return new NhanVienDTO
             {
                 IDNhanVien = txtIDNhanVien.Text,
@@ -183,6 +215,23 @@ namespace QLCF_GUI
                 IDQuanLy = cboChucVu.Text,
                 Pass = txtPass.Text
             };
+        }
+
+        // Event handlers for RadioButtons (to ensure proper gender binding)
+        private void rdoNam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoNam.Checked)
+            {
+                rdoNu.Checked = false;
+            }
+        }
+
+        private void rdoNu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoNu.Checked)
+            {
+                rdoNam.Checked = false;
+            }
         }
     }
 }
