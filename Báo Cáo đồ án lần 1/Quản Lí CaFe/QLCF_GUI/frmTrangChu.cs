@@ -44,11 +44,11 @@ namespace QLCF_GUI
             //childForm.BringToFront();
             childForm.Show();
         }
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-            frmDangKy dangKyForm = new frmDangKy();
-            dangKyForm.ShowDialog();
-        }
+        //private void btnDangKy_Click(object sender, EventArgs e)
+        //{
+        //    frmDangKy dangKyForm = new frmDangKy();
+        //    dangKyForm.ShowDialog();
+        //}
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
@@ -107,5 +107,9 @@ namespace QLCF_GUI
 
         }
 
+        private void btnCongThuc_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCongThuc());
+        }
     }
 }

@@ -13,58 +13,67 @@ namespace QLCF_DAL
     {
         dbContext dbContext = new dbContext();
         private SqlConnection conn;
+
         public NhanVienDAL()
         {
             conn = new SqlConnection(dbContext.Strcon);
         }
+
         public bool isExists(string idNhanVien)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = ("select count(*) from NguyenLieu where IDNhanVien = '" + idNhanVien + "'");
+            string sql = "select count(*) from NhanVien where IDNhanVien = '" + idNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteScalar();
             conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+            return kq > 0;
         }
+
         public bool insert(NhanVienDTO nhanvien)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "insert into NhanVien values('" + nhanvien.IDNhanVien + "',N'" + nhanvien.Ten + "','" + nhanvien.GTinh + "','" + nhanvien.NgSinh + "','" + nhanvien.NgSinh + "','" + nhanvien.SDT + "','" + nhanvien.IDChucVu + "')";
+            string sql = "insert into NhanVien values('"
+                + nhanvien.IDNhanVien + "', N'" + nhanvien.Ten + "', '"
+                + nhanvien.SDT + "', N'" + nhanvien.GTinh + "', '"
+                + nhanvien.NgSinh.ToString("yyyy-MM-dd") + "', "
+                + (nhanvien.TrangThai ? 1 : 0) + ", '"
+                + nhanvien.IDQuanLy + "', '" + nhanvien.Pass + "')";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
+            int kq = cmd.ExecuteNonQuery();
             conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+            return kq > 0;
         }
+
         public bool delete(NhanVienDTO nhanvien)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "delete from NhanVien where IDNhanVien ='" + nhanvien.IDNhanVien + "'";
+            string sql = "delete from NhanVien where IDNhanVien = '" + nhanvien.IDNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
+            int kq = cmd.ExecuteNonQuery();
             conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+            return kq > 0;
         }
+
         public bool edit(NhanVienDTO nhanvien)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update NguyenLieu Set Ten = '" + nhanvien.Ten + "' Where IDNhanVien = '" + nhanvien.IDNhanVien + "'";
+            string sql = "update NhanVien set Ten = N'" + nhanvien.Ten
+                + "', SDT = '" + nhanvien.SDT + "', GTinh = N'" + nhanvien.GTinh
+                + "', NgSinh = '" + nhanvien.NgSinh.ToString("yyyy-MM-dd")
+                + "', TrangThai = " + (nhanvien.TrangThai ? 1 : 0)
+                + ", IDQuanLy = '" + nhanvien.IDQuanLy
+                + "', Pass = '" + nhanvien.Pass
+                + "' where IDNhanVien = '" + nhanvien.IDNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
+            int kq = cmd.ExecuteNonQuery();
             conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+            return kq > 0;
         }
+
         public List<NhanVienDTO> getALL()
         {
             List<NhanVienDTO> LstNhanVien = new List<NhanVienDTO>();
@@ -75,13 +84,17 @@ namespace QLCF_DAL
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                string idnhanvien = rd[0].ToString();
-                string tennv = rd[1].ToString();
-                string sdt = rd[2].ToString();
-                string gioitinh = rd[3].ToString();
-                DateTime ngsinh = (DateTime)rd[4];
-                string idchucvu = rd[5].ToString();
-                NhanVienDTO nv = new NhanVienDTO(idnhanvien, tennv, sdt,gioitinh,ngsinh, idchucvu);
+                NhanVienDTO nv = new NhanVienDTO
+                {
+                    IDNhanVien = rd["IDNhanVien"].ToString(),
+                    Ten = rd["Ten"].ToString(),
+                    SDT = rd["SDT"].ToString(),
+                    GTinh = rd["GTinh"].ToString(),
+                    NgSinh = (DateTime)rd["NgSinh"],
+                    TrangThai = (bool)rd["TrangThai"],
+                    IDQuanLy = rd["IDQuanLy"].ToString(),
+                    Pass = rd["Pass"].ToString()
+                };
                 LstNhanVien.Add(nv);
             }
             conn.Close();

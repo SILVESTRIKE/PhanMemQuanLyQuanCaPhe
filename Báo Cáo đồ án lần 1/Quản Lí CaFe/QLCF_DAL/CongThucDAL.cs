@@ -77,7 +77,7 @@ namespace QLCF_DAL
             {
                 string idmon = rd[0].ToString();
                 string idnguyenlieu = rd[1].ToString();
-                int soluong = (int)rd[2];
+                decimal soluong = (decimal)rd[2];
                 CongThucDTO ct = new CongThucDTO(idmon, idnguyenlieu, soluong);
                 LstCongThuc.Add(ct);
             }

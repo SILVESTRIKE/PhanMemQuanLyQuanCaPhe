@@ -10,8 +10,30 @@ namespace QLCF_BLL
     public class NhanVienBLL
     {
         NhanVienDAL NhanVienDAL = new NhanVienDAL();
+        public string[] GetChucVuOptions()
+        {
+            return new string[] { "Quản lý", "Nhân viên" };
+        }
+
+        public string GetIDQuanLy(string chucVu, string idNhanVien)
+        {
+            if (chucVu == "Quản lý")
+            {
+                return idNhanVien; 
+            }
+            else
+            {
+                return string.Empty; 
+            }
+        }
+
+   
         public bool insert(NhanVienDTO nhanvien)
         {
+            if (nhanvien.GTinh == "Quản lý" && string.IsNullOrEmpty(nhanvien.IDQuanLy))
+            {
+                return false; 
+            }
             bool KiemTra = NhanVienDAL.isExists(nhanvien.IDNhanVien);
             if (KiemTra == true)
                 return false;
@@ -41,6 +63,14 @@ namespace QLCF_BLL
             {
                 return false;
             }
+        }
+        public List<string> GetTrangThaiOptions()
+        {
+            return new List<string>
+            {
+                "Hoạt động", // Active
+                "Nghỉ"       // Inactive
+            };
         }
         public List<NhanVienDTO> getALL()
         {

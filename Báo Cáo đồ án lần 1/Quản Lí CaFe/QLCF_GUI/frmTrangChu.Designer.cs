@@ -32,15 +32,14 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.TopLabel = new System.Windows.Forms.Label();
             this.mnSMain = new System.Windows.Forms.MenuStrip();
-            this.btnTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDangKy = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNhanVien = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHoaDon = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnKho = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCaTruc = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCongThuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnKho = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_body = new System.Windows.Forms.Panel();
             this.panelTitleBar.SuspendLayout();
             this.mnSMain.SuspendLayout();
@@ -85,42 +84,20 @@
             // 
             this.mnSMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnSMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnTaiKhoan,
             this.btnNhanVien,
-            this.btnMenu,
-            this.btnHoaDon,
-            this.btnKho,
             this.btnCaTruc,
-            this.btnThongKe});
+            this.btnMenu,
+            this.btnCongThuc,
+            this.btnKho,
+            this.btnHoaDon,
+            this.btnThongKe,
+            this.btnDangXuat});
             this.mnSMain.Location = new System.Drawing.Point(0, 0);
             this.mnSMain.Name = "mnSMain";
             this.mnSMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.mnSMain.Size = new System.Drawing.Size(1253, 28);
             this.mnSMain.TabIndex = 3;
             this.mnSMain.Text = "Trang Chủ";
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDangKy,
-            this.btnDangXuat});
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(98, 24);
-            this.btnTaiKhoan.Text = "TÀI KHOẢN";
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(180, 24);
-            this.btnDangKy.Text = "ĐĂNG KÝ";
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(180, 24);
-            this.btnDangXuat.Text = "ĐĂNG XUẤT";
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnNhanVien
             // 
@@ -129,6 +106,13 @@
             this.btnNhanVien.Text = "NHÂN VIÊN";
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
+            // btnCaTruc
+            // 
+            this.btnCaTruc.Name = "btnCaTruc";
+            this.btnCaTruc.Size = new System.Drawing.Size(81, 24);
+            this.btnCaTruc.Text = "CA TRỰC";
+            this.btnCaTruc.Click += new System.EventHandler(this.btnCaTruc_Click);
+            // 
             // btnMenu
             // 
             this.btnMenu.Name = "btnMenu";
@@ -136,12 +120,12 @@
             this.btnMenu.Text = "MENU";
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click_1);
             // 
-            // btnHoaDon
+            // btnCongThuc
             // 
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(90, 24);
-            this.btnHoaDon.Text = "HÓA ĐƠN";
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            this.btnCongThuc.Name = "btnCongThuc";
+            this.btnCongThuc.Size = new System.Drawing.Size(105, 24);
+            this.btnCongThuc.Text = "CÔNG THỨC";
+            this.btnCongThuc.Click += new System.EventHandler(this.btnCongThuc_Click);
             // 
             // btnKho
             // 
@@ -150,12 +134,12 @@
             this.btnKho.Text = "KHO";
             this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
             // 
-            // btnCaTruc
+            // btnHoaDon
             // 
-            this.btnCaTruc.Name = "btnCaTruc";
-            this.btnCaTruc.Size = new System.Drawing.Size(81, 24);
-            this.btnCaTruc.Text = "CA TRỰC";
-            this.btnCaTruc.Click += new System.EventHandler(this.btnCaTruc_Click);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(90, 24);
+            this.btnHoaDon.Text = "HÓA ĐƠN";
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnThongKe
             // 
@@ -163,6 +147,13 @@
             this.btnThongKe.Size = new System.Drawing.Size(93, 24);
             this.btnThongKe.Text = "THỐNG KÊ";
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(104, 24);
+            this.btnDangXuat.Text = "ĐĂNG XUẤT";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // panel_body
             // 
@@ -204,10 +195,9 @@
         private System.Windows.Forms.ToolStripMenuItem btnKho;
         private System.Windows.Forms.ToolStripMenuItem btnCaTruc;
         private System.Windows.Forms.ToolStripMenuItem btnThongKe;
-        private System.Windows.Forms.ToolStripMenuItem btnTaiKhoan;
-        private System.Windows.Forms.ToolStripMenuItem btnDangKy;
-        private System.Windows.Forms.ToolStripMenuItem btnDangXuat;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Panel panel_body;
+        private System.Windows.Forms.ToolStripMenuItem btnCongThuc;
+        private System.Windows.Forms.ToolStripMenuItem btnDangXuat;
     }
 }

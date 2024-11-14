@@ -12,22 +12,22 @@ namespace QLCF_BLL
     {
         private CongThucDAL ctDAL = new CongThucDAL();
 
-        public List<CongThucDTO> GetAllMon()
+        public List<CongThucDTO> GetAllCongThuc()
         {
             return ctDAL.getALL();
         }
 
-        public bool AddMon(CongThucDTO ct)
+        public bool AddCongThuc(CongThucDTO ct)
         {
             return ctDAL.insert(ct);
         }
 
-        public bool UpdateMon(CongThucDTO ct)
+        public bool UpdateCongThuc(CongThucDTO ct)
         {
             return ctDAL.edit(ct);
         }
 
-        public bool DeleteMon(CongThucDTO ct)
+        public bool DeleteCongThuc(CongThucDTO ct)
         {
             return ctDAL.delete(ct);
         }

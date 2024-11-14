@@ -8,7 +8,7 @@ namespace QLCF_DTO
 {
    public class MonDTO
     {
-         public string IDMon { get; set; }
+        public string IDMon { get; set; }
         public string TenMon { get; set; }
         public decimal gia { get; set; }
 

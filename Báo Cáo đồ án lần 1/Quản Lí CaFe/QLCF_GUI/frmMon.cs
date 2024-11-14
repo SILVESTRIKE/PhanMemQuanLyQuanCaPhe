@@ -109,10 +109,6 @@ namespace QLCF_GUI
             }
         }
 
-        private void dgVMon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         public void Load_Grv()
         {
             dgVMon.DataSource = monBLL.GetAllMon();

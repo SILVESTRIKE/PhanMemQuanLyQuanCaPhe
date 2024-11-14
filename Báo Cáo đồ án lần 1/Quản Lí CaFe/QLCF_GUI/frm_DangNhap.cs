@@ -19,7 +19,6 @@ namespace QLCF_GUI
         public frm_DangNhap()
         {
             InitializeComponent();
-            txt_username.Focus();
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
@@ -50,6 +49,12 @@ namespace QLCF_GUI
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frm_DangNhap_Load(object sender, EventArgs e)
+        {
+            txt_username.Focus();
+            txt_username.TabIndex = 0;
         }
     }
 }

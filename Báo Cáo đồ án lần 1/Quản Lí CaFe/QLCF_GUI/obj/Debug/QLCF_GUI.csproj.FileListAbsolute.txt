@@ -23,3 +23,5 @@ D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ á
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmIDQuanLi.resources
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmCongThuc.resources
