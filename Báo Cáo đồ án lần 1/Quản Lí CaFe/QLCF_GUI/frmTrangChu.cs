@@ -21,9 +21,9 @@ namespace QLCF_GUI
 
             lblRole.Text = "Chào mừng " + username + " quay trở lại!";
             this.password = password;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            this.AutoScaleMode = AutoScaleMode.Dpi; // Hoặc AutoScaleMode.Dpi;
+            this.AutoScaleMode = AutoScaleMode.Dpi; 
 
             this.TopMost = true;
         }

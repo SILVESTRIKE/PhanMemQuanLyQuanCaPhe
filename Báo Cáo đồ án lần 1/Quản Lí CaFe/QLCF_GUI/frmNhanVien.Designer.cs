@@ -34,8 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.rdoNam = new System.Windows.Forms.RadioButton();
-            this.rdoNu = new System.Windows.Forms.RadioButton();
             this.txtIDNhanVien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +48,9 @@
             this.btnXoa = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboIDQuanLi = new System.Windows.Forms.ComboBox();
+            this.cboGTinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSua)).BeginInit();
@@ -95,7 +96,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(14, 167);
+            this.label3.Location = new System.Drawing.Point(14, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 29);
             this.label3.TabIndex = 6;
@@ -117,36 +118,8 @@
             this.txtTen.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Location = new System.Drawing.Point(147, 121);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(228, 33);
+            this.txtTen.Size = new System.Drawing.Size(246, 33);
             this.txtTen.TabIndex = 9;
-            // 
-            // rdoNam
-            // 
-            this.rdoNam.AutoSize = true;
-            this.rdoNam.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoNam.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rdoNam.Location = new System.Drawing.Point(147, 167);
-            this.rdoNam.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoNam.Name = "rdoNam";
-            this.rdoNam.Size = new System.Drawing.Size(78, 33);
-            this.rdoNam.TabIndex = 13;
-            this.rdoNam.TabStop = true;
-            this.rdoNam.Text = "Nam";
-            this.rdoNam.UseVisualStyleBackColor = true;
-            // 
-            // rdoNu
-            // 
-            this.rdoNu.AutoSize = true;
-            this.rdoNu.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoNu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rdoNu.Location = new System.Drawing.Point(314, 167);
-            this.rdoNu.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoNu.Name = "rdoNu";
-            this.rdoNu.Size = new System.Drawing.Size(61, 33);
-            this.rdoNu.TabIndex = 14;
-            this.rdoNu.TabStop = true;
-            this.rdoNu.Text = "Nữ";
-            this.rdoNu.UseVisualStyleBackColor = true;
             // 
             // txtIDNhanVien
             // 
@@ -154,7 +127,7 @@
             this.txtIDNhanVien.Location = new System.Drawing.Point(147, 75);
             this.txtIDNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDNhanVien.Name = "txtIDNhanVien";
-            this.txtIDNhanVien.Size = new System.Drawing.Size(228, 33);
+            this.txtIDNhanVien.Size = new System.Drawing.Size(246, 33);
             this.txtIDNhanVien.TabIndex = 15;
             // 
             // label5
@@ -196,24 +169,26 @@
             this.txtPass.Location = new System.Drawing.Point(997, 121);
             this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(228, 33);
+            this.txtPass.Size = new System.Drawing.Size(246, 33);
             this.txtPass.TabIndex = 15;
             // 
             // cboTrangThai
             // 
             this.cboTrangThai.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(562, 75);
+            this.cboTrangThai.Location = new System.Drawing.Point(568, 75);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(228, 34);
+            this.cboTrangThai.Size = new System.Drawing.Size(246, 34);
             this.cboTrangThai.TabIndex = 20;
             // 
             // dTNgaySinh
             // 
             this.dTNgaySinh.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dTNgaySinh.Location = new System.Drawing.Point(147, 209);
+            this.dTNgaySinh.Location = new System.Drawing.Point(147, 165);
+            this.dTNgaySinh.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            this.dTNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dTNgaySinh.Name = "dTNgaySinh";
-            this.dTNgaySinh.Size = new System.Drawing.Size(228, 33);
+            this.dTNgaySinh.Size = new System.Drawing.Size(246, 33);
             this.dTNgaySinh.TabIndex = 21;
             // 
             // label8
@@ -232,7 +207,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(14, 213);
+            this.label9.Location = new System.Drawing.Point(14, 169);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 29);
             this.label9.TabIndex = 5;
@@ -243,23 +218,23 @@
             this.txtSDT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(997, 71);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(228, 33);
+            this.txtSDT.Size = new System.Drawing.Size(246, 33);
             this.txtSDT.TabIndex = 11;
             // 
             // cboChucVu
             // 
             this.cboChucVu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChucVu.FormattingEnabled = true;
-            this.cboChucVu.Location = new System.Drawing.Point(562, 121);
+            this.cboChucVu.Location = new System.Drawing.Point(568, 121);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(228, 34);
+            this.cboChucVu.Size = new System.Drawing.Size(246, 34);
             this.cboChucVu.TabIndex = 20;
             // 
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Image = global::QLCF_GUI.Properties.Resources.xoa;
-            this.btnXoa.Location = new System.Drawing.Point(730, 182);
+            this.btnXoa.Location = new System.Drawing.Point(1183, 182);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(60, 60);
@@ -272,7 +247,7 @@
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Image = global::QLCF_GUI.Properties.Resources.sua;
-            this.btnSua.Location = new System.Drawing.Point(587, 182);
+            this.btnSua.Location = new System.Drawing.Point(1028, 182);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(60, 60);
@@ -285,7 +260,7 @@
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLCF_GUI.Properties.Resources.them;
-            this.btnThem.Location = new System.Drawing.Point(443, 182);
+            this.btnThem.Location = new System.Drawing.Point(869, 182);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(60, 60);
@@ -294,6 +269,36 @@
             this.btnThem.TabStop = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(438, 169);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 29);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Mã quản lí:";
+            // 
+            // cboIDQuanLi
+            // 
+            this.cboIDQuanLi.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboIDQuanLi.FormattingEnabled = true;
+            this.cboIDQuanLi.Location = new System.Drawing.Point(568, 169);
+            this.cboIDQuanLi.Name = "cboIDQuanLi";
+            this.cboIDQuanLi.Size = new System.Drawing.Size(246, 34);
+            this.cboIDQuanLi.TabIndex = 20;
+            this.cboIDQuanLi.Click += new System.EventHandler(this.cboIDQuanLi_Click);
+            // 
+            // cboGTinh
+            // 
+            this.cboGTinh.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGTinh.FormattingEnabled = true;
+            this.cboGTinh.Location = new System.Drawing.Point(147, 213);
+            this.cboGTinh.Name = "cboGTinh";
+            this.cboGTinh.Size = new System.Drawing.Size(246, 34);
+            this.cboGTinh.TabIndex = 20;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +306,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1410, 596);
             this.Controls.Add(this.dTNgaySinh);
+            this.Controls.Add(this.cboGTinh);
+            this.Controls.Add(this.cboIDQuanLi);
             this.Controls.Add(this.cboChucVu);
             this.Controls.Add(this.cboTrangThai);
             this.Controls.Add(this.label5);
@@ -309,13 +316,12 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtIDNhanVien);
-            this.Controls.Add(this.rdoNu);
-            this.Controls.Add(this.rdoNam);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -343,8 +349,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.RadioButton rdoNam;
-        private System.Windows.Forms.RadioButton rdoNu;
         private System.Windows.Forms.TextBox txtIDNhanVien;
         private System.Windows.Forms.PictureBox btnThem;
         private System.Windows.Forms.PictureBox btnSua;
@@ -359,5 +363,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.ComboBox cboChucVu;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboIDQuanLi;
+        private System.Windows.Forms.ComboBox cboGTinh;
     }
 }

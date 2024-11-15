@@ -3,6 +3,7 @@ using QLCF_DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -17,12 +18,10 @@ namespace QLCF_GUI
             InitializeComponent();
         }
 
-        // Validate input data
         private bool ValidateInput()
         {
             List<string> missingFields = new List<string>();
 
-            // Check required fields
             if (string.IsNullOrWhiteSpace(txtIDNhanVien.Text))
             {
                 missingFields.Add("Mã nhân viên");
@@ -37,7 +36,6 @@ namespace QLCF_GUI
             }
             else
             {
-                // Validate phone number format
                 string phonePattern = @"^(\+?\d{1,4}|\d{1,4})?\(?\d{1,4}\)?[\d\s\-]{3,}$";
                 if (!Regex.IsMatch(txtSDT.Text, phonePattern))
                 {
@@ -68,6 +66,7 @@ namespace QLCF_GUI
                 {
                     MessageBox.Show("Thêm nhân viên thành công!");
                     RefreshGridView();
+                    //LoadChucVuComboBox();
                 }
                 else
                 {
@@ -119,15 +118,13 @@ namespace QLCF_GUI
             RefreshGridView();
             LoadTrangThaiComboBox();
             LoadChucVuComboBox();
-            BindControls();
+            LoadIDQuanLiComboBox();
+            Bindings();
         }
 
-        private void RefreshGridView()
-        {
-            dgVNhanVien.DataSource = nhanVienBLL.getALL();
-        }
 
-        private void BindControls()
+
+        private void Bindings()
         {
             txtIDNhanVien.DataBindings.Clear();
             txtIDNhanVien.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDNhanVien");
@@ -137,101 +134,114 @@ namespace QLCF_GUI
             txtSDT.DataBindings.Add("Text", dgVNhanVien.DataSource, "SDT");
             dTNgaySinh.DataBindings.Clear();
             dTNgaySinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "NgSinh");
+            cboGTinh.DataBindings.Clear();
+            cboGTinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "GTinh");
 
-            // Bind radio buttons for gender (GTinh)
-            rdoNam.CheckedChanged -= rdoNam_CheckedChanged; // Remove previous event handler to avoid multiple subscriptions
-            rdoNu.CheckedChanged -= rdoNu_CheckedChanged;
-            if (dgVNhanVien.DataSource != null)
-            {
-                var gender = (dgVNhanVien.DataSource as DataRowView)?["GTinh"]?.ToString();
-                if (gender == "Nam")
-                {
-                    rdoNam.Checked = true;
-                }
-                else if (gender == "Nữ")
-                {
-                    rdoNu.Checked = true;
-                }
-            }
-            rdoNam.CheckedChanged += rdoNam_CheckedChanged;
-            rdoNu.CheckedChanged += rdoNu_CheckedChanged;
+            //cboTrangThai.DataBindings.Clear();
+            //Binding trangThaiBinding = new Binding("Text", dgVNhanVien.DataSource, "TrangThai");
 
-            cboTrangThai.DataBindings.Clear();
-            cboTrangThai.DataBindings.Add("Text", dgVNhanVien.DataSource, "TrangThai");
-            cboChucVu.DataBindings.Clear();
-            cboChucVu.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDQuanLy");
+            //trangThaiBinding.Format += (sender, e) =>
+            //{
+            //    e.Value = (e.Value.ToString() == true) ? Hoat : false;
+            //};
+            //cboTrangThai.DataBindings.Add(trangThaiBinding);
+
+            ////cboChucVu.DataBindings.Clear();
+            ////Binding chucVuBinding = new Binding("Text", dgVNhanVien.DataSource, "IDQuanLy");
+
+            ////chucVuBinding.Format += (sender, e) =>
+            ////{
+            ////    var row = ((DataRowView)e.Value).Row;
+            ////    int idQuanLy = Convert.ToInt32(row["IDQuanLy"]);
+            ////    int idNhanVien = Convert.ToInt32(row["IDNhanVien"]);
+
+            ////    e.Value = (idQuanLy == idNhanVien) ? "Quản lý" : "Nhân viên";
+            ////};
+
+            ////cboChucVu.DataBindings.Add(chucVuBinding);
+
+            //cboIDQuanLi.DataBindings.Clear();
+            //cboIDQuanLi.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDQuanLy");
             txtPass.DataBindings.Clear();
             txtPass.DataBindings.Add("Text", dgVNhanVien.DataSource, "Pass");
-        }
-
-        private void LoadTrangThaiComboBox()
-        {
-            List<string> trangThaiOptions = nhanVienBLL.GetTrangThaiOptions();
-            cboTrangThai.Items.Clear();
-            cboTrangThai.Items.AddRange(trangThaiOptions.ToArray());
-            cboTrangThai.SelectedIndex = 0;
         }
 
         private void LoadChucVuComboBox()
         {
             cboChucVu.Items.Clear();
-            cboChucVu.Items.AddRange(nhanVienBLL.GetChucVuOptions());
+            cboChucVu.Items.AddRange(new string[] { "Quản lý", "Nhân viên" });
             cboChucVu.SelectedIndex = 0;
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            cboTrangThai.Items.Clear();
+            cboTrangThai.Items.AddRange(new string[] { "Hoạt động", "Nghỉ" });
+            cboTrangThai.SelectedIndex = 0;
+        }
+
+        private void RefreshGridView()
+        {
+            var danhSachNhanVien = nhanVienBLL.getALL();
+
+            DataTable dtNV = new DataTable();
+            dtNV.Columns.Add("IDNhanVien");
+            dtNV.Columns.Add("Ten");
+            dtNV.Columns.Add("SDT");
+            dtNV.Columns.Add("GTinh");
+            dtNV.Columns.Add("NgSinh");
+            dtNV.Columns.Add("TrangThai");
+            dtNV.Columns.Add("ChucVu");
+            dtNV.Columns.Add("Pass");
+
+            foreach (var nhanVien in danhSachNhanVien)
+            {
+                string chucVu = (nhanVien.IDNhanVien == nhanVien.IDQuanLy) ? "Quản lý" : "Nhân viên";
+                string trangThaiText = nhanVien.TrangThai ? "Hoạt động" : "Nghỉ";
+
+                dtNV.Rows.Add(
+                    nhanVien.IDNhanVien,
+                    nhanVien.Ten,
+                    nhanVien.SDT,
+                    nhanVien.GTinh,
+                    nhanVien.NgSinh.ToString("yyyy-MM-dd"),
+                    trangThaiText,
+                    chucVu,
+                    nhanVien.Pass
+                );
+            }
+
+            dgVNhanVien.DataSource = dtNV;
+        }
+
+
+
+        private void LoadIDQuanLiComboBox()
+        {
+            cboIDQuanLi.Items.Clear();
+            cboIDQuanLi.DataSource = nhanVienBLL.getALL().Select(nl => nl.IDQuanLy).Distinct().ToList();
+            cboIDQuanLi.SelectedIndex = 0;
         }
 
         private NhanVienDTO GetNhanVienFromForm()
         {
             bool trangThai = cboTrangThai.SelectedItem.ToString() == "Hoạt động" ? true : false;
-            string chucVu = cboChucVu.SelectedItem.ToString();
-            string idQuanLy = nhanVienBLL.GetIDQuanLy(chucVu, txtIDNhanVien.Text);
-
-            if (chucVu == "Nhân viên" && string.IsNullOrEmpty(idQuanLy))
-            {
-                // Ask for manager's ID if the user selects "Nhân viên" but no manager is assigned
-                if (MessageBox.Show("Vui lòng nhập ID Quản lý", "Nhập ID Quản lý", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-                    using (var frm = new frmIDQuanLi()) // Assuming this form collects the manager ID
-                    {
-                        if (frm.ShowDialog() == DialogResult.OK)
-                        {
-                            idQuanLy = frm.InputText; // Assuming this is where the input is stored
-                        }
-                        else
-                        {
-                            return null; // Cancel if no input is provided
-                        }
-                    }
-                }
-            }
-
             return new NhanVienDTO
             {
                 IDNhanVien = txtIDNhanVien.Text,
                 Ten = txtTen.Text,
                 SDT = txtSDT.Text,
-                GTinh = rdoNam.Checked ? "Nam" : (rdoNu.Checked ? "Nữ" : ""),
+                GTinh = cboGTinh.Text,
                 NgSinh = dTNgaySinh.Value,
                 TrangThai = trangThai,
-                IDQuanLy = cboChucVu.Text,
+                IDQuanLy = cboIDQuanLi.Text,
                 Pass = txtPass.Text
             };
         }
 
-        // Event handlers for RadioButtons (to ensure proper gender binding)
-        private void rdoNam_CheckedChanged(object sender, EventArgs e)
+        private void cboIDQuanLi_Click(object sender, EventArgs e)
         {
-            if (rdoNam.Checked)
-            {
-                rdoNu.Checked = false;
-            }
-        }
-
-        private void rdoNu_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdoNu.Checked)
-            {
-                rdoNam.Checked = false;
-            }
+            LoadIDQuanLiComboBox();
         }
     }
 }

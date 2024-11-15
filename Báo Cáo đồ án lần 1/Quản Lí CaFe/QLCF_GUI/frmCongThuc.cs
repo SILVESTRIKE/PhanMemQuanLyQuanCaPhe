@@ -118,9 +118,9 @@ namespace QLCF_GUI
         }
         private void LoadMon()
         {
-            List<MonDTO> dishes = MonBLL.GetAllMon(); // Adjust this based on your method name in MonDAL
+            List<MonDTO> dishes = MonBLL.GetAllMon(); 
             cboTenMon.DataSource = dishes;
-            cboTenMon.DisplayMember = "TenMon"; // Ensure this matches the property for dish name
+            cboTenMon.DisplayMember = "TenMon"; 
             cboTenMon.ValueMember = "IDMon";
         }
 
