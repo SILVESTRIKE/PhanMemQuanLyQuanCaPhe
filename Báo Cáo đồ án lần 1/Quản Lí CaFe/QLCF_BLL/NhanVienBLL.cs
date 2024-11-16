@@ -49,5 +49,9 @@ namespace QLCF_BLL
         {
             return NhanVienDAL.getALL();
         }
+        public bool CheckQuanLy(NhanVienDTO nv)
+        {
+            return NhanVienDAL.CheckQuanLy(nv);
+        }
     }
 }

@@ -100,5 +100,12 @@ namespace QLCF_DAL
             conn.Close();
             return LstNhanVien;
         }
+        public bool CheckQuanLy(NhanVienDTO nv)
+        {
+            if (nv.IDQuanLy == nv.IDNhanVien)
+                return true;
+            else return false;
+        }
+        
     }
 }
