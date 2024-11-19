@@ -57,6 +57,7 @@ namespace QLCF_GUI
             return true;
         }
 
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
@@ -118,8 +119,9 @@ namespace QLCF_GUI
             RefreshGridView();
             LoadTrangThaiComboBox();
             LoadChucVuComboBox();
-            LoadIDQuanLiComboBox();
-            Bindings();
+            //LoadIDQuanLiComboBox();
+            //Loadmaql();
+            //Bindings();
         }
 
 
@@ -196,7 +198,7 @@ namespace QLCF_GUI
 
             foreach (var nhanVien in danhSachNhanVien)
             {
-                string chucVu = (nhanVien.IDNhanVien == nhanVien.IDQuanLy) ? "Quản lý" : "Nhân viên";
+
                 string trangThaiText = nhanVien.TrangThai ? "Hoạt động" : "Nghỉ";
 
                 dtNV.Rows.Add(
@@ -206,7 +208,7 @@ namespace QLCF_GUI
                     nhanVien.GTinh,
                     nhanVien.NgSinh.ToString("yyyy-MM-dd"),
                     trangThaiText,
-                    chucVu,
+                    nhanVien.ChucVu,
                     nhanVien.Pass
                 );
             }
@@ -216,12 +218,12 @@ namespace QLCF_GUI
 
 
 
-        private void LoadIDQuanLiComboBox()
-        {
-            cboIDQuanLi.Items.Clear();
-            cboIDQuanLi.DataSource = nhanVienBLL.getALL().Select(nl => nl.IDQuanLy).Distinct().ToList();
-            cboIDQuanLi.SelectedIndex = 0;
-        }
+        //private void LoadIDQuanLiComboBox()
+        //{
+        //    cboIDQuanLi.Items.Clear();
+        //    cboIDQuanLi.DataSource = nhanVienBLL.getALL().Select(nl => nl.IDQuanLy).Distinct().ToList();
+        //    cboIDQuanLi.SelectedIndex = 0;
+        //}
 
         private NhanVienDTO GetNhanVienFromForm()
         {
@@ -234,14 +236,49 @@ namespace QLCF_GUI
                 GTinh = cboGTinh.Text,
                 NgSinh = dTNgaySinh.Value,
                 TrangThai = trangThai,
-                IDQuanLy = cboIDQuanLi.Text,
+                ChucVu = cboChucVu.Text,
                 Pass = txtPass.Text
             };
         }
 
         private void cboIDQuanLi_Click(object sender, EventArgs e)
         {
-            LoadIDQuanLiComboBox();
+            //LoadIDQuanLiComboBox();
+        }
+
+        private void dgVNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem người dùng có click vào dòng hợp lệ hay không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy dòng hiện tại
+                DataGridViewRow row = dgVNhanVien.Rows[e.RowIndex];
+
+                // Gán giá trị từ các cột của DataGridView vào các điều khiển
+                txtIDNhanVien.Text = row.Cells["IDNhanVien"].Value?.ToString() ?? "";
+                txtTen.Text = row.Cells["Ten"].Value?.ToString() ?? "";
+                txtSDT.Text = row.Cells["SDT"].Value?.ToString() ?? "";
+
+                // Kiểm tra và gán giá trị cho dTNgaySinh
+                if (row.Cells["NgSinh"].Value != DBNull.Value && row.Cells["NgSinh"].Value != null)
+                {
+                    dTNgaySinh.Value = Convert.ToDateTime(row.Cells["NgSinh"].Value);
+                }
+                else
+                {
+                    dTNgaySinh.Value = DateTime.Now; // Hoặc bạn có thể để giá trị mặc định khác
+                }
+
+                cboGTinh.Text = row.Cells["GTinh"].Value?.ToString() ?? "";
+                txtPass.Text = row.Cells["Pass"].Value?.ToString() ?? "";
+
+                // Xử lý combo box trạng thái (nếu có)
+                cboTrangThai.Text = row.Cells["TrangThai"].Value?.ToString() ?? "";
+
+
+                // Xử lý combo box chức vụ (nếu có)
+                cboChucVu.Text = row.Cells["ChucVu"].Value?.ToString() ?? "";
+            }
         }
     }
 }

@@ -4,3 +4,9 @@ D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ á
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.csproj.CoreCompileInputs.cache
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.dll
 D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_DTO\obj\Debug\QLCF_DTO.pdb

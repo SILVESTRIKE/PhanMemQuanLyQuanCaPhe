@@ -39,7 +39,7 @@ namespace QLCF_DAL
                 + nhanvien.SDT + "', N'" + nhanvien.GTinh + "', '"
                 + nhanvien.NgSinh.ToString("yyyy-MM-dd") + "', "
                 + (nhanvien.TrangThai ? 1 : 0) + ", '"
-                + nhanvien.IDQuanLy + "', '" + nhanvien.Pass + "')";
+                + nhanvien.ChucVu + "', '" + nhanvien.Pass + "')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = cmd.ExecuteNonQuery();
             conn.Close();
@@ -65,7 +65,7 @@ namespace QLCF_DAL
                 + "', SDT = '" + nhanvien.SDT + "', GTinh = N'" + nhanvien.GTinh
                 + "', NgSinh = '" + nhanvien.NgSinh.ToString("yyyy-MM-dd")
                 + "', TrangThai = " + (nhanvien.TrangThai ? 1 : 0)
-                + ", IDQuanLy = '" + nhanvien.IDQuanLy
+                + ", IDQuanLy = '" + nhanvien.ChucVu
                 + "', Pass = '" + nhanvien.Pass
                 + "' where IDNhanVien = '" + nhanvien.IDNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -92,7 +92,7 @@ namespace QLCF_DAL
                     GTinh = rd["GTinh"].ToString(),
                     NgSinh = (DateTime)rd["NgSinh"],
                     TrangThai = (bool)rd["TrangThai"],
-                    IDQuanLy = rd["IDQuanLy"].ToString(),
+                    ChucVu = rd["ChucVu"].ToString(),
                     Pass = rd["Pass"].ToString()
                 };
                 LstNhanVien.Add(nv);
@@ -102,10 +102,9 @@ namespace QLCF_DAL
         }
         public bool CheckQuanLy(NhanVienDTO nv)
         {
-            if (nv.IDQuanLy == nv.IDNhanVien)
+            if (nv.ChucVu == nv.IDNhanVien)
                 return true;
             else return false;
         }
-        
     }
 }

@@ -34,12 +34,20 @@ CREATE TABLE NhanVien (
     GTinh NVARCHAR(10),                -- Giới tính
     NgSinh DATE,                       -- Ngày sinh
     TrangThai BIT,                     -- Check xem nhân viên có còn làm việc hay không
-    IDQuanLy CHAR(10),                 -- Mã quản lý của nhân viên (có thể là chính họ)
+    ChucVu CHAR(10),                   -- Chức vụ nhân viên (mới đổi tên)
     Pass NVARCHAR(255),                -- Mật khẩu người dùng (có thể mã hóa)
     
     -- Khóa ngoại tự tham chiếu
-    CONSTRAINT FK_NhanVien_IDQuanLy FOREIGN KEY (IDQuanLy) REFERENCES NhanVien(IDNhanVien)    -- Tham chiếu đến IDNhanVien trong cùng bảng
+    -- CONSTRAINT FK_NhanVien_ChucVu FOREIGN KEY (ChucVu) REFERENCES NhanVien(IDNhanVien)    -- Tham chiếu đến IDNhanVien trong cùng bảng
 );
+ALTER TABLE NhanVien
+DROP CONSTRAINT FK_NhanVien_ChucVu;
+EXEC sp_rename 'NhanVien.IDQuanLy', 'ChucVu', 'COLUMN';
+ALTER TABLE NhanVien
+ADD CONSTRAINT FK_NhanVien_ChucVu FOREIGN KEY (ChucVu) REFERENCES NhanVien(IDNhanVien);
+
+
+
 
 -- Bảng HoaDon (Hóa Đơn)
 CREATE TABLE HoaDon (
@@ -157,9 +165,11 @@ INSERT INTO CongThuc (IDMon, IDNguyenLieu, SoLuong) VALUES
 ('M019', 'NL014', 0.15),
 ('M020', 'NL020', 0.02);
 
-INSERT INTO NhanVien (IDNhanVien, Ten, SDT, GTinh, NgSinh, TrangThai, IDQuanLy, Pass) VALUES
-('NV001', N'Trần Văn A', '0900000001', N'Nam', '1990-05-15', 1, 'NV001', '123');
+INSERT INTO NhanVien Values
+('NV001', N'Trần Văn A', '0900000001', N'Nam', '1990-05-15', 1, 'Quản Lý', '123');
 --('NV002', N'Nguyễn Thị B', '0900000002', N'Nữ', '1992-08-22', 1, 'NV001', 'pass123'),
 --('NV003', N'Lê Văn C', '0900000003', N'Nam', '1988-03-09', 1, 'NV001', 'pass123'),
 --('NV004', N'Pham Thi D', '0900000004', N'Nữ', '1995-12-30', 1, 'NV002', 'pass123'),
 --('NV005', N'Nguyen Van E', '0900000005', N'Nam', '1991-07-21', 1, 'NV002', 'pass123');
+
+

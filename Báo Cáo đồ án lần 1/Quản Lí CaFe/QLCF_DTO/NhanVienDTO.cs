@@ -10,12 +10,12 @@ namespace QLCF_DTO
         public string GTinh { get; set; }
         public DateTime NgSinh { get; set; }
         public bool TrangThai { get; set; }
-        public string IDQuanLy { get; set; } 
-        public string Pass { get; set; } 
+        public string ChucVu { get; set; }
+        public string Pass { get; set; }
 
         public NhanVienDTO() { }
 
-        public NhanVienDTO(string idNhanVien, string ten, string sdt, string gtinh, DateTime ngSinh, bool trangThai, string idQuanLy, string pass)
+        public NhanVienDTO(string idNhanVien, string ten, string sdt, string gtinh, DateTime ngSinh, bool trangThai, string chucvu, string pass)
         {
             IDNhanVien = idNhanVien;
             Ten = ten;
@@ -23,7 +23,7 @@ namespace QLCF_DTO
             GTinh = gtinh;
             NgSinh = ngSinh;
             TrangThai = trangThai;
-            IDQuanLy = idQuanLy;
+            ChucVu = chucvu;
             Pass = pass;
         }
     }
