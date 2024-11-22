@@ -15,7 +15,10 @@ namespace QLCF_BLL
         {
             return monDAL.getALL();
         }
-
+        public List<MonDTO> GetMonByLoai(string Loai)
+        {
+            return monDAL.GetMonByLoai(Loai);
+        }
         public bool AddMon(MonDTO mon)
         {
             return monDAL.insert(mon);

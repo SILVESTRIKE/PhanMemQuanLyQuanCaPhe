@@ -53,5 +53,9 @@ namespace QLCF_BLL
         {
             return NhanVienDAL.CheckQuanLy(nv);
         }
+        public NhanVienDTO getnv(string username, string password)
+        {
+            return NhanVienDAL.getnv(username, password);
+        }
     }
 }

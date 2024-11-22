@@ -78,10 +78,31 @@ namespace QLCF_DAL
                 string idmon = rd[0].ToString();
                 string tenmon = rd[1].ToString();
                 decimal gia = (decimal)rd[2];
-                MonDTO mon = new MonDTO(idmon, tenmon, gia);
+                string loai = rd[3].ToString();
+                MonDTO mon = new MonDTO(idmon, tenmon, gia,loai);
                 LstMon.Add(mon);
             }
             conn.Close();
+            return LstMon;
+        }
+        public List<MonDTO> GetMonByLoai(string Loai)
+        {
+            List<MonDTO> LstMon = new List<MonDTO> ();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = "Select * from Mon where Loai = '"+Loai+"'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                string idmon = rd[0].ToString();
+                string tenmon = rd[1].ToString();
+                decimal gia = (decimal)rd[2];
+                string loai = rd[3].ToString();
+                MonDTO mon = new MonDTO(idmon, tenmon, gia, loai);
+                LstMon.Add(mon);
+            }
+            conn.Close ();
             return LstMon;
         }
     }

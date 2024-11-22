@@ -15,7 +15,7 @@ namespace QLCF_GUI
     public partial class frm_DangNhap : Form
     {
         NguoiDungBLL userbll = new NguoiDungBLL();
-
+        NhanVienBLL NhanVienBLL = new NhanVienBLL();
         public frm_DangNhap()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace QLCF_GUI
             }
 
             NguoiDungDTO user = new NguoiDungDTO(txt_username.Text, txt_pass.Text, null);
+            NhanVienDTO nv = NhanVienBLL.getnv(username, password);
             bool kq = userbll.CheckLogin(user);
 
             if (kq)
@@ -40,7 +41,7 @@ namespace QLCF_GUI
 
                 MessageBox.Show("Đăng nhập thành công! Xin chào " + user.IDDN, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                frmTrangChu mainForm = new frmTrangChu(user.IDDN, user.Pass);
+                frmTrangChu mainForm = new frmTrangChu(nv);
                 this.Hide();
                 mainForm.Show(); // Hiển thị form chính
                 mainForm.FormClosed += (s, args) => Application.Exit();

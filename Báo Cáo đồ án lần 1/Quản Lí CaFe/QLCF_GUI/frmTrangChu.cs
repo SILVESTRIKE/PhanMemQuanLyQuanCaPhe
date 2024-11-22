@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCF_DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,21 +15,25 @@ namespace QLCF_GUI
     {
         private string username;
         private string password;
-        public frmTrangChu(string username, string password)
+        
+        public frmTrangChu(NhanVienDTO nv)
         {
+
             InitializeComponent();
-            this.username = username;
+            OpenChildForm(new frmHoaDon());
 
-            lblRole.Text = "Chào mừng " + username + " quay trở lại!";
-            this.password = password;
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.username = nv.IDNhanVien;
+
+            lblRole.Text = "Chào mừng " + nv.Ten + " quay trở lại!";
+            this.password = nv.Pass;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            this.AutoScaleMode = AutoScaleMode.Dpi; 
+            this.AutoScaleMode = AutoScaleMode.Dpi;
 
-            this.TopMost = true;
+            //this.TopMost = true;
         }
         private Form CurrentFormChild;
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             //if (CurrentFormChild != null)
             //{
@@ -43,6 +48,7 @@ namespace QLCF_GUI
             //panel_body.Tag = childForm;
             //childForm.BringToFront();
             childForm.Show();
+            
         }
         //private void btnDangKy_Click(object sender, EventArgs e)
         //{
@@ -110,6 +116,12 @@ namespace QLCF_GUI
         private void btnCongThuc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmCongThuc());
+        }
+
+        private void btnDonHang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmDatHang(this));
+            
         }
     }
 }

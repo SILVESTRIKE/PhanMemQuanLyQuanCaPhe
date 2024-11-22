@@ -49,8 +49,8 @@ namespace QLCF_GUI
                 string idMon = txtmamon.Text;
                 string tenMon = txtTenMon.Text;
                 decimal price = Convert.ToDecimal(txtgia.Text);
-
-                MonDTO mon = new MonDTO(idMon, tenMon, price);
+                string loai = cboLoai.Text;
+                MonDTO mon = new MonDTO(idMon, tenMon, price, loai);
                 bool kq = monBLL.AddMon(mon);
 
                 if (kq == true)
@@ -73,7 +73,8 @@ namespace QLCF_GUI
                 string idMon = txtmamon.Text;
                 string tenMon = txtTenMon.Text;
                 decimal price = Convert.ToDecimal(txtgia.Text);
-                MonDTO mon = new MonDTO(idMon, tenMon, price);
+                string loai = cboLoai.Text;
+                MonDTO mon = new MonDTO(idMon, tenMon, price,loai);
                 bool kq = monBLL.UpdateMon(mon);
                 if (kq == true)
                 {
@@ -93,7 +94,8 @@ namespace QLCF_GUI
                 string idMon = txtmamon.Text;
                 string tenMon = txtTenMon.Text;
                 decimal price = Convert.ToDecimal(txtgia.Text);
-                MonDTO mon = new MonDTO(idMon, tenMon, price);
+                string loai = cboLoai.Text;
+                MonDTO mon = new MonDTO(idMon, tenMon, price,loai);
                 bool kq = monBLL.DeleteMon(mon);
 
 

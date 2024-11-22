@@ -38,7 +38,7 @@ namespace QLCF_DAL
                 + nhanvien.IDNhanVien + "', N'" + nhanvien.Ten + "', '"
                 + nhanvien.SDT + "', N'" + nhanvien.GTinh + "', '"
                 + nhanvien.NgSinh.ToString("yyyy-MM-dd") + "', "
-                + (nhanvien.TrangThai ? 1 : 0) + ", '"
+                + (nhanvien.TrangThai ? 1 : 0) + ", N'"
                 + nhanvien.ChucVu + "', '" + nhanvien.Pass + "')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = cmd.ExecuteNonQuery();
@@ -99,6 +99,30 @@ namespace QLCF_DAL
             }
             conn.Close();
             return LstNhanVien;
+        }
+        
+        public NhanVienDTO getnv(string username, string password)
+        {
+            NhanVienDTO nv = new NhanVienDTO();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = "Select * from NhanVien where IDNhanVien ='"+username+"' and Pass ='"+password+"'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read())
+            {
+                nv.IDNhanVien = rd["IDNhanVien"].ToString();
+                nv.Ten = rd["Ten"].ToString();
+                nv.SDT = rd["SDT"].ToString();
+                nv.GTinh = rd["GTinh"].ToString();
+                nv.NgSinh = (DateTime)rd["NgSinh"];
+                nv.TrangThai = (bool)rd["TrangThai"];
+                nv.ChucVu = rd["ChucVu"].ToString();
+                nv.Pass = rd["Pass"].ToString();
+            }
+            conn.Close();
+            return nv;
+
         }
         public bool CheckQuanLy(NhanVienDTO nv)
         {

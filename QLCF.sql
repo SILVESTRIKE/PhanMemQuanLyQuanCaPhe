@@ -5,8 +5,10 @@ GO
 CREATE TABLE Mon (
     IDMon CHAR(10) PRIMARY KEY,
     TenMon NVARCHAR(100),
-    Gia DECIMAL(10, 2)
+    Gia DECIMAL,
+    Loai CHAR(5)
 );
+
 
 -- Bảng NguyenLieu (Nguyên Liệu)
 CREATE TABLE NguyenLieu (
@@ -28,32 +30,24 @@ CREATE TABLE CongThuc (
 
 -- Bảng NhanVien (Nhân Viên)
 CREATE TABLE NhanVien (
-    IDNhanVien CHAR(10) PRIMARY KEY,   -- Khóa chính nhân viên
+    IDNhanVien CHAR(5) PRIMARY KEY,   -- Khóa chính nhân viên
     Ten NVARCHAR(100),                 -- Tên nhân viên
     SDT NVARCHAR(20),                  -- Số điện thoại
     GTinh NVARCHAR(10),                -- Giới tính
     NgSinh DATE,                       -- Ngày sinh
     TrangThai BIT,                     -- Check xem nhân viên có còn làm việc hay không
-    ChucVu CHAR(10),                   -- Chức vụ nhân viên (mới đổi tên)
+    ChucVu NVARCHAR(10),                   -- Chức vụ nhân viên (mới đổi tên)
     Pass NVARCHAR(255),                -- Mật khẩu người dùng (có thể mã hóa)
     
     -- Khóa ngoại tự tham chiếu
     -- CONSTRAINT FK_NhanVien_ChucVu FOREIGN KEY (ChucVu) REFERENCES NhanVien(IDNhanVien)    -- Tham chiếu đến IDNhanVien trong cùng bảng
 );
-ALTER TABLE NhanVien
-DROP CONSTRAINT FK_NhanVien_ChucVu;
-EXEC sp_rename 'NhanVien.IDQuanLy', 'ChucVu', 'COLUMN';
-ALTER TABLE NhanVien
-ADD CONSTRAINT FK_NhanVien_ChucVu FOREIGN KEY (ChucVu) REFERENCES NhanVien(IDNhanVien);
-
-
-
 
 -- Bảng HoaDon (Hóa Đơn)
 CREATE TABLE HoaDon (
     IDHoaDon CHAR(10) PRIMARY KEY,  -- Khóa chính hóa đơn
     NgayLap DATE,                   -- Ngày lập hóa đơn
-    IDNhanVien CHAR(10),            -- Khóa ngoại từ bảng NhanVien
+    IDNhanVien CHAR(5),            -- Khóa ngoại từ bảng NhanVien
     ThanhTien DECIMAL(10, 2),       -- Tổng số tiền trong hóa đơn
     FOREIGN KEY (IDNhanVien) REFERENCES NhanVien(IDNhanVien)
 );
@@ -85,7 +79,7 @@ CREATE TABLE LichTruc(
 -- Bảng ChiTietCaTruc (Chi Tiết Ca Trực)
 CREATE TABLE ChiTietLichTruc (
     IDLichTruc CHAR(10),            -- Khóa ngoại từ bảng CaTruc
-    IDNhanVien CHAR(10),            -- Khóa ngoại từ bảng NhanVien
+    IDNhanVien CHAR(5),            -- Khóa ngoại từ bảng NhanVien
 	TrangThai BIT,
     PRIMARY KEY (IDLichTruc, IDNhanVien), -- Khóa chính kết hợp
     FOREIGN KEY (IDLichTruc) REFERENCES LichTruc(IDLichTruc),
@@ -113,27 +107,29 @@ INSERT INTO NguyenLieu (IDNguyenLieu, TenNL, SLTon, DVTinh) VALUES
 ('NL019', N'Bột Cacao', 25, N'kg'),
 ('NL020', N'Mật Ong', 30, N'L');
 
-INSERT INTO Mon (IDMon, TenMon, Gia) VALUES
-('M001', N'Cà Phê Đen', 20000),
-('M002', N'Cà Phê Sữa', 25000),
-('M003', N'Cà Phê Đá Xay', 40000),
-('M004', N'Trá Đào', 30000),
-('M005', N'Trá Sữa Trân Châu', 35000),
-('M006', N'Matcha Latte', 45000),
-('M007', N'Sinh Tố Bơ', 50000),
-('M008', N'Sinh Tố Dâu', 50000),
-('M009', N'Nước Cam', 30000),
-('M010', N'Nước Chanh', 25000),
-('M011', N'Sữa Tươi Trân Châu Đường Đen', 40000),
-('M012', N'Trá Sữa Matcha', 45000),
-('M013', N'Soda Bạc Hà', 30000),
-('M014', N'Milo Đá Xay', 35000),
-('M015', N'Cà Phê Cốt Dừa', 40000),
-('M016', N'Sinh Tố Chuối', 50000),
-('M017', N'Trá Sữa Truyền Thống', 35000),
-('M018', N'Sinh Tố Cam Cà Rốt', 50000),
-('M019', N'Trá Sữa Hồng Trà', 40000),
-('M020', N'Trá Chanh Mật Ong', 30000);
+INSERT INTO Mon (IDMon, TenMon, Gia, Loai) VALUES
+('M001', N'Cà Phê Đen', 20000, 'CP'),
+('M002', N'Cà Phê Sữa', 25000, 'CP'),
+('M003', N'Cà Phê Đá Xay', 40000, 'CP'),
+('M004', N'Trà Đào', 30000, 'TR'),
+('M005', N'Trà Sữa Trân Châu', 35000, 'TR'),
+('M006', N'Matcha Latte', 45000, 'TR'),
+('M007', N'Sinh Tố Bơ', 50000, 'ST'),
+('M008', N'Sinh Tố Dâu', 50000, 'ST'),
+('M009', N'Nước Cam', 30000, 'NU'),
+('M010', N'Nước Chanh', 25000, 'NU'),
+('M011', N'Sữa Tươi Trân Châu Đường Đen', 40000, 'NU'),
+('M012', N'Trà Sữa Matcha', 45000, 'TR'),
+('M013', N'Soda Bạc Hà', 30000, 'NU'),
+('M014', N'Milo Đá Xay', 35000, 'NU'),
+('M015', N'Cà Phê Cốt Dừa', 40000, 'CP'),
+('M016', N'Sinh Tố Chuối', 50000, 'ST'),
+('M017', N'Trà Sữa Truyền Thống', 35000, 'TR'),
+('M018', N'Sinh Tố Cam Cà Rốt', 50000, 'ST'),
+('M019', N'Trà Sữa Hồng Trà', 40000, 'TR'),
+('M020', N'Trà Chanh Mật Ong', 30000, 'TR');
+
+
 
 INSERT INTO CongThuc (IDMon, IDNguyenLieu, SoLuong) VALUES
 ('M001', 'NL001', 0.02),
@@ -166,7 +162,7 @@ INSERT INTO CongThuc (IDMon, IDNguyenLieu, SoLuong) VALUES
 ('M020', 'NL020', 0.02);
 
 INSERT INTO NhanVien Values
-('NV001', N'Trần Văn A', '0900000001', N'Nam', '1990-05-15', 1, 'Quản Lý', '123');
+('NV001', N'Trần Văn A', '0900000001', N'Nam', '1990-05-15', 1, N'Quản Lý', '123');
 --('NV002', N'Nguyễn Thị B', '0900000002', N'Nữ', '1992-08-22', 1, 'NV001', 'pass123'),
 --('NV003', N'Lê Văn C', '0900000003', N'Nam', '1988-03-09', 1, 'NV001', 'pass123'),
 --('NV004', N'Pham Thi D', '0900000004', N'Nữ', '1995-12-30', 1, 'NV002', 'pass123'),

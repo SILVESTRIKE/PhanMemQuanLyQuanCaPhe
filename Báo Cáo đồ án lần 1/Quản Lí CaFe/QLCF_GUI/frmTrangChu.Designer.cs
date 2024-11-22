@@ -41,6 +41,7 @@
             this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_body = new System.Windows.Forms.Panel();
+            this.btnDonHang = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTitleBar.SuspendLayout();
             this.mnSMain.SuspendLayout();
             this.SuspendLayout();
@@ -50,9 +51,11 @@
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelTitleBar.Controls.Add(this.lblRole);
             this.panelTitleBar.Controls.Add(this.TopLabel);
-            this.panelTitleBar.Location = new System.Drawing.Point(-1, 28);
+            this.panelTitleBar.ForeColor = System.Drawing.Color.White;
+            this.panelTitleBar.Location = new System.Drawing.Point(-1, 34);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1252, 68);
+            this.panelTitleBar.Size = new System.Drawing.Size(1894, 84);
             this.panelTitleBar.TabIndex = 1;
             // 
             // lblRole
@@ -60,9 +63,10 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRole.Location = new System.Drawing.Point(13, 35);
+            this.lblRole.Location = new System.Drawing.Point(17, 43);
+            this.lblRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(70, 24);
+            this.lblRole.Size = new System.Drawing.Size(89, 29);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "ADMIN";
             // 
@@ -73,9 +77,10 @@
             this.TopLabel.Enabled = false;
             this.TopLabel.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TopLabel.ForeColor = System.Drawing.Color.White;
-            this.TopLabel.Location = new System.Drawing.Point(455, 8);
+            this.TopLabel.Location = new System.Drawing.Point(720, 10);
+            this.TopLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TopLabel.Name = "TopLabel";
-            this.TopLabel.Size = new System.Drawing.Size(365, 47);
+            this.TopLabel.Size = new System.Drawing.Size(487, 58);
             this.TopLabel.TabIndex = 0;
             this.TopLabel.Text = "DFS COFFEE";
             this.TopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,6 +89,7 @@
             // 
             this.mnSMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnSMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDonHang,
             this.btnNhanVien,
             this.btnCaTruc,
             this.btnMenu,
@@ -94,84 +100,93 @@
             this.btnDangXuat});
             this.mnSMain.Location = new System.Drawing.Point(0, 0);
             this.mnSMain.Name = "mnSMain";
-            this.mnSMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mnSMain.Size = new System.Drawing.Size(1253, 28);
+            this.mnSMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mnSMain.Size = new System.Drawing.Size(1893, 28);
             this.mnSMain.TabIndex = 3;
             this.mnSMain.Text = "Trang Chủ";
             // 
             // btnNhanVien
             // 
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(100, 24);
+            this.btnNhanVien.Size = new System.Drawing.Size(102, 24);
             this.btnNhanVien.Text = "NHÂN VIÊN";
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnCaTruc
             // 
             this.btnCaTruc.Name = "btnCaTruc";
-            this.btnCaTruc.Size = new System.Drawing.Size(81, 24);
+            this.btnCaTruc.Size = new System.Drawing.Size(83, 24);
             this.btnCaTruc.Text = "CA TRỰC";
             this.btnCaTruc.Click += new System.EventHandler(this.btnCaTruc_Click);
             // 
             // btnMenu
             // 
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(63, 24);
+            this.btnMenu.Size = new System.Drawing.Size(65, 24);
             this.btnMenu.Text = "MENU";
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click_1);
             // 
             // btnCongThuc
             // 
             this.btnCongThuc.Name = "btnCongThuc";
-            this.btnCongThuc.Size = new System.Drawing.Size(105, 24);
+            this.btnCongThuc.Size = new System.Drawing.Size(107, 24);
             this.btnCongThuc.Text = "CÔNG THỨC";
             this.btnCongThuc.Click += new System.EventHandler(this.btnCongThuc_Click);
             // 
             // btnKho
             // 
             this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(52, 24);
+            this.btnKho.Size = new System.Drawing.Size(54, 24);
             this.btnKho.Text = "KHO";
             this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
             // 
             // btnHoaDon
             // 
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(90, 24);
+            this.btnHoaDon.Size = new System.Drawing.Size(92, 24);
             this.btnHoaDon.Text = "HÓA ĐƠN";
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnThongKe
             // 
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(93, 24);
+            this.btnThongKe.Size = new System.Drawing.Size(95, 24);
             this.btnThongKe.Text = "THỐNG KÊ";
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnDangXuat
             // 
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(104, 24);
+            this.btnDangXuat.Size = new System.Drawing.Size(106, 24);
             this.btnDangXuat.Text = "ĐĂNG XUẤT";
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // panel_body
             // 
-            this.panel_body.Location = new System.Drawing.Point(0, 91);
+            this.panel_body.Location = new System.Drawing.Point(0, 112);
+            this.panel_body.Margin = new System.Windows.Forms.Padding(4);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1253, 543);
+            this.panel_body.Size = new System.Drawing.Size(1906, 668);
             this.panel_body.TabIndex = 4;
+            // 
+            // btnDonHang
+            // 
+            this.btnDonHang.Name = "btnDonHang";
+            this.btnDonHang.Size = new System.Drawing.Size(102, 24);
+            this.btnDonHang.Text = "ĐƠN HÀNG";
+            this.btnDonHang.Click += new System.EventHandler(this.btnDonHang_Click);
             // 
             // frmTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1253, 638);
+            this.ClientSize = new System.Drawing.Size(1893, 785);
             this.Controls.Add(this.panel_body);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.mnSMain);
             this.MainMenuStrip = this.mnSMain;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí quán cà phê";
@@ -199,5 +214,6 @@
         private System.Windows.Forms.Panel panel_body;
         private System.Windows.Forms.ToolStripMenuItem btnCongThuc;
         private System.Windows.Forms.ToolStripMenuItem btnDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem btnDonHang;
     }
 }
