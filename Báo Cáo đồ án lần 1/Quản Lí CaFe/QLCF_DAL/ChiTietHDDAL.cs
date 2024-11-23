@@ -81,7 +81,8 @@ namespace QLCF_DAL
                     string idmon = rd["IDMon"].ToString();
                     int soluong = Convert.ToInt32(rd["SoLuong"]);
                     decimal dongia = Convert.ToDecimal(rd["DonGia"]);
-                    ChiTietHDDTO ctHD = new ChiTietHDDTO(idhoadon, idmon, soluong, dongia);
+                    bool trangThai = Convert.ToBoolean(rd["TinhTrang_PhucVu"]);
+                    ChiTietHDDTO ctHD = new ChiTietHDDTO(idhoadon, idmon, soluong, dongia,trangThai);
                     LstCTHD.Add(ctHD);
                 }
             }

@@ -32,21 +32,12 @@
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.cboMon = new System.Windows.Forms.ComboBox();
-            this.numSL = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTongTIen = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dgVHoaDon = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
+            this.dgVHoaDon = new System.Windows.Forms.DataGridView();
+            this.lblNgay = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThanhToan
@@ -54,7 +45,7 @@
             this.btnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnThanhToan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThanhToan.Location = new System.Drawing.Point(1220, 488);
+            this.btnThanhToan.Location = new System.Drawing.Point(1219, 547);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(186, 45);
             this.btnThanhToan.TabIndex = 12;
@@ -71,43 +62,13 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // cboMon
-            // 
-            this.cboMon.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMon.FormattingEnabled = true;
-            this.cboMon.Location = new System.Drawing.Point(11, 75);
-            this.cboMon.Margin = new System.Windows.Forms.Padding(2);
-            this.cboMon.Name = "cboMon";
-            this.cboMon.Size = new System.Drawing.Size(226, 37);
-            this.cboMon.TabIndex = 26;
-            // 
-            // numSL
-            // 
-            this.numSL.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numSL.Location = new System.Drawing.Point(715, 79);
-            this.numSL.Margin = new System.Windows.Forms.Padding(2);
-            this.numSL.Name = "numSL";
-            this.numSL.Size = new System.Drawing.Size(44, 37);
-            this.numSL.TabIndex = 28;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(611, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 29);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Số lượng";
-            // 
             // lblTongTIen
             // 
             this.lblTongTIen.AutoSize = true;
+            this.lblTongTIen.BackColor = System.Drawing.Color.White;
             this.lblTongTIen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTIen.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTIen.Location = new System.Drawing.Point(148, 496);
+            this.lblTongTIen.Location = new System.Drawing.Point(148, 555);
             this.lblTongTIen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTIen.Name = "lblTongTIen";
             this.lblTongTIen.Size = new System.Drawing.Size(38, 29);
@@ -119,75 +80,12 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(11, 496);
+            this.label3.Location = new System.Drawing.Point(11, 555);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 29);
             this.label3.TabIndex = 31;
             this.label3.Text = "TỔNG TIỀN: ";
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnThem.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(242, 71);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(168, 42);
-            this.btnThem.TabIndex = 27;
-            this.btnThem.Text = "Thêm món";
-            this.btnThem.UseVisualStyleBackColor = false;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên sản phẩm";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ngày tạo hóa đơn";
-            this.columnHeader3.Width = 172;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Số lượng";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Giá bán";
-            this.columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Tổng tiền";
-            this.columnHeader7.Width = 100;
-            // 
-            // dgVHoaDon
-            // 
-            this.dgVHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgVHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.dgVHoaDon.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgVHoaDon.GridLines = true;
-            this.dgVHoaDon.HideSelection = false;
-            this.dgVHoaDon.Location = new System.Drawing.Point(11, 126);
-            this.dgVHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.dgVHoaDon.Name = "dgVHoaDon";
-            this.dgVHoaDon.Size = new System.Drawing.Size(1395, 357);
-            this.dgVHoaDon.TabIndex = 25;
-            this.dgVHoaDon.UseCompatibleStateImageBehavior = false;
-            this.dgVHoaDon.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID Hóa Đơn";
-            this.columnHeader5.Width = 118;
             // 
             // label4
             // 
@@ -200,25 +98,46 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "THANH TOÁN";
             // 
+            // dgVHoaDon
+            // 
+            this.dgVHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgVHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.dgVHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVHoaDon.Location = new System.Drawing.Point(16, 99);
+            this.dgVHoaDon.Name = "dgVHoaDon";
+            this.dgVHoaDon.RowHeadersWidth = 51;
+            this.dgVHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgVHoaDon.Size = new System.Drawing.Size(1389, 442);
+            this.dgVHoaDon.TabIndex = 33;
+            // 
+            // lblNgay
+            // 
+            this.lblNgay.AutoSize = true;
+            this.lblNgay.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNgay.Location = new System.Drawing.Point(15, 59);
+            this.lblNgay.Name = "lblNgay";
+            this.lblNgay.Size = new System.Drawing.Size(85, 23);
+            this.lblNgay.TabIndex = 34;
+            this.lblNgay.Text = "Ngày lập: ";
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1417, 540);
+            this.ClientSize = new System.Drawing.Size(1417, 600);
+            this.Controls.Add(this.lblNgay);
+            this.Controls.Add(this.dgVHoaDon);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTongTIen);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numSL);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.cboMon);
-            this.Controls.Add(this.dgVHoaDon);
             this.Controls.Add(this.btnThanhToan);
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
-            ((System.ComponentModel.ISupportInitialize)(this.numSL)).EndInit();
+            this.Load += new System.EventHandler(this.frmHoaDon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgVHoaDon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,19 +147,10 @@
         private System.Windows.Forms.Button btnThanhToan;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.ComboBox cboMon;
-        private System.Windows.Forms.NumericUpDown numSL;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTongTIen;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ListView dgVHoaDon;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.DataGridView dgVHoaDon;
+        private System.Windows.Forms.Label lblNgay;
     }
 }

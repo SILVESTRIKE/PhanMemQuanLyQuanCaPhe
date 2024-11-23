@@ -1,4 +1,5 @@
-﻿USE QLCF
+﻿CREATE DATABASE QLCF
+USE QLCF
 GO
 
 -- Bảng Mon (Món)

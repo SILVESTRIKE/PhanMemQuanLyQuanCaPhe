@@ -12,15 +12,16 @@ namespace QLCF_DTO
         public string IDMon { get; set; }
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
-
+        public bool TrangThai {  get; set; }
         public ChiTietHDDTO() { }
 
-        public ChiTietHDDTO(string idHoaDon, string idMon, int soLuong, decimal donGia)
+        public ChiTietHDDTO(string idHoaDon, string idMon, int soLuong, decimal donGia, bool trangThai)
         {
             IDHoaDon = idHoaDon;
             IDMon = idMon;
             SoLuong = soLuong;
             DonGia = donGia;
+            TrangThai = trangThai;
         }
     }
 }

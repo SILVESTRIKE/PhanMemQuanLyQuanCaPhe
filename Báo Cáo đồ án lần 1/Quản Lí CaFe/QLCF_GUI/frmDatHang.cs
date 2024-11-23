@@ -31,6 +31,14 @@ namespace QLCF_GUI
 
         private void frmDatHang_Load(object sender, EventArgs e)
         {
+            // Cài đặt font chữ
+            dgVMon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVMon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVMon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVMon.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVMon.GridColor = Color.White;
             //lstMon.DataSource = null; 
 
             lstMon.DataSource = monBLL.GetAllMon();
@@ -95,11 +103,10 @@ namespace QLCF_GUI
             {
                 if (dgVMon.Columns.Count == 0)
                 {
-                    dgVMon.Columns.Add("Column0", "ID Món");
-
-                    dgVMon.Columns.Add("Column1", "Tên Món");
-                    dgVMon.Columns.Add("Column2", "Số Lượng");
-                    dgVMon.Columns.Add("Column3", "Giá");
+                    dgVMon.Columns.Add("IDMon", "ID Món");
+                    dgVMon.Columns.Add("TenMon", "Tên Món");
+                    dgVMon.Columns.Add("SoLuong", "Số Lượng");
+                    dgVMon.Columns.Add("Gia", "Giá");
                 }
                 var monDTO = (MonDTO)lstMon.SelectedItem;
 
@@ -117,7 +124,7 @@ namespace QLCF_GUI
                 // Lấy dòng hiện tại
                 DataGridViewRow row = dgVMon.Rows[e.RowIndex];
 
-                txtSLuong.Text = row.Cells[1].Value?.ToString() ?? "";
+                txtSLuong.Text = row.Cells["SoLuong"].Value?.ToString() ?? "";
             }
         }
         
@@ -125,15 +132,15 @@ namespace QLCF_GUI
         {
             if (dgVMon.SelectedRows.Count > 0)
             {
-                if (dgVMon.SelectedRows[0].Cells[1].Value != null && dgVMon.SelectedRows[0].Cells[2].Value != null)
+                if (dgVMon.SelectedRows[0].Cells["SoLuong"].Value != null && dgVMon.SelectedRows[0].Cells["Gia"].Value != null)
                 {
                     decimal soLuong = Convert.ToDecimal(txtSLuong.Text);
-                    decimal gia = Convert.ToDecimal(dgVMon.SelectedRows[0].Cells[2].Value);
+                    decimal gia = Convert.ToDecimal(dgVMon.SelectedRows[0].Cells["Gia"].Value);
 
                     decimal totalPrice = soLuong * gia;
-                    dgVMon.SelectedRows[0].Cells[1].Value = soLuong;
+                    dgVMon.SelectedRows[0].Cells["SoLuong"].Value = soLuong;
 
-                    dgVMon.SelectedRows[0].Cells[2].Value = totalPrice;
+                    dgVMon.SelectedRows[0].Cells["Gia"].Value = totalPrice;
                 }
                 else
                 {
@@ -150,34 +157,52 @@ namespace QLCF_GUI
         {
             dgVMon.Rows.RemoveAt(dgVMon.SelectedRows[0].Index);
         }
-        private List<MonDTO> GetDataFromDataGridView()
+        private List<ChiTietHDDTO> GetDataFromDataGridView(string idHoaDon)
         {
-            List<MonDTO> monList = new List<MonDTO>();
+            List<ChiTietHDDTO> chiTietList = new List<ChiTietHDDTO>();
 
             foreach (DataGridViewRow row in dgVMon.Rows)
             {
-                // Kiểm tra nếu dòng không phải dòng trống
                 if (!row.IsNewRow)
                 {
-                    MonDTO mon = new MonDTO
-                    {
-                        IDMon = Convert.ToInt32(row.Cells[0].Value), // Thay "ID" bằng tên cột bạn cần
-                        TenMon = row.Cells[1].Value?.ToString() ?? "",
-                        SoLuong = Convert.ToInt32(row.Cells["SoLuong"].Value), // Thay "SoLuong" bằng tên cột bạn cần
-                        Gia = Convert.ToDecimal(row.Cells["Gia"].Value) // Thay "Gia" bằng tên cột bạn cần
-                    };
+                    string idMon = row.Cells["IDMon"].Value?.ToString(); // Lấy ID món
+                    int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value); // Lấy số lượng
+                    decimal donGia = Convert.ToDecimal(row.Cells["Gia"].Value); // Lấy giá món
+                    bool trangThai = true; // Hoặc sử dụng giá trị nào đó cho trạng thái món
 
-                    monList.Add(mon);
+                    ChiTietHDDTO chiTietHoaDon = new ChiTietHDDTO(idMon, idMon, soLuong, donGia, trangThai);
+                    chiTietList.Add(chiTietHoaDon);
                 }
             }
 
-            return monList;
+            return chiTietList;
         }
+
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmHoaDon hoaDonForm = new frmHoaDon();
-            parentForm.OpenChildForm(hoaDonForm);
+            string idHoaDon = Guid.NewGuid().ToString();
+
+            List<ChiTietHDDTO> chiTietHoaDonList = GetDataFromDataGridView(idHoaDon);
+
+            frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDonList);
+            //parentForm.OpenChildForm(this);
+            hoaDonForm.ShowDialog();
+
+        }
+
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtGhiChu.Clear();
+            txtGhiChu.Clear();
+            dgVMon.DataSource = null;
+            dgVMon.Rows.Clear();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace QLCF_GUI
         {
 
             InitializeComponent();
-            OpenChildForm(new frmHoaDon());
+            OpenChildForm(new frmDatHang());
 
             this.username = nv.IDNhanVien;
 
@@ -35,27 +35,17 @@ namespace QLCF_GUI
         private Form CurrentFormChild;
         public void OpenChildForm(Form childForm)
         {
-            //if (CurrentFormChild != null)
-            //{
-            //    CurrentFormChild.Close();
-            //}
-            //CurrentFormChild = childForm;
+
+            this.CurrentFormChild = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             panel_body.Controls.Clear();
             panel_body.Controls.Add(childForm);
-            //panel_body.Tag = childForm;
-            //childForm.BringToFront();
             childForm.Show();
             
         }
-        //private void btnDangKy_Click(object sender, EventArgs e)
-        //{
-        //    frmDangKy dangKyForm = new frmDangKy();
-        //    dangKyForm.ShowDialog();
-        //}
-
+       
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             username = "";
@@ -66,28 +56,40 @@ namespace QLCF_GUI
             this.Hide();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            frmMon frmmon = new frmMon();
-            frmmon.ShowDialog();
-        }
+        //private void btnMenu_Click(object sender, EventArgs e)
+        //{
+        //    frmMon frmmon = new frmMon();
+        //    frmmon.ShowDialog();
+        //}
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmNhanVien());
         }
-        private void btnMenu_Click_1(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-
             OpenChildForm(new frmMon());
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmHoaDon());
+            List<ChiTietHDDTO> chiTietHoaDon = LayDonHang();
 
+            if (chiTietHoaDon.Count > 0)
+            {
+                frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDon);
+                OpenChildForm(hoaDonForm);
+            }
+            else
+            {
+                frmHoaDon hoaDonForm = new frmHoaDon(); 
+                OpenChildForm(hoaDonForm);
+            }
         }
-
+        private List<ChiTietHDDTO> LayDonHang()
+        {
+            return new List<ChiTietHDDTO>();
+        }
         private void btnKho_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmKho());
@@ -105,14 +107,6 @@ namespace QLCF_GUI
             OpenChildForm(new frmThongKe()); 
         }
 
-        private void frmTrangChu_Load(object sender, EventArgs e)
-        {
-            this.panelTitleBar.Dock = DockStyle.Top;
-            this.panel_body.Dock = DockStyle.Fill;
-            this.mnSMain.Dock = DockStyle.Top;
-
-        }
-
         private void btnCongThuc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmCongThuc());
@@ -121,7 +115,15 @@ namespace QLCF_GUI
         private void btnDonHang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmDatHang(this));
-            
+
         }
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
+            this.panelTitleBar.Dock = DockStyle.Top;
+            this.panel_body.Dock = DockStyle.Fill;
+            this.mnSMain.Dock = DockStyle.Top;
+
+        }
+
     }
 }
