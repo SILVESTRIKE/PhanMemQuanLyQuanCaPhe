@@ -10,15 +10,14 @@ namespace QLCF_DTO
     {
         public string IDCa { get; set; }
         public string TenCa { get; set; }
-        public DateTime NgayTruc { get; set; }
 
         public CaTrucDTO() { }
 
-        public CaTrucDTO(string idCa, string tenCa, DateTime ngayTruc)
+        public CaTrucDTO(string idCa, string tenCa)
         {
             IDCa = idCa;
             TenCa = tenCa;
-            NgayTruc = ngayTruc;
+
         }
     }
 }

@@ -19,6 +19,8 @@ namespace QLCF_GUI
         public frm_DangNhap()
         {
             InitializeComponent();
+            txt_username.Text = "NV001";
+            txt_pass.Text = "123";
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)

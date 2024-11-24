@@ -53,6 +53,7 @@
     <Compile Include="CongThucDAL.cs" />
     <Compile Include="dbContext.cs" />
     <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="LichTrucDAL.cs" />
     <Compile Include="MonDAL.cs" />
     <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="NguyenLieuDAL.cs" />

@@ -81,11 +81,13 @@ CREATE TABLE LichTruc(
 CREATE TABLE ChiTietLichTruc (
     IDLichTruc CHAR(10),            -- Khóa ngoại từ bảng CaTruc
     IDNhanVien CHAR(5),            -- Khóa ngoại từ bảng NhanVien
-	TrangThai BIT,
+	TrangThai NVARCHAR(50),
     PRIMARY KEY (IDLichTruc, IDNhanVien), -- Khóa chính kết hợp
     FOREIGN KEY (IDLichTruc) REFERENCES LichTruc(IDLichTruc),
     FOREIGN KEY (IDNhanVien) REFERENCES NhanVien(IDNhanVien)
 );
+
+
 INSERT INTO NguyenLieu (IDNguyenLieu, TenNL, SLTon, DVTinh) VALUES
 ('NL001', N'Cà Phê', 50, N'kg'),
 ('NL002', N'Sữa Tươi', 200, N'L'),
@@ -168,5 +170,14 @@ INSERT INTO NhanVien Values
 --('NV003', N'Lê Văn C', '0900000003', N'Nam', '1988-03-09', 1, 'NV001', 'pass123'),
 --('NV004', N'Pham Thi D', '0900000004', N'Nữ', '1995-12-30', 1, 'NV002', 'pass123'),
 --('NV005', N'Nguyen Van E', '0900000005', N'Nam', '1991-07-21', 1, 'NV002', 'pass123');
+
+INSERT INTO CaTruc Values
+('SA', N'Ca Sáng'),
+('CH', N'Ca Chiều'),
+('TO', N'Ca Tối');
+
+
+
+
 
 

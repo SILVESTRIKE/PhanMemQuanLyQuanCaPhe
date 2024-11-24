@@ -52,6 +52,7 @@
     <Compile Include="ChucVuDTO.cs" />
     <Compile Include="CongThucDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />
+    <Compile Include="LichTrucDTO.cs" />
     <Compile Include="MonDTO.cs" />
     <Compile Include="NguoiDungDTO.cs" />
     <Compile Include="NguyenLieuDTO.cs" />

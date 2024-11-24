@@ -33,7 +33,7 @@ namespace QLCF_DAL
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
 
-            string sql = "insert into CaTruc values('" + caTruc.IDCa + "',N'" + caTruc.TenCa + "',N'" + caTruc.NgayTruc + "')";
+            string sql = "insert into CaTruc values('" + caTruc.IDCa + "',N'" + caTruc.TenCa + "')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -84,8 +84,7 @@ namespace QLCF_DAL
                 {
                     string idcatruc = rd[0].ToString();
                     string tencatruc = rd[1].ToString();
-                    DateTime ngaytruc = (DateTime)rd[3];
-                    CaTrucDTO caTruc = new CaTrucDTO(idcatruc, tencatruc,ngaytruc);
+                    CaTrucDTO caTruc = new CaTrucDTO(idcatruc, tencatruc);
                     LstCaTruc.Add(caTruc);
                 }
             }

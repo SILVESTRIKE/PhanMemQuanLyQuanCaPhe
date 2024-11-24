@@ -37,5 +37,7 @@ namespace QLCF_BLL
         {
             return chitiecatructDAL.getALL();
         }
+        
+
     }
 }
