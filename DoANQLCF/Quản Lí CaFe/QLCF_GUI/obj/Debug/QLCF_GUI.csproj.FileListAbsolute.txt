@@ -79,3 +79,30 @@ D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đ�
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe.config
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.AssemblyReference.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmCaTruc.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmCongThuc.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmDangKy.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmDatHang.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmHoaDon.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmKho.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmMon.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmNhanVien.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmThongKe.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmTrangChu.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frm_DangNhap.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.Properties.Resources.resources
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.GenerateResource.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.CoreCompileInputs.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb

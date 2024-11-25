@@ -47,5 +47,9 @@ namespace QLCF_BLL
         {
             return cthdDAL.getALL();
         }
+        public string TenMon(string idMon)
+        {
+            return cthdDAL.tenMon(idMon);
+        }
     }
 }

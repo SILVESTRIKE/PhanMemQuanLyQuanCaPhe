@@ -8,6 +8,6 @@ namespace QLCF_DAL
 {
     public class dbContext
     {
-        public string Strcon = "Data Source=LIEM_PHONG\\THCSDL;Initial Catalog=QLCF;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public string Strcon = "Data Source=silves;Initial Catalog=QLCF;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
     }
 }

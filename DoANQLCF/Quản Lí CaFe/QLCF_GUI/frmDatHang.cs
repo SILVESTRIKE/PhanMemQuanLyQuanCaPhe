@@ -15,13 +15,12 @@ namespace QLCF_GUI
     public partial class frmDatHang : Form
     {
         private frmTrangChu parentForm; // Tham chiếu tới frmTrangChu
-
+        HoaDonBLL hoaDonBLL= new HoaDonBLL();
         public frmDatHang(frmTrangChu parent)
         {
             InitializeComponent();
             parentForm = parent;  // Gán tham chiếu đến frmTrangChu
         }
-
         MonBLL monBLL = new MonBLL();
         List<MonDTO> DSMON = new List<MonDTO>();
         public frmDatHang()
@@ -98,24 +97,49 @@ namespace QLCF_GUI
         }
         private void lstMon_DoubleClick(object sender, EventArgs e)
         {
-
             if (lstMon.SelectedItem != null)
             {
+                // Kiểm tra và tạo cột nếu chưa có
                 if (dgVMon.Columns.Count == 0)
                 {
                     dgVMon.Columns.Add("IDMon", "ID Món");
                     dgVMon.Columns.Add("TenMon", "Tên Món");
                     dgVMon.Columns.Add("SoLuong", "Số Lượng");
                     dgVMon.Columns.Add("Gia", "Giá");
+                    dgVMon.Columns.Add("ThanhTien", "Thành Tiền");
                 }
+
                 var monDTO = (MonDTO)lstMon.SelectedItem;
+                bool isExist = false;
 
-                dgVMon.Rows.Add( monDTO.IDMon, monDTO.TenMon, 1, monDTO.gia);
+                // Kiểm tra nếu món đã tồn tại
+                foreach (DataGridViewRow row in dgVMon.Rows)
+                {
+                    if (row.Cells["IDMon"].Value?.ToString() == monDTO.IDMon.ToString())
+                    {
+                        // Món đã tồn tại, tăng số lượng
+                        int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
+                        soLuong++;
+                        row.Cells["SoLuong"].Value = soLuong;
 
+                        // Cập nhật Thành Tiền
+                        decimal gia = Convert.ToDecimal(row.Cells["Gia"].Value);
+                        row.Cells["ThanhTien"].Value = soLuong * gia;
+
+                        isExist = true;
+                        break;
+                    }
+                }
+
+                // Nếu món chưa tồn tại, thêm mới vào DataGridView
+                if (!isExist)
+                {
+                    dgVMon.Rows.Add(monDTO.IDMon, monDTO.TenMon, 1, monDTO.gia, monDTO.gia);
+                }
             }
-            dgVMon.CurrentCell = null;
-
+            dgVMon.CurrentCell = null; // Bỏ chọn dòng hiện tại
         }
+
 
         private void dgVMon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -140,7 +164,7 @@ namespace QLCF_GUI
                     decimal totalPrice = soLuong * gia;
                     dgVMon.SelectedRows[0].Cells["SoLuong"].Value = soLuong;
 
-                    dgVMon.SelectedRows[0].Cells["Gia"].Value = totalPrice;
+                    dgVMon.SelectedRows[0].Cells["ThanhTien"].Value = totalPrice;
                 }
                 else
                 {
@@ -165,12 +189,14 @@ namespace QLCF_GUI
             {
                 if (!row.IsNewRow)
                 {
+                    string idHD = hoaDonBLL.IDHoaDon();
                     string idMon = row.Cells["IDMon"].Value?.ToString(); // Lấy ID món
                     int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value); // Lấy số lượng
                     decimal donGia = Convert.ToDecimal(row.Cells["Gia"].Value); // Lấy giá món
+                    decimal thanhTien = Convert.ToDecimal(row.Cells["ThanhTien"].Value);
                     bool trangThai = true; // Hoặc sử dụng giá trị nào đó cho trạng thái món
 
-                    ChiTietHDDTO chiTietHoaDon = new ChiTietHDDTO(idMon, idMon, soLuong, donGia, trangThai);
+                    ChiTietHDDTO chiTietHoaDon = new ChiTietHDDTO(idHD, idMon, soLuong, donGia, thanhTien, trangThai);
                     chiTietList.Add(chiTietHoaDon);
                 }
             }

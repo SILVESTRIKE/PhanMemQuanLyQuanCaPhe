@@ -85,5 +85,11 @@ namespace QLCF_DAL
             conn.Close();
             return LstHoaDon;
         }
+        public string IDHoaDon()
+        {
+            string ngayhientai = DateTime.Now.ToString("ddMMyyyy");
+            return "HD" + ngayhientai.ToString() + (getALL().Count() + 1).ToString("D3");
+        }
+        
     }
 }
