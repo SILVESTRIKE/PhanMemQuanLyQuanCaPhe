@@ -16,15 +16,15 @@ namespace QLCF_GUI
     {
         private List<ChiTietHDDTO> ListCTHoaDon;
         ChiTietHDBLL chiTietBLL =new ChiTietHDBLL();
-        public frmHoaDon()
-        {
-            InitializeComponent();
-            ListCTHoaDon = new List<ChiTietHDDTO>(); // Tạo danh sách chi tiết hóa đơn trống
-        }
+        //public frmHoaDon()
+        //{
+        //    InitializeComponent();
+        //    ListCTHoaDon = new List<ChiTietHDDTO>();
+        //}
         public frmHoaDon(List<ChiTietHDDTO> chiTietHoaDon)
         {
             InitializeComponent();
-            ListCTHoaDon = chiTietHoaDon;
+            this.ListCTHoaDon = chiTietHoaDon;
         }
 
         private void frmHoaDon_Load(object sender, EventArgs e)
@@ -38,10 +38,10 @@ namespace QLCF_GUI
                 dgVHoaDon.Columns.Add("TenMon", "Tên Món");
                 dgVHoaDon.Columns.Add("SoLuong", "Số Lượng");
                 dgVHoaDon.Columns.Add("DonGia", "Đơn Giá");
-                dgVHoaDon.Columns.Add("ThanhTien", "Thành Tiền");
+                dgVHoaDon.Columns.Add("TongTien", "Thành Tiền");
                 dgVHoaDon.Columns.Add("TrangThai", "Trạng Thái");
             }
-            if (ListCTHoaDon.Count > 0) 
+            if (ListCTHoaDon != null && ListCTHoaDon.Count > 0) 
             {
                 foreach (var chiTiet in ListCTHoaDon)
                 {
@@ -64,6 +64,11 @@ namespace QLCF_GUI
             {
                 MessageBox.Show("Không có đơn hàng để thanh toán.");
             }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

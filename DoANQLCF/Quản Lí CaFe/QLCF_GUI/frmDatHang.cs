@@ -106,7 +106,7 @@ namespace QLCF_GUI
                     dgVMon.Columns.Add("TenMon", "Tên Món");
                     dgVMon.Columns.Add("SoLuong", "Số Lượng");
                     dgVMon.Columns.Add("Gia", "Giá");
-                    dgVMon.Columns.Add("ThanhTien", "Thành Tiền");
+                    dgVMon.Columns.Add("TongTien", "Thành Tiền");
                 }
 
                 var monDTO = (MonDTO)lstMon.SelectedItem;
@@ -124,7 +124,7 @@ namespace QLCF_GUI
 
                         // Cập nhật Thành Tiền
                         decimal gia = Convert.ToDecimal(row.Cells["Gia"].Value);
-                        row.Cells["ThanhTien"].Value = soLuong * gia;
+                        row.Cells["TongTien"].Value = soLuong * gia;
 
                         isExist = true;
                         break;
@@ -164,7 +164,7 @@ namespace QLCF_GUI
                     decimal totalPrice = soLuong * gia;
                     dgVMon.SelectedRows[0].Cells["SoLuong"].Value = soLuong;
 
-                    dgVMon.SelectedRows[0].Cells["ThanhTien"].Value = totalPrice;
+                    dgVMon.SelectedRows[0].Cells["TongTien"].Value = totalPrice;
                 }
                 else
                 {
@@ -184,16 +184,15 @@ namespace QLCF_GUI
         private List<ChiTietHDDTO> GetDataFromDataGridView(string idHoaDon)
         {
             List<ChiTietHDDTO> chiTietList = new List<ChiTietHDDTO>();
-
+            string idHD = hoaDonBLL.IDHoaDon();
             foreach (DataGridViewRow row in dgVMon.Rows)
             {
                 if (!row.IsNewRow)
                 {
-                    string idHD = hoaDonBLL.IDHoaDon();
                     string idMon = row.Cells["IDMon"].Value?.ToString(); // Lấy ID món
                     int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value); // Lấy số lượng
                     decimal donGia = Convert.ToDecimal(row.Cells["Gia"].Value); // Lấy giá món
-                    decimal thanhTien = Convert.ToDecimal(row.Cells["ThanhTien"].Value);
+                    decimal thanhTien = Convert.ToDecimal(row.Cells["TongTien"].Value);
                     bool trangThai = true; // Hoặc sử dụng giá trị nào đó cho trạng thái món
 
                     ChiTietHDDTO chiTietHoaDon = new ChiTietHDDTO(idHD, idMon, soLuong, donGia, thanhTien, trangThai);
@@ -212,7 +211,7 @@ namespace QLCF_GUI
             List<ChiTietHDDTO> chiTietHoaDonList = GetDataFromDataGridView(idHoaDon);
 
             frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDonList);
-            //parentForm.OpenChildForm(this);
+            //parentForm.OpenChildForm(hoaDonForm);
             hoaDonForm.ShowDialog();
 
         }

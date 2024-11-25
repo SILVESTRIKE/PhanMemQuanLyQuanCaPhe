@@ -51,6 +51,7 @@
             this.btnThanhToan.TabIndex = 12;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // printPreviewDialog1
             // 

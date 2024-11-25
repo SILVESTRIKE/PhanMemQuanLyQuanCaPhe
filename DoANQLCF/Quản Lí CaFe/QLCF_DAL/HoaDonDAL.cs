@@ -33,7 +33,7 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "insert into HoaDon values('" + hoadon.IDHoaDon + "',N'" + hoadon.IDNhanVien + "','" + hoadon.NgayLap+ "','"+hoadon.NgayLap+"','"+hoadon.ThanhTien+"')";
+            string sql = "insert into HoaDon values('" + hoadon.IDHoaDon + "',N'" + hoadon.IDNhanVien + "','" + hoadon.NgayLap+ "','"+hoadon.NgayLap+"','"+hoadon.TongTien+"')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -57,7 +57,7 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update HoaDon Set ThanhTienn = '" + hoadon.ThanhTien + "' Where IDHoaDon = '" + hoadon.IDHoaDon + "' and IDNhanVien='" + hoadon.IDNhanVien + "'";
+            string sql = "update HoaDon Set ThanhTienn = '" + hoadon.TongTien + "' Where IDHoaDon = '" + hoadon.IDHoaDon + "' and IDNhanVien='" + hoadon.IDNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -90,6 +90,46 @@ namespace QLCF_DAL
             string ngayhientai = DateTime.Now.ToString("ddMMyyyy");
             return "HD" + ngayhientai.ToString() + (getALL().Count() + 1).ToString("D3");
         }
-        
+        public bool SaveHoaDon(HoaDonDTO hoaDon, List<ChiTietHDDTO> chiTietList)
+        {
+            using (SqlTransaction transaction = conn.BeginTransaction())
+            {
+                try
+                {
+                    // Lưu thông tin hóa đơn
+                    string sql = "INSERT INTO HoaDon VALUES ('"+ hoaDon.IDHoaDon + "', '"+ hoaDon.NgayLap + "','"+ hoaDon.IDNhanVien + "', '"+ hoaDon.TongTien + "')";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    int kq = (int)cmd.ExecuteNonQuery();
+                    conn.Close();
+                    if (kq > 0)
+                    {
+                        foreach (var chiTiet in chiTietList)
+                        {
+                            string sqlChiTiet = "INSERT INTO ChiTietHD VALUES ('"+chiTiet.IDHoaDon+"','"+chiTiet.IDMon+", '"+chiTiet.SoLuong+"','"+ chiTiet.DonGia + "','"+ chiTiet.ThanhTien + "', '"+ chiTiet.TrangThai + "')";
+                            SqlCommand cmdChiTiet = new SqlCommand(sqlChiTiet, conn);
+                            int kqCT = (int)cmd.ExecuteNonQuery();
+                            conn.Close();
+                            if (kqCT > 0)
+                            {
+                                transaction.Commit();
+                                return true;
+                            }
+                        }
+                        return true;
+                    }
+                            
+                    else return false;
+
+                    // Lưu chi tiết hóa đơn
+                    
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    throw;
+                }
+            }
+        }
+
     }
 }

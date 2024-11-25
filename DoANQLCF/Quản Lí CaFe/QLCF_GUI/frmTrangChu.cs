@@ -82,8 +82,9 @@ namespace QLCF_GUI
             }
             else
             {
-                frmHoaDon hoaDonForm = new frmHoaDon(); 
-                OpenChildForm(hoaDonForm);
+                //frmHoaDon hoaDonForm = new frmHoaDon(); 
+                //OpenChildForm(hoaDonForm);
+                MessageBox.Show("Chua co mon trong hoa don");
             }
         }
         private List<ChiTietHDDTO> LayDonHang()

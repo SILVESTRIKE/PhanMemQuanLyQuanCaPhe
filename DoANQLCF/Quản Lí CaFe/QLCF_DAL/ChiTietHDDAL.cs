@@ -82,7 +82,7 @@ namespace QLCF_DAL
                     string idmon = rd["IDMon"].ToString();
                     int soluong = Convert.ToInt32(rd["SoLuong"]);
                     decimal dongia = Convert.ToDecimal(rd["DonGia"]);
-                    decimal thanhTien = Convert.ToDecimal(rd["ThanhTien"]);
+                    decimal thanhTien = Convert.ToDecimal(rd["TongTien"]);
                     bool trangThai = Convert.ToBoolean(rd["TinhTrang_PhucVu"]);
                     ChiTietHDDTO ctHD = new ChiTietHDDTO(idhoadon, idmon, soluong, dongia, thanhTien, trangThai);
                     LstCTHD.Add(ctHD);
@@ -96,7 +96,7 @@ namespace QLCF_DAL
             string ten = string.Empty;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "Select TenMon from Mon, ChiTietHD where Mon.IDMon = '" + idMon + "'";
+            string sql = "Select TenMon from Mon where IDMon = '" + idMon + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())

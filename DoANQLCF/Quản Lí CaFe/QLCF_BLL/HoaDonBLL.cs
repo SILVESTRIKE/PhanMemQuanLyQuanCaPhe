@@ -30,6 +30,10 @@ namespace QLCF_BLL
         {
             return HDDal.IDHoaDon();
         }
-        
+        public bool SaveHoaDon(HoaDonDTO hoaDon, List<ChiTietHDDTO> chiTietList)
+        {
+            return HDDal.SaveHoaDon(hoaDon, chiTietList);
+        }
+
     }
 }
