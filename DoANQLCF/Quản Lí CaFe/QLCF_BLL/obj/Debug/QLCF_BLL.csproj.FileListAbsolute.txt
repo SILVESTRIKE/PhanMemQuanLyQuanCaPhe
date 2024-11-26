@@ -1,0 +1,44 @@
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.dll
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.pdb
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.AssemblyReference.cache
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.CoreCompileInputs.cache
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.Up2Date
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNgheNet-Nhom5_PhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.Up2Date
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.AssemblyReference.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.CoreCompileInputs.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.Up2Date
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\Báo Cáo đồ án lần 1\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_BLL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DAL.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.AssemblyReference.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.CoreCompileInputs.cache
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.csproj.Up2Date
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.dll
+D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_BLL\obj\Debug\QLCF_BLL.pdb

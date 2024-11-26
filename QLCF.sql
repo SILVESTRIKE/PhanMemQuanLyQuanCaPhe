@@ -46,19 +46,20 @@ CREATE TABLE NhanVien (
 
 -- Bảng HoaDon (Hóa Đơn)
 CREATE TABLE HoaDon (
-    IDHoaDon CHAR(10) PRIMARY KEY,  -- Khóa chính hóa đơn
+    IDHoaDon CHAR(16) PRIMARY KEY,  -- Khóa chính hóa đơn
     NgayLap DATE,                   -- Ngày lập hóa đơn
     IDNhanVien CHAR(5),            -- Khóa ngoại từ bảng NhanVien
-    ThanhTien DECIMAL(10, 2),       -- Tổng số tiền trong hóa đơn
+    TongTien DECIMAL(10, 2),       -- Tổng số tiền trong hóa đơn
     FOREIGN KEY (IDNhanVien) REFERENCES NhanVien(IDNhanVien)
 );
 
 -- Bảng ChiTietHD (Chi Tiết Hóa Đơn)
 CREATE TABLE ChiTietHD (
-    IDHoaDon CHAR(10),              -- Khóa ngoại từ bảng HoaDon
+    IDHoaDon CHAR(16),              -- Khóa ngoại từ bảng HoaDon
     IDMon CHAR(10),                 -- Khóa ngoại từ bảng Mon
     SoLuong INT,                    -- Số lượng món
     DonGia DECIMAL(10, 2),          -- Đơn giá của món
+	ThanhTien DECIMAL(10,2),
 	TinhTrang_PhucVu BIT            -- Xem món ăn đã được phục vụ hay chưa
     PRIMARY KEY (IDHoaDon, IDMon),  -- Khóa chính kết hợp
     FOREIGN KEY (IDHoaDon) REFERENCES HoaDon(IDHoaDon),
