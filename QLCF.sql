@@ -53,6 +53,7 @@ CREATE TABLE HoaDon (
     FOREIGN KEY (IDNhanVien) REFERENCES NhanVien(IDNhanVien)
 );
 
+
 -- Bảng ChiTietHD (Chi Tiết Hóa Đơn)
 CREATE TABLE ChiTietHD (
     IDHoaDon CHAR(16),              -- Khóa ngoại từ bảng HoaDon
@@ -65,6 +66,7 @@ CREATE TABLE ChiTietHD (
     FOREIGN KEY (IDHoaDon) REFERENCES HoaDon(IDHoaDon),
     FOREIGN KEY (IDMon) REFERENCES Mon(IDMon)
 );
+
 
 -- Bảng CaTruc (Ca Trực)
 CREATE TABLE CaTruc (
@@ -136,34 +138,37 @@ INSERT INTO Mon (IDMon, TenMon, Gia, Loai) VALUES
 
 
 INSERT INTO CongThuc (IDMon, IDNguyenLieu, SoLuong) VALUES
-('M001', 'NL001', 0.02),
-('M002', 'NL001', 0.02),
-('M002', 'NL002', 0.03),
-('M003', 'NL001', 0.02),
-('M003', 'NL004', 0.01),
-('M004', 'NL007', 0.25),
-('M005', 'NL017', 0.05),
-('M005', 'NL002', 0.1),
-('M006', 'NL005', 0.02),
-('M006', 'NL002', 0.15),
-('M007', 'NL016', 0.2),
-('M008', 'NL018', 0.2),
-('M009', 'NL014', 0.3),
-('M010', 'NL013', 0.2),
-('M011', 'NL015', 0.05),
-('M011', 'NL002', 0.15),
-('M012', 'NL009', 0.02),
-('M012', 'NL002', 0.1),
-('M013', 'NL006', 0.05),
-('M014', 'NL008', 0.02),
-('M015', 'NL001', 0.02),
-('M015', 'NL010', 0.05),
-('M016', 'NL019', 0.1),
-('M017', 'NL002', 0.1),
-('M018', 'NL012', 0.15),
-('M018', 'NL011', 0.1),
-('M019', 'NL014', 0.15),
-('M020', 'NL020', 0.02);
+('M001', 'NL001', 0.02), -- Cà Phê Đen
+('M002', 'NL001', 0.02), -- Cà Phê Sữa
+('M002', 'NL002', 0.03), -- Sữa Tươi
+('M003', 'NL001', 0.02), -- Cà Phê Đá Xay
+('M003', 'NL004', 0.01), -- Sốt Socola
+('M004', 'NL007', 0.25), -- Trà Đào
+('M005', 'NL015', 0.05), -- Hạt Trân Châu
+('M005', 'NL002', 0.1),  -- Sữa Tươi
+('M006', 'NL005', 0.02), -- Bột Matcha
+('M006', 'NL002', 0.15), -- Sữa Tươi
+('M007', 'NL016', 0.2),  -- Sinh Tố Bơ
+('M008', 'NL017', 0.2),  -- Sinh Tố Dâu
+('M009', 'NL012', 0.3),  -- Cam
+('M010', 'NL011', 0.2),  -- Chanh
+('M011', 'NL015', 0.05), -- Hạt Trân Châu
+('M011', 'NL002', 0.15), -- Sữa Tươi
+('M012', 'NL009', 0.02), -- Trà Xanh
+('M012', 'NL002', 0.1),  -- Sữa Tươi
+('M013', 'NL006', 0.05), -- Bạc Hà
+('M014', 'NL008', 0.02), -- Bột Milo
+('M015', 'NL001', 0.02), -- Cà Phê
+('M015', 'NL010', 0.05), -- Đào Miếng
+('M016', 'NL018', 0.2),  -- Chuối
+('M017', 'NL002', 0.1),  -- Sữa Tươi
+('M018', 'NL012', 0.15), -- Cam
+('M018', 'NL013', 0.1),  -- Cà Rốt
+('M019', 'NL014', 0.15), -- Trà Đen
+('M020', 'NL020', 0.02), -- Mật Ong
+('M020', 'NL011', 0.1);  -- Chanh
+
+
 
 INSERT INTO NhanVien Values
 ('NV001', N'Trần Văn A', '0900000001', N'Nam', '1990-05-15', 1, N'Quản Lý', '123');
@@ -176,6 +181,8 @@ INSERT INTO CaTruc Values
 ('SA', N'Ca Sáng'),
 ('CH', N'Ca Chiều'),
 ('TO', N'Ca Tối');
+
+
 
 
 

@@ -16,6 +16,7 @@ namespace QLCF_GUI
     {
         private List<ChiTietHDDTO> ListCTHoaDon;
         ChiTietHDBLL chiTietBLL =new ChiTietHDBLL();
+        HoaDonBLL HoaDonbll =new HoaDonBLL();
         //public frmHoaDon()
         //{
         //    InitializeComponent();
@@ -68,6 +69,27 @@ namespace QLCF_GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            // Tạo hóa đơn mới
+            string idHoaDon = HoaDonbll.IDHoaDon();
+            HoaDonDTO hoaDon = new HoaDonDTO
+            {
+                IDHoaDon = idHoaDon,
+                NgayLap = DateTime.Now,
+                IDNhanVien = "NV001", // Bạn có thể thay đổi thông tin nhân viên tại đây
+                TongTien = ListCTHoaDon.Sum(ct => ct.ThanhTien)
+            };
+
+            // Cập nhật IDHoaDon trong ListCTHoaDon
+            foreach (var chiTiet in ListCTHoaDon)
+            {
+                chiTiet.IDHoaDon = idHoaDon;
+            }
+
+            // Lưu hóa đơn và chi tiết hóa đơn xuống cơ sở dữ liệu
+            HoaDonbll.SaveHoaDon(hoaDon, ListCTHoaDon);
+            MessageBox.Show("Thanh toán thành công!");
+
+            this.Close();
 
         }
     }

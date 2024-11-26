@@ -106,3 +106,30 @@ D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Qu�
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe.config
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.exe
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_GUI.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_BLL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\bin\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmCaTruc.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmCongThuc.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmDangKy.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmDatHang.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmHoaDon.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmKho.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmMon.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmNhanVien.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmThongKe.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frmTrangChu.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.frm_DangNhap.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.Properties.Resources.resources
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.GenerateResource.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb

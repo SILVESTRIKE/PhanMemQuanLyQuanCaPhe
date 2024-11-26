@@ -34,3 +34,12 @@ D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Qu�
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
 D:\CNNET\CongNgheNet\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb

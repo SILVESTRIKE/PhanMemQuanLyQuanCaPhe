@@ -170,11 +170,13 @@ namespace QLCF_GUI
                 {
                     MessageBox.Show("Dữ liệu không hợp lệ.");
                 }
+                txtSLuong.Refresh();
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một dòng.");
             }
+            
         }
 
         private void mnSXoa_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
