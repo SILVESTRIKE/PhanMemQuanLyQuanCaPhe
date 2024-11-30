@@ -181,6 +181,78 @@ INSERT INTO CaTruc Values
 ('SA', N'Ca Sáng'),
 ('CH', N'Ca Chiều'),
 ('TO', N'Ca Tối');
+Go
+CREATE PROCEDURE ChiaLichTruc
+AS
+BEGIN
+    DECLARE @Ngay DATE;
+    DECLARE @IDCa NVARCHAR(50);
+	DECLARE @IDLichTruc CHAR(10);
+    DECLARE @IDNhanVien INT;
+    DECLARE @i INT = 0;
+
+    -- Tạo danh sách các ngày trong tuần
+    DECLARE @NgayTruc TABLE (Ngay DATE);
+    INSERT INTO @NgayTruc (Ngay)
+    VALUES 
+    (GETDATE()), 
+    (DATEADD(DAY, 1, GETDATE())),
+    (DATEADD(DAY, 2, GETDATE())),
+    (DATEADD(DAY, 3, GETDATE())),
+    (DATEADD(DAY, 4, GETDATE())),
+    (DATEADD(DAY, 5, GETDATE())),
+    (DATEADD(DAY, 6, GETDATE()));
+
+    -- Duyệt qua từng ngày trong tuần
+    DECLARE NgayCursor CURSOR FOR SELECT Ngay FROM @NgayTruc;
+    OPEN NgayCursor;
+    FETCH NEXT FROM NgayCursor INTO @Ngay;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Duyệt qua từng ca trong ngày
+        DECLARE CaCursor CURSOR FOR SELECT IDca FROM CaTruc;
+        OPEN CaCursor;
+        FETCH NEXT FROM CaCursor INTO @IDCa;
+
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Tạo IDLichTruc (có thể điều chỉnh lại tùy theo cách tạo ID của bạn)
+            SET @IDLichTruc = CONVERT(CHAR(10), NEWID());
+
+            -- Thêm lịch trực vào bảng LichTruc
+            INSERT INTO LichTruc (IDLichTruc, NgayTruc, IDCa) VALUES (@IDLichTruc, @Ngay, @IDCa);
+
+            -- Chọn nhân viên tiếp theo
+            SELECT @IDNhanVien = IDNhanVien FROM (
+                SELECT IDNhanVien 
+                FROM NhanVien 
+                ORDER BY IDNhanVien 
+                OFFSET @i ROWS 
+                FETCH NEXT 1 ROW ONLY
+            ) AS NV;
+
+            -- Thêm chi tiết lịch trực vào bảng ChiTietLichTruc
+            INSERT INTO ChiTietLichTruc (IDLichTruc, IDNhanVien, TrangThai) VALUES (@IDLichTruc, @IDNhanVien, N'Chưa trực');
+
+            -- Tăng biến đếm nhân viên
+            SET @i = (@i + 1) % (SELECT COUNT(*) FROM NhanVien);
+
+            FETCH NEXT FROM CaCursor INTO @IDCa;
+        END
+        CLOSE CaCursor;
+        DEALLOCATE CaCursor;
+
+        FETCH NEXT FROM NgayCursor INTO @Ngay;
+    END
+    CLOSE NgayCursor;
+    DEALLOCATE NgayCursor;
+END
+EXEC ChiaLichTruc;
+
+ALTER TABLE LichTruc
+ALTER COLUMN IDLichTruc UNIQUEIDENTIFIER;
+
 
 
 

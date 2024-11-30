@@ -57,12 +57,13 @@
             this.dgVMon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgVMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVMon.Location = new System.Drawing.Point(16, 95);
-            this.dgVMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVMon.Margin = new System.Windows.Forms.Padding(4);
             this.dgVMon.Name = "dgVMon";
             this.dgVMon.RowHeadersWidth = 51;
             this.dgVMon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVMon.Size = new System.Drawing.Size(1275, 613);
             this.dgVMon.TabIndex = 0;
+            this.dgVMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVMon_CellClick);
             // 
             // label2
             // 
@@ -104,7 +105,7 @@
             // 
             this.txtTenMon.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMon.Location = new System.Drawing.Point(1512, 160);
-            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(329, 44);
             this.txtTenMon.TabIndex = 8;
@@ -113,7 +114,7 @@
             // 
             this.txtmamon.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmamon.Location = new System.Drawing.Point(1512, 91);
-            this.txtmamon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmamon.Margin = new System.Windows.Forms.Padding(4);
             this.txtmamon.Name = "txtmamon";
             this.txtmamon.Size = new System.Drawing.Size(329, 44);
             this.txtmamon.TabIndex = 10;
@@ -199,7 +200,7 @@
             // 
             this.txtGhiChu.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(1512, 367);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(329, 107);
@@ -247,7 +248,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgVMon);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sản phẩm";

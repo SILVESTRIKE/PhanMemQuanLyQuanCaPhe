@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace QLCF_DTO
 {
-    public class CongThucDTO
+    public class ChiTietHD_CTDTO
     {
+        public string IDHoaDon { get; set; }
         public string IDMon { get; set; }
         public string TenMon { get; set; }
-        public string IDNguyenLieu { get; set; }
-        public string TenNguyenLieu { get; set; }
-        public decimal SoLuong { get; set; }
-        public string DVTinh { get; set; }
+        public int SoLuong { get; set; }
+        public bool TinhTrang_PhucVu { get; set; }
+
     }
 }

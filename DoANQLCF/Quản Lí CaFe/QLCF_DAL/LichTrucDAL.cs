@@ -175,6 +175,21 @@ namespace QLCF_DAL
             }
         }
 
+        public bool ChiaLichTrucNhanVien()
+        {
+            using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
+            {
+                conn.Open();
+                string query = "EXEC ChiaLichTruc";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+        }
+
 
 
     }

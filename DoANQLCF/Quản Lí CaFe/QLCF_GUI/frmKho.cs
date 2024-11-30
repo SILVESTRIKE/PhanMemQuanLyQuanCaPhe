@@ -31,7 +31,7 @@ namespace QLCF_GUI
             }
 
             decimal slTon;
-            if (string.IsNullOrEmpty(nbrTon.Text) || !decimal.TryParse(nbrTon.Text, out slTon))
+            if (string.IsNullOrEmpty(cboTon.Text) || !decimal.TryParse(cboTon.Text, out slTon))
             {
                 MessageBox.Show("Số lượng tồn phải là số lớn hơn 0!");
                 return false;
@@ -51,7 +51,7 @@ namespace QLCF_GUI
             {
                 string idNguyenLieu = txtMaNL.Text;
                 string tenNguyenLieu = txtTen.Text;
-                int slTon = int.Parse(nbrTon.Text);
+                int slTon = int.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);
@@ -75,7 +75,7 @@ namespace QLCF_GUI
             {
                 string idNguyenLieu = txtMaNL.Text;
                 string tenNguyenLieu = txtTen.Text;
-                int slTon = int.Parse(nbrTon.Text);
+                int slTon = int.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);
@@ -129,8 +129,8 @@ namespace QLCF_GUI
             txtTen.DataBindings.Clear();
             txtTen.DataBindings.Add("Text", dgVNguyenLieu.DataSource, "TenNL");
 
-            nbrTon.DataBindings.Clear();
-            nbrTon.DataBindings.Add("Text", dgVNguyenLieu.DataSource, "SLTon");
+            cboTon.DataBindings.Clear();
+            cboTon.DataBindings.Add("Text", dgVNguyenLieu.DataSource, "SLTon");
 
             cboDVT.DataBindings.Clear();
             cboDVT.DataBindings.Add("Text", dgVNguyenLieu.DataSource, "DVTinh");
@@ -146,6 +146,25 @@ namespace QLCF_GUI
             Load_Grv();
             Bindings();
             LoadComboBoxDVT();
+            cboTon.Minimum = 0;
+            cboTon.Maximum = 300;
         }
+
+        private void dgVNguyenLieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem hàng được click có hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy hàng hiện tại
+                DataGridViewRow row = dgVNguyenLieu.Rows[e.RowIndex];
+
+                // Cập nhật các TextBox và ComboBox với dữ liệu từ hàng được chọn
+                txtMaNL.Text = row.Cells["IDNguyenLieu"].Value.ToString();
+                txtTen.Text = row.Cells["TenNL"].Value.ToString();
+                cboTon.Value = Convert.ToDecimal(row.Cells["SLTon"].Value);
+                cboDVT.Text = row.Cells["DVTinh"].Value.ToString();
+            }
+        }
+
     }
 }

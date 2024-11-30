@@ -32,38 +32,56 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "insert into Mon values('" + mon.IDMon + "',N'" + mon.TenMon + "','" + mon.gia + "')";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
-            conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+
+            string sql = "INSERT INTO Mon (IDMon, TenMon, Gia, Loai) VALUES (@IDMon, @TenMon, @Gia, @Loai)";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@IDMon", mon.IDMon);
+                cmd.Parameters.AddWithValue("@TenMon", mon.TenMon);
+                cmd.Parameters.AddWithValue("@Gia", mon.gia);
+                cmd.Parameters.AddWithValue("@Loai", mon.loai);
+
+                int kq = cmd.ExecuteNonQuery();
+                conn.Close();
+                return kq > 0;
+            }
         }
+
         public bool delete(MonDTO mon)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "delete from Mon where IDMon ='" + mon.IDMon + "'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
-            conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+
+            string sql = "DELETE FROM Mon WHERE IDMon = @IDMon";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@IDMon", mon.IDMon);
+
+                int kq = cmd.ExecuteNonQuery();
+                conn.Close();
+                return kq > 0;
+            }
         }
+
         public bool edit(MonDTO mon)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update Mon Set GIA = '" + mon.gia+ "' Where IDMon = '" + mon.IDMon+ "'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
-            conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+
+            string sql = "UPDATE Mon SET TenMon = @TenMon, Gia = @Gia, Loai = @Loai WHERE IDMon = @IDMon";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@IDMon", mon.IDMon);
+                cmd.Parameters.AddWithValue("@TenMon", mon.TenMon);
+                cmd.Parameters.AddWithValue("@Gia", mon.gia);
+                cmd.Parameters.AddWithValue("@Loai", mon.loai);
+
+                int kq = cmd.ExecuteNonQuery();
+                conn.Close();
+                return kq > 0;
+            }
         }
+
 
         public List<MonDTO> getALL()
         {

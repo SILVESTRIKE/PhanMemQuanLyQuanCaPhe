@@ -106,5 +106,65 @@ namespace QLCF_DAL
             conn.Close();
             return ten;
         }
+        public List<ChiTietHD_CTDTO> GetChiTietHDByHoaDonID(string idHoaDon)
+        {
+            List<ChiTietHD_CTDTO> LstCTHD = new List<ChiTietHD_CTDTO>();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+
+            string sql = @"
+                SELECT c.IDHoaDon, c.IDMon, m.TenMon, c.SoLuong, c.TinhTrang_PhucVu 
+                FROM ChiTietHD c
+                JOIN Mon m ON c.IDMon = m.IDMon
+                WHERE c.IDHoaDon = @IDHoaDon";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@IDHoaDon", idHoaDon);
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        string idhoadon = rd["IDHoaDon"].ToString();
+                        string idmon = rd["IDMon"].ToString();
+                        string tenmon = rd["TenMon"].ToString();
+                        int soluong = Convert.ToInt32(rd["SoLuong"]);
+                        bool trangThai = Convert.ToBoolean(rd["TinhTrang_PhucVu"]);
+
+                        ChiTietHD_CTDTO ctHD = new ChiTietHD_CTDTO
+                        {
+                            IDHoaDon = idhoadon,
+                            IDMon = idmon,
+                            TenMon = tenmon,
+                            SoLuong = soluong,
+                            TinhTrang_PhucVu = trangThai
+                        };
+                        LstCTHD.Add(ctHD);
+                    }
+                }
+            }
+            conn.Close();
+            return LstCTHD;
+        }
+        public bool UpdateTrangThaiPhucVu(string idHoaDon, string idMon, bool trangThaiPhucVu)
+        {
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+
+            string sql = "UPDATE ChiTietHD SET TinhTrang_PhucVu = @TinhTrang_PhucVu WHERE IDHoaDon = @IDHoaDon AND IDMon = @IDMon";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@TinhTrang_PhucVu", trangThaiPhucVu);
+                cmd.Parameters.AddWithValue("@IDHoaDon", idHoaDon);
+                cmd.Parameters.AddWithValue("@IDMon", idMon);
+
+                int result = cmd.ExecuteNonQuery();
+                conn.Close();
+                return result > 0;
+            }
+        }
+
+
+
     }
 }

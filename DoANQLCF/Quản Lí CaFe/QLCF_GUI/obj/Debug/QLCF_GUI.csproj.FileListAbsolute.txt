@@ -133,3 +133,4 @@ D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLC
 D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.csproj.Up2Date
 D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.exe
 D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.pdb
+D:\hufi\hk5\.Net\đồ án\CongNghePhanMem-XayDungPhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_GUI\obj\Debug\QLCF_GUI.ListDonHang.resources

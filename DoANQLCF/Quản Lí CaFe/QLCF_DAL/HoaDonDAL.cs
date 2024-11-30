@@ -134,7 +134,7 @@ namespace QLCF_DAL
                             cmdHoaDon.ExecuteNonQuery();
                         }
 
-                        // Lưu chi tiết hóa đơn
+                        // Lưu chi tiết hóa đơn và đặt mặc định TinhTrang_PhucVu là false
                         foreach (var chiTiet in chiTietList)
                         {
                             string sqlChiTiet = "INSERT INTO ChiTietHD (IDHoaDon, IDMon, SoLuong, DonGia, ThanhTien, TinhTrang_PhucVu) VALUES (@IDHoaDon, @IDMon, @SoLuong, @DonGia, @ThanhTien, @TinhTrang)";
@@ -145,7 +145,7 @@ namespace QLCF_DAL
                                 cmdChiTiet.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
                                 cmdChiTiet.Parameters.AddWithValue("@DonGia", chiTiet.DonGia);
                                 cmdChiTiet.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
-                                cmdChiTiet.Parameters.AddWithValue("@TinhTrang", chiTiet.TrangThai);
+                                cmdChiTiet.Parameters.AddWithValue("@TinhTrang", false); // Đặt mặc định là false
                                 cmdChiTiet.ExecuteNonQuery();
                             }
                         }
@@ -161,6 +161,7 @@ namespace QLCF_DAL
                 }
             }
         }
+
         public List<HoaDonDTO> GetHoaDonByDate(DateTime date)
         {
             List<HoaDonDTO> hoaDons = new List<HoaDonDTO>();

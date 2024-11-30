@@ -76,6 +76,7 @@ namespace QLCF_GUI
             dgvLichTruc.Columns["TenNhanVien"].HeaderText = "Tên Nhân Viên";
             dgvLichTruc.Columns["NgayTruc"].HeaderText = "Ngày Trực";
             dgvLichTruc.Columns["TrangThai"].HeaderText = "Trạng Thái";
+            dgvLichTruc.Columns["IdLichTruc"].Visible = false;  
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -170,6 +171,14 @@ namespace QLCF_GUI
                 dTNgayTruc.Value = DateTime.Parse(row.Cells["NgayTruc"].Value.ToString());
                 cbo_TrangThai.SelectedItem = row.Cells["TrangThai"].Value.ToString();
             }
+        }
+
+        private void btn_chialichtruc_Click(object sender, EventArgs e)
+        {
+            LichTrucBLL bll = new LichTrucBLL();
+            bll.ChiaLichTrucNhanVien();
+            MessageBox.Show("Chia lịch trực tự động thành công!");
+            LoadDataGridView();
         }
     }
 }

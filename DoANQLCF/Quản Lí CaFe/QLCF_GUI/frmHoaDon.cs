@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLCF_GUI
 {
     public partial class frmHoaDon : Form
     {
+        public string nv;
         private List<ChiTietHDDTO> ListCTHoaDon;
         ChiTietHDBLL chiTietBLL =new ChiTietHDBLL();
         HoaDonBLL HoaDonbll =new HoaDonBLL();
@@ -22,10 +24,17 @@ namespace QLCF_GUI
         //    InitializeComponent();
         //    ListCTHoaDon = new List<ChiTietHDDTO>();
         //}
+        public frmHoaDon(List<ChiTietHDDTO> chiTietHoaDon, string username)
+        {
+            InitializeComponent();
+            this.ListCTHoaDon = chiTietHoaDon;
+            nv = username;
+        }
         public frmHoaDon(List<ChiTietHDDTO> chiTietHoaDon)
         {
             InitializeComponent();
             this.ListCTHoaDon = chiTietHoaDon;
+
         }
 
         private void frmHoaDon_Load(object sender, EventArgs e)
@@ -40,7 +49,7 @@ namespace QLCF_GUI
                 dgVHoaDon.Columns.Add("SoLuong", "Số Lượng");
                 dgVHoaDon.Columns.Add("DonGia", "Đơn Giá");
                 dgVHoaDon.Columns.Add("TongTien", "Thành Tiền");
-                dgVHoaDon.Columns.Add("TrangThai", "Trạng Thái");
+
             }
             if (ListCTHoaDon != null && ListCTHoaDon.Count > 0) 
             {
@@ -75,7 +84,7 @@ namespace QLCF_GUI
             {
                 IDHoaDon = idHoaDon,
                 NgayLap = DateTime.Now,
-                IDNhanVien = "NV001", // Bạn có thể thay đổi thông tin nhân viên tại đây
+                IDNhanVien = nv, 
                 TongTien = ListCTHoaDon.Sum(ct => ct.ThanhTien)
             };
 

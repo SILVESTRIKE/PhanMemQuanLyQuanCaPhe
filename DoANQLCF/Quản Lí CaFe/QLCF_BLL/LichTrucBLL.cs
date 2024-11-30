@@ -27,6 +27,10 @@ namespace QLCF_BLL
         {
             return dal.UpdateLichTruc(lichTruc);
         }
+        public bool ChiaLichTrucNhanVien()
+        {
+            return dal.ChiaLichTrucNhanVien();
+        }
 
     }
 }

@@ -75,7 +75,7 @@ namespace QLCF_GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            var allInvoices = hoaDonBLL.GetAllLichTruc();
+            var allInvoices = hoaDonBLL.GetALL();
             dgVThongKe.DataSource = allInvoices;
         }
     }

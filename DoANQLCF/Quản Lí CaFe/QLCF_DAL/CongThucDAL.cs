@@ -57,7 +57,7 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update CongThuc Set SoLuog = '" + congthuc.SoLuong + "' Where IDMon = '" + congthuc.IDMon + "' and IDNguyenLieu='"+congthuc.IDNguyenLieu+"'";
+            string sql = "update CongThuc Set SoLuong = '" + congthuc.SoLuong + "' Where IDMon = '" + congthuc.IDMon + "' and IDNguyenLieu='"+congthuc.IDNguyenLieu+"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();
@@ -70,19 +70,71 @@ namespace QLCF_DAL
             List<CongThucDTO> LstCongThuc = new List<CongThucDTO>();
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "Select * from CongThuc";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
+
+            string sql = @"
+        SELECT c.IDMon, m.TenMon, c.IDNguyenLieu, nl.TenNL, c.SoLuong, nl.DVTinh 
+        FROM CongThuc c
+        JOIN NguyenLieu nl ON c.IDNguyenLieu = nl.IDNguyenLieu
+        JOIN Mon m ON c.IDMon = m.IDMon";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                string idmon = rd[0].ToString();
-                string idnguyenlieu = rd[1].ToString();
-                decimal soluong = (decimal)rd[2];
-                CongThucDTO ct = new CongThucDTO(idmon, idnguyenlieu, soluong);
-                LstCongThuc.Add(ct);
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        CongThucDTO congThuc = new CongThucDTO
+                        {
+                            IDMon = rd["IDMon"].ToString(),
+                            TenMon = rd["TenMon"].ToString(),
+                            IDNguyenLieu = rd["IDNguyenLieu"].ToString(),
+                            TenNguyenLieu = rd["TenNL"].ToString(),
+                            SoLuong = Convert.ToDecimal(rd["SoLuong"]),
+                            DVTinh = rd["DVTinh"].ToString()
+                        };
+                        LstCongThuc.Add(congThuc);
+                    }
+                }
             }
             conn.Close();
             return LstCongThuc;
+        }
+
+        public List<CongThucDTO> GetCongThucByMon(string idMon)
+        {
+            List<CongThucDTO> congThucs = new List<CongThucDTO>();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+
+            string sql = @"
+                SELECT c.IDMon, m.TenMon, c.IDNguyenLieu, nl.TenNL, c.SoLuong, nl.DVTinh 
+                FROM CongThuc c
+                JOIN NguyenLieu nl ON c.IDNguyenLieu = nl.IDNguyenLieu
+                JOIN Mon m ON c.IDMon = m.IDMon
+                WHERE c.IDMon = @IDMon";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@IDMon", idMon);
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        CongThucDTO congThuc = new CongThucDTO
+                        {
+                            IDMon = rd["IDMon"].ToString(),
+                            TenMon = rd["TenMon"].ToString(),
+                            IDNguyenLieu = rd["IDNguyenLieu"].ToString(),
+                            TenNguyenLieu = rd["TenNL"].ToString(),
+                            SoLuong = Convert.ToDecimal(rd["SoLuong"]),
+                            DVTinh = rd["DVTinh"].ToString()
+                        };
+                        congThucs.Add(congThuc);
+                    }
+                }
+            }
+            conn.Close();
+            return congThucs;
         }
 
     }

@@ -49,6 +49,7 @@
     <Compile Include="CaTrucDTO.cs" />
     <Compile Include="ChiTietCaTrucDTO.cs" />
     <Compile Include="ChiTietHDDTO.cs" />
+    <Compile Include="ChiTietHD_CTDTO.cs" />
     <Compile Include="ChucVuDTO.cs" />
     <Compile Include="CongThucDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />

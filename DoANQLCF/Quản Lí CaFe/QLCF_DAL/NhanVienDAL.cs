@@ -65,7 +65,7 @@ namespace QLCF_DAL
                 + "', SDT = '" + nhanvien.SDT + "', GTinh = N'" + nhanvien.GTinh
                 + "', NgSinh = '" + nhanvien.NgSinh.ToString("yyyy-MM-dd")
                 + "', TrangThai = " + (nhanvien.TrangThai ? 1 : 0)
-                + ", IDQuanLy = '" + nhanvien.ChucVu
+                + ", ChucVu = '" + nhanvien.ChucVu
                 + "', Pass = '" + nhanvien.Pass
                 + "' where IDNhanVien = '" + nhanvien.IDNhanVien + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);

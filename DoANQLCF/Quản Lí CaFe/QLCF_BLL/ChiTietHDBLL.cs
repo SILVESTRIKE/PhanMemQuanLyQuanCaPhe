@@ -51,5 +51,14 @@ namespace QLCF_BLL
         {
             return cthdDAL.tenMon(idMon);
         }
+        public List<ChiTietHD_CTDTO> GetChiTietHDByHoaDonID(string idHoaDon)
+        {
+            return cthdDAL.GetChiTietHDByHoaDonID(idHoaDon);
+        }
+        public bool UpdateTrangThaiPhucVu(string idHoaDon, string idMon, bool trangThaiPhucVu)
+        {
+            return cthdDAL.UpdateTrangThaiPhucVu(idHoaDon, idMon, trangThaiPhucVu);
+        }
+
     }
 }

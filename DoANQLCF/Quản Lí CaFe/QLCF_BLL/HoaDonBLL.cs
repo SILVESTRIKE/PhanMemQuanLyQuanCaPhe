@@ -10,7 +10,7 @@ namespace QLCF_BLL
     public class HoaDonBLL
     {
         private HoaDonDAL HDDal = new HoaDonDAL();
-        public List<HoaDonDTO> GetAllLichTruc()
+        public List<HoaDonDTO> GetALL()
         {
             return HDDal.GetAll();
         }
@@ -18,11 +18,11 @@ namespace QLCF_BLL
         {
             return HDDal.Insert(hoaDon);
         }
-        public bool DeleteChiTietLichTruc(string idhoadon)
+        public bool DeleteChiTiethd(string idhoadon)
         {
             return HDDal.Delete(idhoadon);
         }
-        public bool UpdateLichTruc(HoaDonDTO hoaDon)
+        public bool UpdateHoaDon(HoaDonDTO hoaDon)
         {
             return HDDal.Edit(hoaDon);
         }

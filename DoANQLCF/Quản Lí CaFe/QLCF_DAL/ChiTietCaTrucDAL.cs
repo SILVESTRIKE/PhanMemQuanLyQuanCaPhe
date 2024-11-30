@@ -75,22 +75,6 @@ namespace QLCF_DAL
             conn.Close();
             return LstCTCT;
         }
-        public int DemSoMaLichTrongNgay(DateTime ngay)
-        {
-            int count = 0;
-
-            string query = "SELECT COUNT(*) FROM LICHTRUC WHERE CONVERT(DATE, NgayTruc) = @Ngay";
-            using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Ngay", ngay.Date);
-
-                    count = (int)cmd.ExecuteScalar();
-                }
-            }
-            return count;
-        }
+        
     }
 }

@@ -197,6 +197,7 @@
             this.btn_chialichtruc.TabIndex = 45;
             this.btn_chialichtruc.Text = "Chia lịch trực tự động";
             this.btn_chialichtruc.UseVisualStyleBackColor = true;
+            this.btn_chialichtruc.Click += new System.EventHandler(this.btn_chialichtruc_Click);
             // 
             // label5
             // 

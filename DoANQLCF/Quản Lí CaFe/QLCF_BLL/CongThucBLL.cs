@@ -31,5 +31,10 @@ namespace QLCF_BLL
         {
             return ctDAL.delete(ct);
         }
+        public List<CongThucDTO> GetCongThucByMon(string idMon)
+        {
+            return ctDAL.GetCongThucByMon(idMon);
+        }
+
     }
 }

@@ -119,9 +119,8 @@ namespace QLCF_GUI
             RefreshGridView();
             LoadTrangThaiComboBox();
             LoadChucVuComboBox();
-            //LoadIDQuanLiComboBox();
-            //Loadmaql();
-            //Bindings();
+            LoadsearchCombobox();
+            LoadGioitinh();
         }
 
 
@@ -181,7 +180,12 @@ namespace QLCF_GUI
             cboTrangThai.Items.AddRange(new string[] { "Hoạt động", "Nghỉ" });
             cboTrangThai.SelectedIndex = 0;
         }
-
+        private void LoadGioitinh()
+        {
+            cboGTinh.Items.Clear();
+            cboGTinh.Items.AddRange(new string[] { "Nam", "Nữ" });
+            cboGTinh.SelectedIndex = 0;
+        }
         private void RefreshGridView()
         {
             var danhSachNhanVien = nhanVienBLL.getALL();
@@ -215,6 +219,46 @@ namespace QLCF_GUI
 
             dgVNhanVien.DataSource = dtNV;
         }
+
+        private Dictionary<string, string> searchOptions = new Dictionary<string, string>();
+
+        private List<string> displayMembers = new List<string>
+        {
+            "Mã Nhân Viên",
+            "Họ và tên",
+            "Ngày Sinh",
+            "Giới tính",
+            "Chức vụ",
+            "Trạng thái"
+        };
+
+        private List<string> valueMembers = new List<string>
+        {
+            "IDNhanVien",
+            "Ten",
+            "NgSinh",
+            "GTinh",
+            "ChucVu",
+            "TrangThai"
+        };
+
+        public void LoadsearchCombobox()
+        {
+            var items = displayMembers.Zip(valueMembers, (display, value) => new
+            {
+                DisplayMember = display,
+                ValueMember = value
+            }).ToList();
+
+            cboSearch.DisplayMember = "DisplayMember";
+            cboSearch.ValueMember = "ValueMember";
+            cboSearch.DataSource = items;
+
+            cboSearch.SelectedIndexChanged += new EventHandler(cboSearch_SelectedIndexChanged);
+        }
+
+
+
 
 
 
@@ -280,5 +324,50 @@ namespace QLCF_GUI
                 cboChucVu.Text = row.Cells["ChucVu"].Value?.ToString() ?? "";
             }
         }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboSearch.SelectedItem == null) return;
+
+            // Lấy giá trị thực của mục được chọn trong ComboBox
+            var selectedColumn = (cboSearch.SelectedItem as dynamic).ValueMember;
+
+            // Lấy danh sách các giá trị duy nhất cho thuộc tính được chọn
+            DataTable dt = (dgVNhanVien.DataSource as DataTable);
+            var uniqueValues = dt.AsEnumerable()
+                                 .Select(row => row[selectedColumn].ToString())
+                                 .Distinct()
+                                 .ToList();
+
+            // Thiết lập datasource cho valueSearchComboBox
+            cboValueSearch.DataSource = uniqueValues;
+
+            // Xóa bộ lọc hiện tại
+            (dgVNhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+        }
+
+        
+
+        private void cboValueSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboValueSearch.SelectedItem == null) return;
+
+            // Lấy giá trị thực của mục được chọn trong cboSearch
+            var selectedColumn = (cboSearch.SelectedItem as dynamic).ValueMember;
+            // Lấy giá trị được chọn trong valueSearchComboBox
+            string filterValue = cboValueSearch.SelectedItem.ToString();
+
+            // Lọc DataGridView dựa trên giá trị tìm kiếm
+            (dgVNhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Format("{0} = '{1}'", selectedColumn, filterValue);
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            // Xóa tất cả các trường nhập và đặt lại bộ lọc của DataGridView
+            cboSearch.SelectedIndex = -1;
+            cboValueSearch.DataSource = null;
+            (dgVNhanVien.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+        }
+
     }
 }

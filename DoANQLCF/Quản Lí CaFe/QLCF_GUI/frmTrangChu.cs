@@ -15,12 +15,12 @@ namespace QLCF_GUI
     {
         private string username;
         private string password;
-        
+        NhanVienDTO _nv = new NhanVienDTO();
         public frmTrangChu(NhanVienDTO nv)
         {
 
             InitializeComponent();
-            OpenChildForm(new frmDatHang());
+            OpenChildForm(new frmDatHang(nv));
 
             this.username = nv.IDNhanVien;
 
@@ -29,6 +29,13 @@ namespace QLCF_GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             this.AutoScaleMode = AutoScaleMode.Dpi;
+            if (nv.ChucVu == "Nhân viên")
+            {
+                this.btnNhanVien.Enabled = false;
+                this.btnThongKe.Enabled = false;
+                this.btnKho.Enabled = false;
+            }
+            _nv = nv;
 
             //this.TopMost = true;
         }
@@ -77,7 +84,7 @@ namespace QLCF_GUI
 
             if (chiTietHoaDon.Count > 0)
             {
-                frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDon);
+                frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDon, _nv.IDNhanVien);
                 OpenChildForm(hoaDonForm);
             }
             else
@@ -126,5 +133,9 @@ namespace QLCF_GUI
 
         }
 
+        private void btnListDonHang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ListDonHang());
+        }
     }
 }
