@@ -27,10 +27,11 @@ namespace QLCF_BLL
         {
             return dal.UpdateLichTruc(lichTruc);
         }
-        public bool ChiaLichTrucNhanVien()
+        public List<LichTrucDTO> GetLichTrucByNhanVien(string idNhanVien)
         {
-            return dal.ChiaLichTrucNhanVien();
+            return dal.GetLichtrucByNV(idNhanVien);
         }
+
 
     }
 }

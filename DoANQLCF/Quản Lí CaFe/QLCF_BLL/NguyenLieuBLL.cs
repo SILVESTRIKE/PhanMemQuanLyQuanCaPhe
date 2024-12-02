@@ -30,5 +30,9 @@ namespace QLCF_BLL
         {
             return nglieuDAL.delete(nl);
         }
+        public void TruSoLuongNguyenLieu(string idNguyenLieu, decimal soLuongTru)
+        {
+            nglieuDAL.TruSoLuongNguyenLieu(idNguyenLieu, soLuongTru);
+        }
     }
 }

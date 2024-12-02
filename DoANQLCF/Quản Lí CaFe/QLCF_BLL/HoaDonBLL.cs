@@ -34,7 +34,7 @@ namespace QLCF_BLL
         {
             return HDDal.SaveHoaDon(hoaDon, chiTietList);
         }
-        public List<HoaDonDTO> GetHoaDonByDate(DateTime date)
+        public List<HoaDonDTO> GetHoaDonByDate(int date)
         {
             return HDDal.GetHoaDonByDate(date);
         }
@@ -44,7 +44,7 @@ namespace QLCF_BLL
             return HDDal.GetHoaDonByMonth(month, year);
         }
 
-        public decimal GetTotalRevenueByDate(DateTime date)
+        public decimal GetTotalRevenueByDate(int date)
         {
             return HDDal.GetTotalRevenueByDate(date);
         }
@@ -53,7 +53,7 @@ namespace QLCF_BLL
         {
             return HDDal.GetTotalRevenueByMonth(month, year);
         }
-        public int GetHoaDonCountByDate(DateTime date)
+        public int GetHoaDonCountByDate(int date)
         {
             return HDDal.GetInvoiceCountByDate(date);
         }

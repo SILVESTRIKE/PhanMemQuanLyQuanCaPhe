@@ -16,15 +16,19 @@ namespace QLCF_GUI
     {
         CaTrucBLL catruc = new CaTrucBLL();
         NhanVienBLL nhanvien = new NhanVienBLL();
-        
+
+
         public frmCaTruc()
         {
             InitializeComponent();
+            
+
             Loadcatruc();
             Loadnhanvien();
-            Loadtrangthai();    
-            LoadDataGridView(); 
+            Loadtrangthai();
+            LoadDataGridView();
             txt_IDLictruc.Text = string.Empty;
+
         }
 
         public void Loadcatruc()
@@ -175,10 +179,25 @@ namespace QLCF_GUI
 
         private void btn_chialichtruc_Click(object sender, EventArgs e)
         {
+            var nv = Session.CurrentUser;
+            string idnv = nv.IDNhanVien;
+
+            // Lấy danh sách lịch trực theo ID nhân viên
             LichTrucBLL bll = new LichTrucBLL();
-            bll.ChiaLichTrucNhanVien();
-            MessageBox.Show("Chia lịch trực tự động thành công!");
-            LoadDataGridView();
+            List<LichTrucDTO> list = bll.GetLichTrucByNhanVien(idnv);
+
+            // Cập nhật DataGridView
+            dgvLichTruc.DataSource = list;
+
+            // Thiết lập tên cột hiển thị (nếu cần)
+            dgvLichTruc.Columns["IdLichTruc"].HeaderText = "ID Lịch Trực";
+            dgvLichTruc.Columns["CaLam"].HeaderText = "Ca Làm";
+            dgvLichTruc.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên";
+            dgvLichTruc.Columns["TenNhanVien"].HeaderText = "Tên Nhân Viên";
+            dgvLichTruc.Columns["NgayTruc"].HeaderText = "Ngày Trực";
+            dgvLichTruc.Columns["TrangThai"].HeaderText = "Trạng Thái";
+            dgvLichTruc.Columns["IdLichTruc"].Visible = false;
         }
+
     }
 }

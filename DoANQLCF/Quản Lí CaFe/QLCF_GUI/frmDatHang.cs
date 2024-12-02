@@ -24,10 +24,11 @@ namespace QLCF_GUI
         MonBLL monBLL = new MonBLL();
         List<MonDTO> DSMON = new List<MonDTO>();
         NhanVienDTO _nv = new NhanVienDTO();
-        public frmDatHang(NhanVienDTO nv)
+        public frmDatHang()
         {
             InitializeComponent();
-            _nv = nv;
+            var nv = Session.CurrentUser;
+
         }
 
         private void frmDatHang_Load(object sender, EventArgs e)
@@ -214,7 +215,7 @@ namespace QLCF_GUI
 
             List<ChiTietHDDTO> chiTietHoaDonList = GetDataFromDataGridView(idHoaDon);
 
-            frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDonList, _nv.IDNhanVien);
+            frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDonList);
             //parentForm.OpenChildForm(hoaDonForm);
             hoaDonForm.ShowDialog();
 

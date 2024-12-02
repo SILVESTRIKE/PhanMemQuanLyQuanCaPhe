@@ -162,13 +162,13 @@ namespace QLCF_DAL
             }
         }
 
-        public List<HoaDonDTO> GetHoaDonByDate(DateTime date)
+        public List<HoaDonDTO> GetHoaDonByDate(int date)
         {
             List<HoaDonDTO> hoaDons = new List<HoaDonDTO>();
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
                 conn.Open();
-                string sql = "SELECT * FROM HoaDon WHERE CAST(NgayLap AS DATE) = @Date";
+                string sql = "SELECT * FROM HoaDon WHERE DAY(NgayLap) = @Date";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Date", date);
@@ -223,13 +223,13 @@ namespace QLCF_DAL
             return hoaDons;
         }
 
-        public decimal GetTotalRevenueByDate(DateTime date)
+        public decimal GetTotalRevenueByDate(int date)
         {
             decimal totalRevenue = 0;
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
                 conn.Open();
-                string sql = "SELECT SUM(TongTien) AS TotalRevenue FROM HoaDon WHERE CAST(NgayLap AS DATE) = @Date";
+                string sql = "SELECT SUM(TongTien) AS TotalRevenue FROM HoaDon WHERE DAY(NgayLap) = @Date";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Date", date);
@@ -263,13 +263,13 @@ namespace QLCF_DAL
             }
             return totalRevenue;
         }
-        public int GetInvoiceCountByDate(DateTime date)
+        public int GetInvoiceCountByDate(int date)
         {
             int invoiceCount = 0;
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
                 conn.Open();
-                string sql = "SELECT COUNT(*) FROM HoaDon WHERE CAST(NgayLap AS DATE) = @Date";
+                string sql = "SELECT COUNT(*) FROM HoaDon WHERE DAY(NgayLap) = @Date";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Date", date);

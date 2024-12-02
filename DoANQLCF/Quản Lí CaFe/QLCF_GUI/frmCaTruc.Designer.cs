@@ -195,7 +195,7 @@
             this.btn_chialichtruc.Name = "btn_chialichtruc";
             this.btn_chialichtruc.Size = new System.Drawing.Size(473, 59);
             this.btn_chialichtruc.TabIndex = 45;
-            this.btn_chialichtruc.Text = "Chia lịch trực tự động";
+            this.btn_chialichtruc.Text = "Xem lịch trực của mình";
             this.btn_chialichtruc.UseVisualStyleBackColor = true;
             this.btn_chialichtruc.Click += new System.EventHandler(this.btn_chialichtruc_Click);
             // 

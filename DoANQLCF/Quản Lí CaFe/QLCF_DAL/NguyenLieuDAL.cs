@@ -57,14 +57,21 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update NguyenLieu Set SLTon = '" + nl.SLTon+ "' Where IDNGuyenLieu = '" + nl.IDNguyenLieu+ "'";
+
+            // Cập nhật cả SLTon và TenNL
+            string sql = "update NguyenLieu Set SLTon = @SLTon, TenNL = @TenNL Where IDNguyenLieu = @IDNguyenLieu";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            int kq = (int)cmd.ExecuteNonQuery();
+
+            // Sử dụng các tham số để tránh SQL Injection
+            cmd.Parameters.AddWithValue("@SLTon", nl.SLTon);
+            cmd.Parameters.AddWithValue("@TenNL", nl.TenNL);
+            cmd.Parameters.AddWithValue("@IDNguyenLieu", nl.IDNguyenLieu);
+
+            int kq = cmd.ExecuteNonQuery();
             conn.Close();
-            if (kq > 0)
-                return true;
-            else return false;
+            return kq > 0;
         }
+
         public List<NguyenLieuDTO> getALL()
         {
             List<NguyenLieuDTO> LstNguyenLieu = new List<NguyenLieuDTO>();
@@ -100,6 +107,19 @@ namespace QLCF_DAL
             }
             conn.Close();
             return dvtList;
+        }
+        public void TruSoLuongNguyenLieu(string idNguyenLieu, decimal soLuongTru)
+        {
+            string query = "UPDATE NguyenLieu SET SLTon = SLTon - @SoLuongTru WHERE IDNguyenLieu = @IDNguyenLieu";
+
+            using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SoLuongTru", soLuongTru);
+                cmd.Parameters.AddWithValue("@IDNguyenLieu", idNguyenLieu);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

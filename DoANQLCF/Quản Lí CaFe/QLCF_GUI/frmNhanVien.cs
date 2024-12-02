@@ -12,10 +12,11 @@ namespace QLCF_GUI
     public partial class frmNhanVien : Form
     {
         private NhanVienBLL nhanVienBLL = new NhanVienBLL();
-
+        NhanVienDTO _nv = new NhanVienDTO();
         public frmNhanVien()
         {
             InitializeComponent();
+      
         }
 
         private bool ValidateInput()

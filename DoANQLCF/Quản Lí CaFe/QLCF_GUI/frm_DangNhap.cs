@@ -42,8 +42,9 @@ namespace QLCF_GUI
             {
 
                 MessageBox.Show("Đăng nhập thành công! Xin chào " + user.IDDN, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Session.CurrentUser = nv;
 
-                frmTrangChu mainForm = new frmTrangChu(nv);
+                frmTrangChu mainForm = new frmTrangChu();
                 this.Hide();
                 mainForm.Show(); // Hiển thị form chính
                 mainForm.FormClosed += (s, args) => Application.Exit();

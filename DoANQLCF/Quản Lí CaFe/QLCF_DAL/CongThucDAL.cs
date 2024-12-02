@@ -57,7 +57,7 @@ namespace QLCF_DAL
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string sql = "update CongThuc Set SoLuong = '" + congthuc.SoLuong + "' Where IDMon = '" + congthuc.IDMon + "' and IDNguyenLieu='"+congthuc.IDNguyenLieu+"'";
+            string sql = "update CongThuc Set SoLuong = '" + congthuc.SoLuong + "' and  Where IDMon = '" + congthuc.IDMon + "' and IDNguyenLieu='"+congthuc.IDNguyenLieu+"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int kq = (int)cmd.ExecuteNonQuery();
             conn.Close();

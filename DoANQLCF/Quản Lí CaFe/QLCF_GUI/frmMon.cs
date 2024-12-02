@@ -15,6 +15,8 @@ namespace QLCF_GUI
     public partial class frmMon : Form
     {
         MonBLL monBLL = new MonBLL();
+        NhanVienDTO _nv = new NhanVienDTO();
+
         private bool KT_DL()
         {
             if (txtmamon.Text == string.Empty)
@@ -39,6 +41,8 @@ namespace QLCF_GUI
         public frmMon()
         {
             InitializeComponent();
+            var nv = Session.CurrentUser;
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)

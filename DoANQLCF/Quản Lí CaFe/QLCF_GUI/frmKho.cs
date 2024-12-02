@@ -15,6 +15,8 @@ namespace QLCF_GUI
     public partial class frmKho : Form
     {
         NguyenLieuBLL nglieuBLL = new NguyenLieuBLL();
+        NhanVienDTO _nv = new NhanVienDTO();
+
 
         private bool KT_DL()
         {
@@ -43,6 +45,8 @@ namespace QLCF_GUI
         public frmKho()
         {
             InitializeComponent();
+            var nv = Session.CurrentUser;
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)

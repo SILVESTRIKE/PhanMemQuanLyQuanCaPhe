@@ -174,22 +174,56 @@ namespace QLCF_DAL
                 }
             }
         }
-
-        public bool ChiaLichTrucNhanVien()
+        public List<LichTrucDTO> GetLichtrucByNV(string idNhanVien)
         {
+            List<LichTrucDTO> list = new List<LichTrucDTO>();
+
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
                 conn.Open();
-                string query = "EXEC ChiaLichTruc";
+
+                // Thêm ORDER BY để sắp xếp theo thứ tự mong muốn
+                string query = @"
+                SELECT 
+                    lt.IDLichTruc, 
+                    ct.TenCa AS CaLam, 
+                    nv.IDNhanVien, 
+                    nv.Ten AS TenNhanVien, 
+                    lt.NgayTruc, 
+                    ctlt.TrangThai 
+                FROM ChiTietLichTruc ctlt
+                JOIN LichTruc lt ON ctlt.IDLichTruc = lt.IDLichTruc
+                JOIN NhanVien nv ON ctlt.IDNhanVien = nv.IDNhanVien
+                JOIN CaTruc ct ON lt.IDCa = ct.IDCa 
+                WHERE nv.IDNhanVien = '" + idNhanVien + "' ORDER BY lt.NgayTruc ASC, ct.TenCa ASC";
+
+
+
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    int result = cmd.ExecuteNonQuery();
-                    return result > 0;
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Đọc dữ liệu từ SQL và thêm vào danh sách
+                            LichTrucDTO lichTruc = new LichTrucDTO
+                            {
+                                IdLichTruc = reader.GetString(0),
+                                CaLam = reader.GetString(1),
+                                MaNhanVien = reader.GetString(2),
+                                TenNhanVien = reader.GetString(3),
+                                NgayTruc = reader.GetDateTime(4),
+                                TrangThai = reader.GetString(5)
+                            };
+                            list.Add(lichTruc);
+                        }
+                    }
                 }
             }
-        }
 
+            return list;
+        }
 
 
     }

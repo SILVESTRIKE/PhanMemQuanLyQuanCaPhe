@@ -180,7 +180,6 @@
             this.btnThongKeNgay.TabIndex = 14;
             this.btnThongKeNgay.Text = "Thống kê ngày";
             this.btnThongKeNgay.UseVisualStyleBackColor = false;
-            this.btnThongKeNgay.Click += new System.EventHandler(this.btnThongKeNgay_Click);
             // 
             // btnThongKeThang
             // 
@@ -194,7 +193,6 @@
             this.btnThongKeThang.TabIndex = 15;
             this.btnThongKeThang.Text = "Thống kê tháng";
             this.btnThongKeThang.UseVisualStyleBackColor = false;
-            this.btnThongKeThang.Click += new System.EventHandler(this.btnThongKeThang_Click);
             // 
             // frmThongKe
             // 

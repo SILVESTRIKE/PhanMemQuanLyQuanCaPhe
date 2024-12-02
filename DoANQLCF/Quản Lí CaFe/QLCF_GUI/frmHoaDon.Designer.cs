@@ -45,9 +45,10 @@
             this.btnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnThanhToan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThanhToan.Location = new System.Drawing.Point(1219, 547);
+            this.btnThanhToan.Location = new System.Drawing.Point(1260, 674);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(186, 45);
+            this.btnThanhToan.Size = new System.Drawing.Size(248, 55);
             this.btnThanhToan.TabIndex = 12;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
@@ -69,10 +70,9 @@
             this.lblTongTIen.BackColor = System.Drawing.Color.White;
             this.lblTongTIen.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTIen.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTIen.Location = new System.Drawing.Point(148, 555);
-            this.lblTongTIen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTongTIen.Location = new System.Drawing.Point(197, 683);
             this.lblTongTIen.Name = "lblTongTIen";
-            this.lblTongTIen.Size = new System.Drawing.Size(38, 29);
+            this.lblTongTIen.Size = new System.Drawing.Size(49, 37);
             this.lblTongTIen.TabIndex = 30;
             this.lblTongTIen.Text = "0đ";
             // 
@@ -81,10 +81,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(11, 555);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(15, 683);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 29);
+            this.label3.Size = new System.Drawing.Size(168, 37);
             this.label3.TabIndex = 31;
             this.label3.Text = "TỔNG TIỀN: ";
             // 
@@ -93,9 +92,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Location = new System.Drawing.Point(16, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 39);
+            this.label4.Size = new System.Drawing.Size(246, 49);
             this.label4.TabIndex = 32;
             this.label4.Text = "THANH TOÁN";
             // 
@@ -104,11 +104,12 @@
             this.dgVHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgVHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgVHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVHoaDon.Location = new System.Drawing.Point(16, 99);
+            this.dgVHoaDon.Location = new System.Drawing.Point(21, 122);
+            this.dgVHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.dgVHoaDon.Name = "dgVHoaDon";
             this.dgVHoaDon.RowHeadersWidth = 51;
             this.dgVHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVHoaDon.Size = new System.Drawing.Size(1389, 442);
+            this.dgVHoaDon.Size = new System.Drawing.Size(1665, 544);
             this.dgVHoaDon.TabIndex = 33;
             // 
             // lblNgay
@@ -116,24 +117,26 @@
             this.lblNgay.AutoSize = true;
             this.lblNgay.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNgay.Location = new System.Drawing.Point(15, 59);
+            this.lblNgay.Location = new System.Drawing.Point(20, 73);
+            this.lblNgay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNgay.Name = "lblNgay";
-            this.lblNgay.Size = new System.Drawing.Size(85, 23);
+            this.lblNgay.Size = new System.Drawing.Size(110, 29);
             this.lblNgay.TabIndex = 34;
             this.lblNgay.Text = "Ngày lập: ";
             // 
             // frmHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1417, 600);
+            this.ClientSize = new System.Drawing.Size(1889, 738);
             this.Controls.Add(this.lblNgay);
             this.Controls.Add(this.dgVHoaDon);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTongTIen);
             this.Controls.Add(this.btnThanhToan);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";

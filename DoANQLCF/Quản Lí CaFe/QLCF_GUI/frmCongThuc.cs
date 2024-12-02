@@ -17,6 +17,8 @@ namespace QLCF_GUI
         CongThucBLL CongThucBLL = new CongThucBLL();
         MonBLL MonBLL = new MonBLL();
         NguyenLieuBLL NgLieuBLL = new NguyenLieuBLL();
+        NhanVienDTO _nv = new NhanVienDTO();
+
 
         private bool KT_DL()
         {
@@ -42,6 +44,8 @@ namespace QLCF_GUI
         public frmCongThuc()
         {
             InitializeComponent();
+            var nv = Session.CurrentUser;
+
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

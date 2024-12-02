@@ -15,25 +15,22 @@ namespace QLCF_GUI
 {
     public partial class frmHoaDon : Form
     {
-        public string nv;
+        
         private List<ChiTietHDDTO> ListCTHoaDon;
         ChiTietHDBLL chiTietBLL =new ChiTietHDBLL();
         HoaDonBLL HoaDonbll =new HoaDonBLL();
+        CongThucBLL congThucBLL = new CongThucBLL();
+        NguyenLieuBLL nguyenLieuBLL = new NguyenLieuBLL();
         //public frmHoaDon()
         //{
         //    InitializeComponent();
         //    ListCTHoaDon = new List<ChiTietHDDTO>();
         //}
-        public frmHoaDon(List<ChiTietHDDTO> chiTietHoaDon, string username)
-        {
-            InitializeComponent();
-            this.ListCTHoaDon = chiTietHoaDon;
-            nv = username;
-        }
         public frmHoaDon(List<ChiTietHDDTO> chiTietHoaDon)
         {
             InitializeComponent();
             this.ListCTHoaDon = chiTietHoaDon;
+            
 
         }
 
@@ -74,17 +71,19 @@ namespace QLCF_GUI
             {
                 MessageBox.Show("Không có đơn hàng để thanh toán.");
             }
+            
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            var nv = Session.CurrentUser;
             // Tạo hóa đơn mới
             string idHoaDon = HoaDonbll.IDHoaDon();
             HoaDonDTO hoaDon = new HoaDonDTO
             {
                 IDHoaDon = idHoaDon,
                 NgayLap = DateTime.Now,
-                IDNhanVien = nv, 
+                IDNhanVien = nv.IDNhanVien, 
                 TongTien = ListCTHoaDon.Sum(ct => ct.ThanhTien)
             };
 
@@ -92,12 +91,25 @@ namespace QLCF_GUI
             foreach (var chiTiet in ListCTHoaDon)
             {
                 chiTiet.IDHoaDon = idHoaDon;
+
+                // Lấy danh sách nguyên liệu cần thiết để làm món này
+                List<CongThucDTO> congThucList = congThucBLL.GetCongThucByMon(chiTiet.IDMon);
+
+                foreach (var congThuc in congThucList)
+                {
+                    // Tính toán số lượng nguyên liệu cần thiết
+                    decimal soLuongNguyenLieuCan = chiTiet.SoLuong * congThuc.SoLuong;
+
+                    // Trừ số lượng nguyên liệu từ kho
+                    nguyenLieuBLL.TruSoLuongNguyenLieu(congThuc.IDNguyenLieu, soLuongNguyenLieuCan);
+                }
             }
 
             // Lưu hóa đơn và chi tiết hóa đơn xuống cơ sở dữ liệu
             HoaDonbll.SaveHoaDon(hoaDon, ListCTHoaDon);
             MessageBox.Show("Thanh toán thành công!");
-
+            BieuMauThanhToan bieu = new BieuMauThanhToan(hoaDon);
+            bieu.Show();
             this.Close();
 
         }

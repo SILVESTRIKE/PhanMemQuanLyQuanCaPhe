@@ -15,12 +15,15 @@ namespace QLCF_GUI
     {
         private string username;
         private string password;
-        NhanVienDTO _nv = new NhanVienDTO();
-        public frmTrangChu(NhanVienDTO nv)
+        public NhanVienDTO _nv = new NhanVienDTO();
+        public frmTrangChu()
         {
 
             InitializeComponent();
-            OpenChildForm(new frmDatHang(nv));
+            var nv = Session.CurrentUser;
+            OpenChildForm(new frmDatHang());
+            
+
 
             this.username = nv.IDNhanVien;
 
@@ -35,7 +38,7 @@ namespace QLCF_GUI
                 this.btnThongKe.Enabled = false;
                 this.btnKho.Enabled = false;
             }
-            _nv = nv;
+            
 
             //this.TopMost = true;
         }
@@ -84,7 +87,7 @@ namespace QLCF_GUI
 
             if (chiTietHoaDon.Count > 0)
             {
-                frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDon, _nv.IDNhanVien);
+                frmHoaDon hoaDonForm = new frmHoaDon(chiTietHoaDon);
                 OpenChildForm(hoaDonForm);
             }
             else

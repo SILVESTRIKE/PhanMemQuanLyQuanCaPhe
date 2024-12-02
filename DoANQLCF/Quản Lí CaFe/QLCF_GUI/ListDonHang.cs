@@ -14,13 +14,16 @@ namespace QLCF_GUI
 {
     public partial class ListDonHang : Form
     {
+        NhanVienDTO _nv = new NhanVienDTO();
+
         public ListDonHang()
         {
             InitializeComponent();
             LoadDataGridViewHoaDon();
+
         }
 
-        
+
         private HoaDonBLL hoaDonBLL = new HoaDonBLL();
         private ChiTietHDBLL chiTietHDBLL = new ChiTietHDBLL();
         private CongThucBLL congThucBLL = new CongThucBLL(); 

@@ -35,6 +35,8 @@ namespace QLCF_BLL
         {
             return ctDAL.GetCongThucByMon(idMon);
         }
+        
+
 
     }
 }
