@@ -21,6 +21,14 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             LoadComboBoxDMY();
+            dgVThongKe.ReadOnly = true;
+            dgVThongKe.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVThongKe.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVThongKe.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVThongKe.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVThongKe.GridColor = Color.White;
 
         }
 

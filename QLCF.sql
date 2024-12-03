@@ -15,7 +15,7 @@ CREATE TABLE Mon (
 CREATE TABLE NguyenLieu (
     IDNguyenLieu CHAR(10) PRIMARY KEY,
     TenNL NVARCHAR(100),
-    SLTon INT,
+    SLTon DECIMAL(10,2),
 	DVTinh NVARCHAR(10)
 );
 
@@ -58,7 +58,7 @@ CREATE TABLE HoaDon (
 CREATE TABLE ChiTietHD (
     IDHoaDon CHAR(16),              -- Khóa ngoại từ bảng HoaDon
     IDMon CHAR(10),                 -- Khóa ngoại từ bảng Mon
-    SoLuong INT,                    -- Số lượng món
+    SoLuong DECIMAL(10,2),                    -- Số lượng món
     DonGia DECIMAL(10, 2),          -- Đơn giá của món
 	ThanhTien DECIMAL(10,2),
 	TinhTrang_PhucVu BIT            -- Xem món ăn đã được phục vụ hay chưa
@@ -182,7 +182,8 @@ INSERT INTO CaTruc Values
 ('CH', N'Ca Chiều'),
 ('TO', N'Ca Tối');
 Go
-CREATE PROCEDURE ChiaLichTruc
+
+CREATE PROC ChiaLichTruc
 AS
 BEGIN
     DECLARE @Ngay DATE;

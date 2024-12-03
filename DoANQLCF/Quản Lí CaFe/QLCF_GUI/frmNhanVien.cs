@@ -3,6 +3,7 @@ using QLCF_DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -16,7 +17,15 @@ namespace QLCF_GUI
         public frmNhanVien()
         {
             InitializeComponent();
-      
+            dgVNhanVien.ReadOnly= true;
+            dgVNhanVien.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVNhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVNhanVien.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVNhanVien.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVNhanVien.GridColor = Color.White;
+
         }
 
         private bool ValidateInput()
@@ -139,31 +148,7 @@ namespace QLCF_GUI
             cboGTinh.DataBindings.Clear();
             cboGTinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "GTinh");
 
-            //cboTrangThai.DataBindings.Clear();
-            //Binding trangThaiBinding = new Binding("Text", dgVNhanVien.DataSource, "TrangThai");
 
-            //trangThaiBinding.Format += (sender, e) =>
-            //{
-            //    e.Value = (e.Value.ToString() == true) ? Hoat : false;
-            //};
-            //cboTrangThai.DataBindings.Add(trangThaiBinding);
-
-            ////cboChucVu.DataBindings.Clear();
-            ////Binding chucVuBinding = new Binding("Text", dgVNhanVien.DataSource, "IDQuanLy");
-
-            ////chucVuBinding.Format += (sender, e) =>
-            ////{
-            ////    var row = ((DataRowView)e.Value).Row;
-            ////    int idQuanLy = Convert.ToInt32(row["IDQuanLy"]);
-            ////    int idNhanVien = Convert.ToInt32(row["IDNhanVien"]);
-
-            ////    e.Value = (idQuanLy == idNhanVien) ? "Quản lý" : "Nhân viên";
-            ////};
-
-            ////cboChucVu.DataBindings.Add(chucVuBinding);
-
-            //cboIDQuanLi.DataBindings.Clear();
-            //cboIDQuanLi.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDQuanLy");
             txtPass.DataBindings.Clear();
             txtPass.DataBindings.Add("Text", dgVNhanVien.DataSource, "Pass");
         }
@@ -199,7 +184,6 @@ namespace QLCF_GUI
             dtNV.Columns.Add("NgSinh");
             dtNV.Columns.Add("TrangThai");
             dtNV.Columns.Add("ChucVu");
-            dtNV.Columns.Add("Pass");
 
             foreach (var nhanVien in danhSachNhanVien)
             {
@@ -213,8 +197,7 @@ namespace QLCF_GUI
                     nhanVien.GTinh,
                     nhanVien.NgSinh.ToString("yyyy-MM-dd"),
                     trangThaiText,
-                    nhanVien.ChucVu,
-                    nhanVien.Pass
+                    nhanVien.ChucVu
                 );
             }
 

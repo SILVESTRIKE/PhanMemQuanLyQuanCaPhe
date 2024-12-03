@@ -58,11 +58,9 @@ namespace QLCF_DAL
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
 
-            // Cập nhật cả SLTon và TenNL
             string sql = "update NguyenLieu Set SLTon = @SLTon, TenNL = @TenNL Where IDNguyenLieu = @IDNguyenLieu";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            // Sử dụng các tham số để tránh SQL Injection
             cmd.Parameters.AddWithValue("@SLTon", nl.SLTon);
             cmd.Parameters.AddWithValue("@TenNL", nl.TenNL);
             cmd.Parameters.AddWithValue("@IDNguyenLieu", nl.IDNguyenLieu);
@@ -84,7 +82,7 @@ namespace QLCF_DAL
             {
                 string idnl = rd[0].ToString();
                 string tennl = rd[1].ToString();
-                int slton = (int)rd[2];
+                decimal slton = (decimal)rd[2];
                 string dvtinh = rd[3].ToString();
 
                 NguyenLieuDTO nl = new NguyenLieuDTO(idnl, tennl, slton, dvtinh);

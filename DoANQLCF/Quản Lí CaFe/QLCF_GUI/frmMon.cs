@@ -42,6 +42,14 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             var nv = Session.CurrentUser;
+            dgVMon.ReadOnly = true;
+            dgVMon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVMon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVMon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVMon.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVMon.GridColor = Color.White;
 
         }
 

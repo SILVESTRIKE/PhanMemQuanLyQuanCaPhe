@@ -21,14 +21,23 @@ namespace QLCF_GUI
         public frmCaTruc()
         {
             InitializeComponent();
-            
 
+            dgvLichTruc.ReadOnly = true;
             Loadcatruc();
             Loadnhanvien();
             Loadtrangthai();
             LoadDataGridView();
             txt_IDLictruc.Text = string.Empty;
 
+            dgvLichTruc.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgvLichTruc.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgvLichTruc.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgvLichTruc.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvLichTruc.GridColor = Color.White;
+
+            
         }
 
         public void Loadcatruc()
@@ -50,21 +59,7 @@ namespace QLCF_GUI
             list.Add("Nghỉ làm");
             cbo_TrangThai.DataSource = list;
         }
-        private void dTNgayTruc_ValueChanged(object sender, EventArgs e)
-        {
-            string ma = "LT";
-            string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
-            string ca = cboTenCa.SelectedValue.ToString();
-            txt_IDLictruc.Text = ma + ddmmyy + ca;
-        }
-
-        private void cboTenCa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string ma = "LT";
-            string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
-            string ca = cboTenCa.SelectedValue.ToString();
-            txt_IDLictruc.Text = ma + ddmmyy + ca;
-        }
+        
 
         private void LoadDataGridView()
         {
@@ -81,6 +76,10 @@ namespace QLCF_GUI
             dgvLichTruc.Columns["NgayTruc"].HeaderText = "Ngày Trực";
             dgvLichTruc.Columns["TrangThai"].HeaderText = "Trạng Thái";
             dgvLichTruc.Columns["IdLichTruc"].Visible = false;  
+            if (dgvLichTruc.SelectedRows == null)
+            {
+                txt_IDLictruc.Text = string.Empty;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -108,23 +107,50 @@ namespace QLCF_GUI
                 MessageBox.Show("Thêm thất bại!");
             }
         }
+        private void dTNgayTruc_ValueChanged(object sender, EventArgs e)
+        {
+            // Chỉ tạo ID mới khi thêm lịch trực mới, không áp dụng khi chỉnh sửa
+            if (string.IsNullOrEmpty(txt_IDLictruc.Text))
+            {
+                string ma = "LT";
+                string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
+                string ca = cboTenCa.SelectedValue.ToString();
+                string nv = cboIDNhanVien.SelectedValue.ToString();
+                txt_IDLictruc.Text = ma + ddmmyy + ca;
+            }
+        }
+
+        private void cboTenCa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_IDLictruc.Text))
+            {
+                string ma = "LT";
+                string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
+                string ca = cboTenCa.SelectedValue.ToString();
+                string nv = cboIDNhanVien.SelectedValue.ToString();
+                txt_IDLictruc.Text = ma + ddmmyy + ca;
+            }
+        }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             if (dgvLichTruc.CurrentRow != null)
             {
+                string oldIDLichTruc = dgvLichTruc.CurrentRow.Cells["IdLichTruc"].Value.ToString();
+
+                string newIDLichTruc = "LT" + dTNgayTruc.Value.ToString("ddMMyy") + cboTenCa.SelectedValue.ToString() + cboIDNhanVien.SelectedValue.ToString();
+
                 LichTrucDTO lichTruc = new LichTrucDTO
                 {
-                    IdLichTruc = dgvLichTruc.CurrentRow.Cells["IdLichTruc"].Value.ToString(),
+                    IdLichTruc = oldIDLichTruc, // ID cũ
                     CaLam = cboTenCa.SelectedValue.ToString(),
                     MaNhanVien = cboIDNhanVien.SelectedValue.ToString(),
-                    TenNhanVien = cboIDNhanVien.SelectedText.ToString(),
                     NgayTruc = dTNgayTruc.Value,
                     TrangThai = cbo_TrangThai.SelectedValue.ToString()
                 };
 
                 LichTrucBLL bll = new LichTrucBLL();
-                bool isUpdated = bll.UpdateLichTruc(lichTruc);
+                bool isUpdated = bll.UpdateLichTruc(lichTruc, newIDLichTruc);
 
                 if (isUpdated)
                 {
@@ -137,6 +163,8 @@ namespace QLCF_GUI
                 }
             }
         }
+
+
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
@@ -174,6 +202,10 @@ namespace QLCF_GUI
                 cboIDNhanVien.Text = row.Cells["TenNhanVien"].Value.ToString();
                 dTNgayTruc.Value = DateTime.Parse(row.Cells["NgayTruc"].Value.ToString());
                 cbo_TrangThai.SelectedItem = row.Cells["TrangThai"].Value.ToString();
+            }
+            else if (e.RowIndex == -1)
+            {
+                dgvLichTruc.ClearSelection();
             }
         }
 

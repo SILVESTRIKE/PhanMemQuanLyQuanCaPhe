@@ -20,6 +20,29 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             LoadDataGridViewHoaDon();
+            dgvChiTietHoaDon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgvChiTietHoaDon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgvChiTietHoaDon.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvChiTietHoaDon.GridColor = Color.White;
+
+            dgVListHoaDon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVListHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVListHoaDon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVListHoaDon.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVListHoaDon.GridColor = Color.White;
+
+            dgvCT.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgvCT.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgvCT.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgvCT.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvCT.GridColor = Color.White;
 
         }
 

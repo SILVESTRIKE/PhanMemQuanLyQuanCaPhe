@@ -46,6 +46,14 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             var nv = Session.CurrentUser;
+            dgVNguyenLieu.ReadOnly = true;
+            dgVNguyenLieu.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
+            dgVNguyenLieu.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVNguyenLieu.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
+
+            // Loại bỏ đường kẻ
+            dgVNguyenLieu.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgVNguyenLieu.GridColor = Color.White;
 
         }
 
@@ -53,9 +61,9 @@ namespace QLCF_GUI
         {
             if (KT_DL())
             {
-                string idNguyenLieu = txtMaNL.Text;
+                string idNguyenLieu = "NL" + (dgVNguyenLieu.RowCount + 1).ToString("D3");
                 string tenNguyenLieu = txtTen.Text;
-                int slTon = int.Parse(cboTon.Text);
+                decimal slTon = decimal.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);
@@ -77,9 +85,11 @@ namespace QLCF_GUI
         {
             if (KT_DL())
             {
-                string idNguyenLieu = txtMaNL.Text;
+                DataGridViewRow selectedRow = dgVNguyenLieu.SelectedRows[0];
+
+                string idNguyenLieu = selectedRow.Cells[0].Value.ToString();
                 string tenNguyenLieu = txtTen.Text;
-                int slTon = int.Parse(cboTon.Text);
+                decimal slTon = decimal.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);
@@ -150,8 +160,7 @@ namespace QLCF_GUI
             Load_Grv();
             Bindings();
             LoadComboBoxDVT();
-            cboTon.Minimum = 0;
-            cboTon.Maximum = 300;
+
         }
 
         private void dgVNguyenLieu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -165,7 +174,7 @@ namespace QLCF_GUI
                 // Cập nhật các TextBox và ComboBox với dữ liệu từ hàng được chọn
                 txtMaNL.Text = row.Cells["IDNguyenLieu"].Value.ToString();
                 txtTen.Text = row.Cells["TenNL"].Value.ToString();
-                cboTon.Value = Convert.ToDecimal(row.Cells["SLTon"].Value);
+                cboTon.Text = row.Cells["SLTon"].Value.ToString();
                 cboDVT.Text = row.Cells["DVTinh"].Value.ToString();
             }
         }

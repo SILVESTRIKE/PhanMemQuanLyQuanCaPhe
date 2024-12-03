@@ -29,7 +29,7 @@ namespace QLCF_GUI
 
             lblRole.Text = "Chào mừng " + nv.Ten + " quay trở lại!";
             this.password = nv.Pass;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             this.AutoScaleMode = AutoScaleMode.Dpi;
             if (nv.ChucVu == "Nhân viên")
@@ -104,7 +104,6 @@ namespace QLCF_GUI
         private void btnKho_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmKho());
-
         }
 
         private void btnCaTruc_Click(object sender, EventArgs e)

@@ -124,12 +124,6 @@
     <Compile Include="frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="HoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,10 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>HoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

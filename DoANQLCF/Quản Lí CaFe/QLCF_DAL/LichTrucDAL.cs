@@ -146,34 +146,73 @@ namespace QLCF_DAL
             }
         }
 
-        public bool UpdateLichTruc(LichTrucDTO lichTruc)
+        public bool UpdateLichTruc(LichTrucDTO lichTruc, string newIDLichTruc)
         {
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
                 conn.Open();
-                string query = @"
-            UPDATE LichTruc 
-            SET IDCa = @IDCa, NgayTruc = @NgayTruc
-            WHERE IDLichTruc = @IDLichTruc;
+                SqlTransaction transaction = conn.BeginTransaction();
 
-            UPDATE ChiTietLichTruc 
-            SET IDNhanVien = @IDNhanVien, TrangThai = @TrangThai
-            WHERE IDLichTruc = @IDLichTruc;
-        ";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@IDCa", lichTruc.CaLam);
-                    cmd.Parameters.AddWithValue("@NgayTruc", lichTruc.NgayTruc);
-                    cmd.Parameters.AddWithValue("@IDNhanVien", lichTruc.MaNhanVien);
-                    cmd.Parameters.AddWithValue("@TrangThai", lichTruc.TrangThai);
-                    cmd.Parameters.AddWithValue("@IDLichTruc", lichTruc.IdLichTruc);
+                    // Thêm LichTruc mới với ID mới
+                    string insertNewLichTrucQuery = @"
+                INSERT INTO LichTruc (IDLichTruc, NgayTruc, IDCa)
+                VALUES (@NewIDLichTruc, @NgayTruc, @IDCa);
+            ";
 
-                    int result = cmd.ExecuteNonQuery();
-                    return result > 0;
+                    using (SqlCommand cmd = new SqlCommand(insertNewLichTrucQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@NewIDLichTruc", newIDLichTruc);
+                        cmd.Parameters.AddWithValue("@NgayTruc", lichTruc.NgayTruc);
+                        cmd.Parameters.AddWithValue("@IDCa", lichTruc.CaLam);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Cập nhật ChiTietLichTruc để trỏ đến ID mới
+                    string updateChiTietQuery = @"
+                UPDATE ChiTietLichTruc
+                SET IDLichTruc = @NewIDLichTruc
+                WHERE IDLichTruc = @OldIDLichTruc AND IDNhanVien = @IDNhanVien;
+            ";
+
+                    using (SqlCommand cmd = new SqlCommand(updateChiTietQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@NewIDLichTruc", newIDLichTruc);
+                        cmd.Parameters.AddWithValue("@OldIDLichTruc", lichTruc.IdLichTruc);
+                        cmd.Parameters.AddWithValue("@IDNhanVien", lichTruc.MaNhanVien);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Xóa LichTruc cũ nếu không còn liên kết
+                    string deleteOldLichTrucQuery = @"
+                DELETE FROM LichTruc
+                WHERE IDLichTruc = @OldIDLichTruc
+                AND NOT EXISTS (SELECT 1 FROM ChiTietLichTruc WHERE IDLichTruc = @OldIDLichTruc);
+            ";
+
+                    using (SqlCommand cmd = new SqlCommand(deleteOldLichTrucQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@OldIDLichTruc", lichTruc.IdLichTruc);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    return false;
                 }
             }
         }
+
+
+
         public List<LichTrucDTO> GetLichtrucByNV(string idNhanVien)
         {
             List<LichTrucDTO> list = new List<LichTrucDTO>();

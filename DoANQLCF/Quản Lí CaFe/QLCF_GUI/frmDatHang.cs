@@ -28,7 +28,7 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             var nv = Session.CurrentUser;
-
+            dgVMon.ReadOnly = true;
         }
 
         private void frmDatHang_Load(object sender, EventArgs e)
@@ -41,7 +41,8 @@ namespace QLCF_GUI
             // Loại bỏ đường kẻ
             dgVMon.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgVMon.GridColor = Color.White;
-            //lstMon.DataSource = null; 
+
+            lstMon.Font = new Font("Arial", 16);
 
             lstMon.DataSource = monBLL.GetAllMon();
             lstMon.DisplayMember = "TenMon";
