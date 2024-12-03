@@ -234,5 +234,10 @@ namespace QLCF_GUI
         {
 
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            dgVMon.Rows.RemoveAt(dgVMon.SelectedRows[0].Index);
+        }
     }
 }

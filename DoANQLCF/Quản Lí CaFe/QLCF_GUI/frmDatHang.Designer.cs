@@ -116,6 +116,7 @@
             this.btnXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnXoa.TabIndex = 26;
             this.btnXoa.TabStop = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -146,7 +147,7 @@
             // 
             this.txtGhiChu.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(1149, 242);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(249, 291);
@@ -158,7 +159,7 @@
             this.dgVMon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgVMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVMon.Location = new System.Drawing.Point(25, 105);
-            this.dgVMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVMon.Margin = new System.Windows.Forms.Padding(4);
             this.dgVMon.Name = "dgVMon";
             this.dgVMon.ReadOnly = true;
             this.dgVMon.RowHeadersWidth = 51;
@@ -173,7 +174,7 @@
             this.btnThanhToan.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThanhToan.Location = new System.Drawing.Point(1149, 550);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(249, 55);
             this.btnThanhToan.TabIndex = 28;
@@ -314,7 +315,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgVMon);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDatHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E";

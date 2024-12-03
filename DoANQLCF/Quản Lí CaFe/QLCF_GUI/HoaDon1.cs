@@ -16,14 +16,14 @@ namespace QLCF_GUI {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class HoaDon : ReportClass {
+    public class HoaDon1 : ReportClass {
         
-        public HoaDon() {
+        public HoaDon1() {
         }
         
         public override string ResourceName {
             get {
-                return "HoaDon.rpt";
+                return "HoaDon1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace QLCF_GUI {
         
         public override string FullResourceName {
             get {
-                return "QLCF_GUI.HoaDon.rpt";
+                return "QLCF_GUI.HoaDon1.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace QLCF_GUI {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedHoaDon : Component, ICachedReport {
+    public class CachedHoaDon1 : Component, ICachedReport {
         
-        public CachedHoaDon() {
+        public CachedHoaDon1() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace QLCF_GUI {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            HoaDon rpt = new HoaDon();
+            HoaDon1 rpt = new HoaDon1();
             rpt.Site = this.Site;
             return rpt;
         }

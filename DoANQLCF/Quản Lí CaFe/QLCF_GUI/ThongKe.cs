@@ -16,14 +16,14 @@ namespace QLCF_GUI {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class HoaDon : ReportClass {
+    public class ThongKe : ReportClass {
         
-        public HoaDon() {
+        public ThongKe() {
         }
         
         public override string ResourceName {
             get {
-                return "HoaDon.rpt";
+                return "ThongKe.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace QLCF_GUI {
         
         public override string FullResourceName {
             get {
-                return "QLCF_GUI.HoaDon.rpt";
+                return "QLCF_GUI.ThongKe.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace QLCF_GUI {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace QLCF_GUI {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,41 +82,17 @@ namespace QLCF_GUI {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_IDHoaDon {
-            get {
-                return this.DataDefinition.ParameterFields[0];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedHoaDon : Component, ICachedReport {
+    public class CachedThongKe : Component, ICachedReport {
         
-        public CachedHoaDon() {
+        public CachedThongKe() {
         }
         
         [Browsable(false)]
@@ -153,7 +129,7 @@ namespace QLCF_GUI {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            HoaDon rpt = new HoaDon();
+            ThongKe rpt = new ThongKe();
             rpt.Site = this.Site;
             return rpt;
         }
