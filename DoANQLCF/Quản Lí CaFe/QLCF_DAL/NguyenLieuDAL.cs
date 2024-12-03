@@ -82,7 +82,7 @@ namespace QLCF_DAL
             {
                 string idnl = rd[0].ToString();
                 string tennl = rd[1].ToString();
-                double slton = (double)rd[2];
+                double slton = Convert.ToDouble(rd[2]);
                 string dvtinh = rd[3].ToString();
 
                 NguyenLieuDTO nl = new NguyenLieuDTO(idnl, tennl, slton, dvtinh);
