@@ -63,7 +63,7 @@ namespace QLCF_GUI
             {
                 string idNguyenLieu = "NL" + (dgVNguyenLieu.RowCount + 1).ToString("D3");
                 string tenNguyenLieu = txtTen.Text;
-                decimal slTon = decimal.Parse(cboTon.Text);
+                double slTon = double.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);
@@ -89,7 +89,7 @@ namespace QLCF_GUI
 
                 string idNguyenLieu = selectedRow.Cells[0].Value.ToString();
                 string tenNguyenLieu = txtTen.Text;
-                decimal slTon = decimal.Parse(cboTon.Text);
+                double slTon = double.Parse(cboTon.Text);
                 string dvTinh = cboDVT.Text;
 
                 NguyenLieuDTO nguyenLieu = new NguyenLieuDTO(idNguyenLieu, tenNguyenLieu, slTon, dvTinh);

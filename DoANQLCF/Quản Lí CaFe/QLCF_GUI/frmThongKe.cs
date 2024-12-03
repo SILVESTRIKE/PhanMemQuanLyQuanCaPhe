@@ -32,20 +32,6 @@ namespace QLCF_GUI
 
         }
 
-        private void btnThongKeNgay_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-
-        private void btnThongKeThang_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-
         private void frmThongKe_Load(object sender, EventArgs e)
         {
             // Cài đặt DataGridView ban đầu
@@ -110,6 +96,12 @@ namespace QLCF_GUI
                 "Ngày", "Tháng", "Năm"
             };
             cboNgayThangNam.DataSource = list;
+        }
+
+        private void btnThongkeDoanhSoNhanVien_Click(object sender, EventArgs e)
+        {
+            BieumauThongke a = new BieumauThongke();
+            a.Show();
         }
     }
 }

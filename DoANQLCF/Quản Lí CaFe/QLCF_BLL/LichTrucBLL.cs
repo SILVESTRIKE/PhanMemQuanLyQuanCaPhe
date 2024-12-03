@@ -23,10 +23,10 @@ namespace QLCF_BLL
         {
             return dal.DeleteChiTietLichTruc(idLichTruc, idNhanVien);
         }
-        public bool UpdateLichTruc(LichTrucDTO lichTruc, string newIDLichTruc)
+        public bool UpdateLichTruc(string idLichTruc, string newStatus, string manv)
         {
             LichTrucDAL dal = new LichTrucDAL();
-            return dal.UpdateLichTruc(lichTruc, newIDLichTruc);
+            return dal.UpdateLichTruc(idLichTruc, newStatus, manv);
         }
         public List<LichTrucDTO> GetLichTrucByNhanVien(string idNhanVien)
         {

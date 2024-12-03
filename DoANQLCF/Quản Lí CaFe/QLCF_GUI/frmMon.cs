@@ -19,13 +19,13 @@ namespace QLCF_GUI
 
         private bool KT_DL()
         {
-            if (txtmamon.Text == string.Empty)
-            {
-                MessageBox.Show("Ma mon khong duoc de trong!");
-                return false;
-            }
+            //if (txtmamon.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Ma mon khong duoc de trong!");
+            //    return false;
+            //}
 
-            if (txtmamon.Text == string.Empty)
+            if (txtTenMon.Text == string.Empty)
             {
                 MessageBox.Show("Ten mon khong duoc de trong!");
                 return false;
@@ -51,6 +51,13 @@ namespace QLCF_GUI
             dgVMon.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgVMon.GridColor = Color.White;
 
+            if (nv.ChucVu == "Nhân viên")
+            {
+                this.btnThem.Enabled = false;
+                this.btnXoa.Enabled = false;
+                this.btnSua.Enabled = false;
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace QLCF_GUI
             bool kt = KT_DL();
             if (kt == true)
             {
-                string idMon = txtmamon.Text;
+                string idMon = "NL" + (dgVMon.RowCount + 1).ToString("D3");
                 string tenMon = txtTenMon.Text;
                 decimal price = Convert.ToDecimal(txtgia.Text);
                 string loai = cboLoai.Text;

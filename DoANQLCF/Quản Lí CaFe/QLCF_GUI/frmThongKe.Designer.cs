@@ -40,8 +40,7 @@
             this.cboNgayThangNam = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnThongKeNgay = new System.Windows.Forms.Button();
-            this.btnThongKeThang = new System.Windows.Forms.Button();
+            this.btnThongkeDoanhSoNhanVien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVThongKe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +49,7 @@
             this.dgVThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgVThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVThongKe.Location = new System.Drawing.Point(11, 153);
-            this.dgVThongKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgVThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.dgVThongKe.Name = "dgVThongKe";
             this.dgVThongKe.RowHeadersWidth = 51;
             this.dgVThongKe.RowTemplate.Height = 24;
@@ -85,7 +84,7 @@
             this.dTNgayKT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dTNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTNgayKT.Location = new System.Drawing.Point(80, 100);
-            this.dTNgayKT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dTNgayKT.Margin = new System.Windows.Forms.Padding(2);
             this.dTNgayKT.Name = "dTNgayKT";
             this.dTNgayKT.Size = new System.Drawing.Size(316, 33);
             this.dTNgayKT.TabIndex = 4;
@@ -171,29 +170,18 @@
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // btnThongKeNgay
+            // btnThongkeDoanhSoNhanVien
             // 
-            this.btnThongKeNgay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnThongKeNgay.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKeNgay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKeNgay.Location = new System.Drawing.Point(1208, 11);
-            this.btnThongKeNgay.Name = "btnThongKeNgay";
-            this.btnThongKeNgay.Size = new System.Drawing.Size(186, 45);
-            this.btnThongKeNgay.TabIndex = 14;
-            this.btnThongKeNgay.Text = "Thống kê ngày";
-            this.btnThongKeNgay.UseVisualStyleBackColor = false;
-            // 
-            // btnThongKeThang
-            // 
-            this.btnThongKeThang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnThongKeThang.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKeThang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKeThang.Location = new System.Drawing.Point(1207, 64);
-            this.btnThongKeThang.Name = "btnThongKeThang";
-            this.btnThongKeThang.Size = new System.Drawing.Size(186, 45);
-            this.btnThongKeThang.TabIndex = 15;
-            this.btnThongKeThang.Text = "Thống kê tháng";
-            this.btnThongKeThang.UseVisualStyleBackColor = false;
+            this.btnThongkeDoanhSoNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnThongkeDoanhSoNhanVien.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongkeDoanhSoNhanVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThongkeDoanhSoNhanVien.Location = new System.Drawing.Point(839, 53);
+            this.btnThongkeDoanhSoNhanVien.Name = "btnThongkeDoanhSoNhanVien";
+            this.btnThongkeDoanhSoNhanVien.Size = new System.Drawing.Size(407, 45);
+            this.btnThongkeDoanhSoNhanVien.TabIndex = 14;
+            this.btnThongkeDoanhSoNhanVien.Text = "Thống kê Doanh Số Nhân Viên";
+            this.btnThongkeDoanhSoNhanVien.UseVisualStyleBackColor = false;
+            this.btnThongkeDoanhSoNhanVien.Click += new System.EventHandler(this.btnThongkeDoanhSoNhanVien_Click);
             // 
             // frmThongKe
             // 
@@ -201,8 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1404, 512);
-            this.Controls.Add(this.btnThongKeThang);
-            this.Controls.Add(this.btnThongKeNgay);
+            this.Controls.Add(this.btnThongkeDoanhSoNhanVien);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.cboNgayThangNam);
             this.Controls.Add(this.label7);
@@ -214,7 +201,7 @@
             this.Controls.Add(this.lblDoanhThu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgVThongKe);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo doanh thu";
@@ -239,7 +226,6 @@
         private System.Windows.Forms.ComboBox cboNgayThangNam;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnThongKeNgay;
-        private System.Windows.Forms.Button btnThongKeThang;
+        private System.Windows.Forms.Button btnThongkeDoanhSoNhanVien;
     }
 }

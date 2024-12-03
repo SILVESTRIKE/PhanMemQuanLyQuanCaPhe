@@ -146,7 +146,7 @@ namespace QLCF_DAL
             }
         }
 
-        public bool UpdateLichTruc(LichTrucDTO lichTruc, string newIDLichTruc)
+        public bool UpdateLichTruc(string idLichTruc, string newStatus, string manv)
         {
             using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
             {
@@ -155,47 +155,18 @@ namespace QLCF_DAL
 
                 try
                 {
-                    // Thêm LichTruc mới với ID mới
-                    string insertNewLichTrucQuery = @"
-                INSERT INTO LichTruc (IDLichTruc, NgayTruc, IDCa)
-                VALUES (@NewIDLichTruc, @NgayTruc, @IDCa);
-            ";
-
-                    using (SqlCommand cmd = new SqlCommand(insertNewLichTrucQuery, conn, transaction))
-                    {
-                        cmd.Parameters.AddWithValue("@NewIDLichTruc", newIDLichTruc);
-                        cmd.Parameters.AddWithValue("@NgayTruc", lichTruc.NgayTruc);
-                        cmd.Parameters.AddWithValue("@IDCa", lichTruc.CaLam);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    // Cập nhật ChiTietLichTruc để trỏ đến ID mới
-                    string updateChiTietQuery = @"
+                    // Cập nhật trạng thái của lịch trực
+                    string updateStatusQuery = @"
                 UPDATE ChiTietLichTruc
-                SET IDLichTruc = @NewIDLichTruc
-                WHERE IDLichTruc = @OldIDLichTruc AND IDNhanVien = @IDNhanVien;
+                SET TrangThai = @NewStatus
+                WHERE IDLichTruc = @IDLichTruc and IDNhanVien = @manv;
             ";
 
-                    using (SqlCommand cmd = new SqlCommand(updateChiTietQuery, conn, transaction))
+                    using (SqlCommand cmd = new SqlCommand(updateStatusQuery, conn, transaction))
                     {
-                        cmd.Parameters.AddWithValue("@NewIDLichTruc", newIDLichTruc);
-                        cmd.Parameters.AddWithValue("@OldIDLichTruc", lichTruc.IdLichTruc);
-                        cmd.Parameters.AddWithValue("@IDNhanVien", lichTruc.MaNhanVien);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    // Xóa LichTruc cũ nếu không còn liên kết
-                    string deleteOldLichTrucQuery = @"
-                DELETE FROM LichTruc
-                WHERE IDLichTruc = @OldIDLichTruc
-                AND NOT EXISTS (SELECT 1 FROM ChiTietLichTruc WHERE IDLichTruc = @OldIDLichTruc);
-            ";
-
-                    using (SqlCommand cmd = new SqlCommand(deleteOldLichTrucQuery, conn, transaction))
-                    {
-                        cmd.Parameters.AddWithValue("@OldIDLichTruc", lichTruc.IdLichTruc);
+                        cmd.Parameters.AddWithValue("@NewStatus", newStatus);
+                        cmd.Parameters.AddWithValue("@IDLichTruc", idLichTruc);
+                        cmd.Parameters.AddWithValue("@manv", manv);
 
                         cmd.ExecuteNonQuery();
                     }

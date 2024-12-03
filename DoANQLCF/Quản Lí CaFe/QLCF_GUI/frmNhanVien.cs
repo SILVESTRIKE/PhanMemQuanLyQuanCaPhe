@@ -135,24 +135,7 @@ namespace QLCF_GUI
 
 
 
-        private void Bindings()
-        {
-            txtIDNhanVien.DataBindings.Clear();
-            txtIDNhanVien.DataBindings.Add("Text", dgVNhanVien.DataSource, "IDNhanVien");
-            txtTen.DataBindings.Clear();
-            txtTen.DataBindings.Add("Text", dgVNhanVien.DataSource, "Ten");
-            txtSDT.DataBindings.Clear();
-            txtSDT.DataBindings.Add("Text", dgVNhanVien.DataSource, "SDT");
-            dTNgaySinh.DataBindings.Clear();
-            dTNgaySinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "NgSinh");
-            cboGTinh.DataBindings.Clear();
-            cboGTinh.DataBindings.Add("Text", dgVNhanVien.DataSource, "GTinh");
-
-
-            txtPass.DataBindings.Clear();
-            txtPass.DataBindings.Add("Text", dgVNhanVien.DataSource, "Pass");
-        }
-
+        
         private void LoadChucVuComboBox()
         {
             cboChucVu.Items.Clear();
@@ -184,6 +167,7 @@ namespace QLCF_GUI
             dtNV.Columns.Add("NgSinh");
             dtNV.Columns.Add("TrangThai");
             dtNV.Columns.Add("ChucVu");
+            dtNV.Columns.Add("Pass");
 
             foreach (var nhanVien in danhSachNhanVien)
             {
@@ -197,7 +181,8 @@ namespace QLCF_GUI
                     nhanVien.GTinh,
                     nhanVien.NgSinh.ToString("yyyy-MM-dd"),
                     trangThaiText,
-                    nhanVien.ChucVu
+                    nhanVien.ChucVu,
+                    nhanVien.Pass
                 );
             }
 

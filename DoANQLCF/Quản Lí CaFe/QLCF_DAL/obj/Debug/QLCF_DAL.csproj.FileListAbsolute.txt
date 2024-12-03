@@ -52,3 +52,12 @@ D:\CNNET\CongNgheNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\ob
 D:\CNNET\CongNgheNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
 D:\CNNET\CongNgheNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
 D:\CNNET\CongNgheNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.pdb
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.dll
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.pdb
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.AssemblyReference.cache
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
+D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb

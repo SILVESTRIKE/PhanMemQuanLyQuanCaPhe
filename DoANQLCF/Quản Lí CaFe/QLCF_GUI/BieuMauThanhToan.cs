@@ -30,6 +30,7 @@ namespace QLCF_GUI
             try
             {
                 HoaDon1 hoaDon = new HoaDon1();
+                hoaDon.SetDatabaseLogon("sa", "123");
 
                 // Kiểm tra giá trị của tham số trước khi thiết lập
                 if (hd != null && !string.IsNullOrEmpty(hd.IDHoaDon))

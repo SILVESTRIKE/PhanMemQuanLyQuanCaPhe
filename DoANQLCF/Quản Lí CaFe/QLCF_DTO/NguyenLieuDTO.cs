@@ -10,11 +10,11 @@ namespace QLCF_DTO
     {
         public string IDNguyenLieu { get; set; }
         public string TenNL { get; set; }
-        public decimal SLTon { get; set; }
+        public double SLTon { get; set; }
         public string DVTinh {  get; set; }
         public NguyenLieuDTO() { }
 
-        public NguyenLieuDTO(string idNguyenLieu, string tenNL, decimal slTon, string dVTinh)
+        public NguyenLieuDTO(string idNguyenLieu, string tenNL, double slTon, string dVTinh)
         {
             IDNguyenLieu = idNguyenLieu;
             TenNL = tenNL;

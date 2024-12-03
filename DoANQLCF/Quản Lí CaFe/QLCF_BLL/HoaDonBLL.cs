@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,15 @@ namespace QLCF_BLL
         {
             return HDDal.GetInvoiceCountByMonth(month, year);
         }
+        public List<HoaDonDTO> GetAll(int date)
+        {
+            return HDDal.GetAll(date);
+        }
+        public DataTable GetThongKeData()
+        {
+            return HDDal.GetThongKeData();
+        }
+
 
 
     }

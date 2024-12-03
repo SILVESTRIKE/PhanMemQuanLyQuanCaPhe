@@ -107,7 +107,31 @@ namespace QLCF_DAL
             }
             return lstHoaDon;
         }
-
+        public List<HoaDonDTO> GetAll(int date)
+        {
+            List<HoaDonDTO> lstHoaDon = new List<HoaDonDTO>();
+            using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM HoaDon WHERE DAY(NgayLap) = '"+date+"'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    using (SqlDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            string idHoaDon = rd["IDHoaDon"].ToString();
+                            string idNhanVien = rd["IDNhanVien"].ToString();
+                            DateTime ngayLap = (DateTime)rd["NgayLap"];
+                            decimal tongTien = (decimal)rd["TongTien"];
+                            HoaDonDTO hd = new HoaDonDTO(idHoaDon, idNhanVien, ngayLap, tongTien);
+                            lstHoaDon.Add(hd);
+                        }
+                    }
+                }
+            }
+            return lstHoaDon;
+        }
         public string GenerateIDHoaDon()
         {
             string ngayHienTai = DateTime.Now.ToString("ddMMyyyy");
@@ -294,6 +318,22 @@ namespace QLCF_DAL
                 }
             }
             return invoiceCount;
+        }
+        public  DataTable GetThongKeData()
+        {
+            DataTable dt = new DataTable();
+            // Thêm code truy vấn từ database
+            // Ví dụ: dùng SqlConnection, SqlCommand để load dữ liệu
+            using (SqlConnection conn = new SqlConnection(dbContext.Strcon))
+            {
+                string query = "SELECT * FROM HoaDon"; // Thay bằng câu truy vấn phù hợp
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
         }
 
     }

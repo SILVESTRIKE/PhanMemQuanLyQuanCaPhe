@@ -58,6 +58,12 @@
     <Compile Include="BieuMauThanhToan.Designer.cs">
       <DependentUpon>BieuMauThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="BieumauThongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BieumauThongke.Designer.cs">
+      <DependentUpon>BieumauThongke.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaTruc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="BieuMauThanhToan.resx">
       <DependentUpon>BieuMauThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BieumauThongke.resx">
+      <DependentUpon>BieumauThongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaTruc.resx">
       <DependentUpon>frmCaTruc.cs</DependentUpon>

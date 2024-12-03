@@ -46,12 +46,11 @@
             this.dgVListHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgVListHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgVListHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVListHoaDon.Location = new System.Drawing.Point(16, 144);
-            this.dgVListHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.dgVListHoaDon.Location = new System.Drawing.Point(12, 117);
             this.dgVListHoaDon.Name = "dgVListHoaDon";
             this.dgVListHoaDon.RowHeadersWidth = 51;
             this.dgVListHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVListHoaDon.Size = new System.Drawing.Size(656, 564);
+            this.dgVListHoaDon.Size = new System.Drawing.Size(492, 458);
             this.dgVListHoaDon.TabIndex = 0;
             this.dgVListHoaDon.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVListHoaDon_CellDoubleClick);
             // 
@@ -60,10 +59,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(335, 49);
+            this.label3.Size = new System.Drawing.Size(267, 39);
             this.label3.TabIndex = 23;
             this.label3.Text = "CHI TIẾT HÓA ĐƠN";
             // 
@@ -72,10 +70,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 105);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(10, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(294, 35);
+            this.label4.Size = new System.Drawing.Size(233, 27);
             this.label4.TabIndex = 28;
             this.label4.Text = "List Hóa Đơn trong ngày";
             // 
@@ -84,12 +81,11 @@
             this.dgvChiTietHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(704, 144);
-            this.dgvChiTietHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(528, 117);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(656, 564);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(492, 458);
             this.dgvChiTietHoaDon.TabIndex = 29;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
@@ -98,10 +94,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(716, 105);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(537, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 35);
+            this.label6.Size = new System.Drawing.Size(164, 27);
             this.label6.TabIndex = 30;
             this.label6.Text = "Chi tiết Hóa đơn";
             // 
@@ -110,10 +105,9 @@
             this.btnLuuGiaTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnLuuGiaTri.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuGiaTri.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLuuGiaTri.Location = new System.Drawing.Point(1409, 653);
-            this.btnLuuGiaTri.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuuGiaTri.Location = new System.Drawing.Point(1057, 531);
             this.btnLuuGiaTri.Name = "btnLuuGiaTri";
-            this.btnLuuGiaTri.Size = new System.Drawing.Size(248, 55);
+            this.btnLuuGiaTri.Size = new System.Drawing.Size(186, 45);
             this.btnLuuGiaTri.TabIndex = 31;
             this.btnLuuGiaTri.Text = "Lưu Giá Trị";
             this.btnLuuGiaTri.UseVisualStyleBackColor = false;
@@ -124,12 +118,11 @@
             this.dgvCT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgvCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCT.Location = new System.Drawing.Point(1389, 144);
-            this.dgvCT.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCT.Location = new System.Drawing.Point(1042, 117);
             this.dgvCT.Name = "dgvCT";
             this.dgvCT.RowHeadersWidth = 51;
             this.dgvCT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCT.Size = new System.Drawing.Size(483, 452);
+            this.dgvCT.Size = new System.Drawing.Size(362, 367);
             this.dgvCT.TabIndex = 32;
             // 
             // dgvCongThuc
@@ -137,19 +130,18 @@
             this.dgvCongThuc.AutoSize = true;
             this.dgvCongThuc.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvCongThuc.ForeColor = System.Drawing.Color.White;
-            this.dgvCongThuc.Location = new System.Drawing.Point(1392, 105);
-            this.dgvCongThuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dgvCongThuc.Location = new System.Drawing.Point(1044, 85);
             this.dgvCongThuc.Name = "dgvCongThuc";
-            this.dgvCongThuc.Size = new System.Drawing.Size(134, 35);
+            this.dgvCongThuc.Size = new System.Drawing.Size(106, 27);
             this.dgvCongThuc.TabIndex = 33;
             this.dgvCongThuc.Text = "Công thức";
             // 
             // ListDonHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1885, 734);
+            this.ClientSize = new System.Drawing.Size(1414, 596);
             this.Controls.Add(this.dgvCongThuc);
             this.Controls.Add(this.dgvCT);
             this.Controls.Add(this.btnLuuGiaTri);
@@ -158,7 +150,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgVListHoaDon);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListDonHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CÔNG THỨC";

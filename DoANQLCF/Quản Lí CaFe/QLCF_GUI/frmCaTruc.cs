@@ -36,8 +36,16 @@ namespace QLCF_GUI
             // Loại bỏ đường kẻ
             dgvLichTruc.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvLichTruc.GridColor = Color.White;
+            var nv = Session.CurrentUser;
 
-            
+            if (nv.ChucVu == "Nhân viên")
+            {
+                this.btnThem.Enabled = false;
+                this.btn_Xoa.Enabled = false;
+                this.btn_Sua.Enabled = false;
+            }    
+
+
         }
 
         public void Loadcatruc()
@@ -109,60 +117,53 @@ namespace QLCF_GUI
         }
         private void dTNgayTruc_ValueChanged(object sender, EventArgs e)
         {
-            // Chỉ tạo ID mới khi thêm lịch trực mới, không áp dụng khi chỉnh sửa
-            if (string.IsNullOrEmpty(txt_IDLictruc.Text))
-            {
+            
                 string ma = "LT";
                 string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
                 string ca = cboTenCa.SelectedValue.ToString();
-                string nv = cboIDNhanVien.SelectedValue.ToString();
                 txt_IDLictruc.Text = ma + ddmmyy + ca;
-            }
+            
         }
 
         private void cboTenCa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_IDLictruc.Text))
-            {
+            
                 string ma = "LT";
                 string ddmmyy = dTNgayTruc.Value.ToString("ddMMyy");
                 string ca = cboTenCa.SelectedValue.ToString();
-                string nv = cboIDNhanVien.SelectedValue.ToString();
                 txt_IDLictruc.Text = ma + ddmmyy + ca;
-            }
+            
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             if (dgvLichTruc.CurrentRow != null)
             {
-                string oldIDLichTruc = dgvLichTruc.CurrentRow.Cells["IdLichTruc"].Value.ToString();
+                // Lấy ID lịch trực từ hàng được chọn
+                string idLichTruc = dgvLichTruc.CurrentRow.Cells["IdLichTruc"].Value.ToString();
+                string manv = dgvLichTruc.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+                // Lấy giá trị Ca trực mới từ ComboBox
+                string trangthaimoi = cbo_TrangThai.SelectedValue.ToString();
+                
 
-                string newIDLichTruc = "LT" + dTNgayTruc.Value.ToString("ddMMyy") + cboTenCa.SelectedValue.ToString() + cboIDNhanVien.SelectedValue.ToString();
-
-                LichTrucDTO lichTruc = new LichTrucDTO
-                {
-                    IdLichTruc = oldIDLichTruc, // ID cũ
-                    CaLam = cboTenCa.SelectedValue.ToString(),
-                    MaNhanVien = cboIDNhanVien.SelectedValue.ToString(),
-                    NgayTruc = dTNgayTruc.Value,
-                    TrangThai = cbo_TrangThai.SelectedValue.ToString()
-                };
-
+                
+                // Gọi đến BLL để cập nhật
                 LichTrucBLL bll = new LichTrucBLL();
-                bool isUpdated = bll.UpdateLichTruc(lichTruc, newIDLichTruc);
+                bool isUpdated = bll.UpdateLichTruc(idLichTruc, trangthaimoi, manv);
 
+                // Kiểm tra kết quả
                 if (isUpdated)
                 {
-                    MessageBox.Show("Sửa thành công!");
-                    LoadDataGridView();
+                    MessageBox.Show("Sửa Ca trực thành công!");
+                    LoadDataGridView(); // Tải lại dữ liệu
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại!");
+                    MessageBox.Show("Sửa Ca trực thất bại!");
                 }
             }
         }
+
 
 
 

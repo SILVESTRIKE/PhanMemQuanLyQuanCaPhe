@@ -53,7 +53,8 @@ namespace QLCF_GUI
 
         private void LoadDataGridViewHoaDon()
         {
-            List<HoaDonDTO> hoaDons = hoaDonBLL.GetALL();
+            int date = DateTime.Now.Day;
+            List<HoaDonDTO> hoaDons = hoaDonBLL.GetAll(date);
             dgVListHoaDon.DataSource = hoaDons;
         }
 
@@ -127,6 +128,6 @@ namespace QLCF_GUI
             MessageBox.Show("Cập nhật trạng thái phục vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
+        
     }
 }
