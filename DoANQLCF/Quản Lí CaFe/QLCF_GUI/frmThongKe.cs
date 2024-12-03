@@ -15,6 +15,7 @@ namespace QLCF_GUI
     public partial class frmThongKe : Form
     {
         private HoaDonBLL hoaDonBLL = new HoaDonBLL();
+        private ThongKeDoanhThuBLL tkBLL = new ThongKeDoanhThuBLL();
         NhanVienDTO _nv = new NhanVienDTO();
 
         public frmThongKe()
@@ -22,8 +23,8 @@ namespace QLCF_GUI
             InitializeComponent();
             LoadComboBoxDMY();
             dgVThongKe.ReadOnly = true;
-            dgVThongKe.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgVThongKe.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVThongKe.DefaultCellStyle.Font = new Font("Arial", 12); // Font dữ liệu
+            dgVThongKe.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Font tiêu đề
             dgVThongKe.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ
@@ -102,6 +103,20 @@ namespace QLCF_GUI
         {
             BieumauThongke a = new BieumauThongke();
             a.Show();
+        }
+
+        private void btnBackUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tự động sao lưu (Full, Diff, Log theo tuần tự)
+                tkBLL.BackUp();
+                MessageBox.Show("Sao lưu cơ sở dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

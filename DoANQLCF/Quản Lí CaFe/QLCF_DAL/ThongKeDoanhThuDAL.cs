@@ -88,6 +88,88 @@ namespace QLCF_DAL
             conn.Close();
             return LstTKDT;
         }
+        private const string FullBackupPath = @"D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\BackUp\Full_QLCF.bak";
+        private const string DiffBackupPath = @"D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\BackUp\Diff_QLCF.bak";
+        private const string LogBackupPath = @"D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\BackUp\Log_QLCF.trn";
+        public void BackupDatabase()
+        {
+            bool hasFullBackup = System.IO.File.Exists(FullBackupPath);
+            bool hasDiffBackup = System.IO.File.Exists(DiffBackupPath);
+            bool hasLogBackup = System.IO.File.Exists(LogBackupPath);
+
+            // Bắt đầu backup tuần tự nếu thiếu file backup
+            if (!hasFullBackup)
+            {
+                FullBackup();
+                hasFullBackup = true; // Đánh dấu đã thực hiện Full Backup
+            }
+
+            if (!hasDiffBackup && hasFullBackup) // Thực hiện Diff Backup nếu đã có Full Backup
+            {
+                DifferentialBackup();
+                hasDiffBackup = true; // Đánh dấu đã thực hiện Differential Backup
+            }
+
+            if (!hasLogBackup && hasDiffBackup) // Thực hiện Log Backup nếu đã có Diff Backup
+            {
+                TransactionLogBackup();
+            }
+        }
+
+
+        // Full Backup
+        public bool FullBackup()
+        {
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = $@"
+                BACKUP DATABASE QLCF
+                TO DISK = '{FullBackupPath}'
+            ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int kq = (int)cmd.ExecuteNonQuery();
+            conn.Close();
+            if (kq > 0)
+                return true;
+            else return false;
+        }
+
+        // Differential Backup
+        public bool DifferentialBackup()
+        {
+            
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = $@"
+                BACKUP DATABASE QLCF
+                TO DISK = '{DiffBackupPath}'
+                WITH DIFFERENTIAL
+            ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int kq = (int)cmd.ExecuteNonQuery();
+            conn.Close();
+            if (kq > 0)
+                return true;
+            else return false;
+        }
+
+        // Transaction Log Backup
+        public bool TransactionLogBackup()
+        {
+           
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string sql = $@"
+                BACKUP LOG QLCF
+                TO DISK = '{LogBackupPath}'
+            ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int kq = (int)cmd.ExecuteNonQuery();
+            conn.Close();
+            if (kq > 0)
+                return true;
+            else return false;
+        }
 
     }
 }

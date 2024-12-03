@@ -18,8 +18,8 @@ namespace QLCF_GUI
         {
             InitializeComponent();
             dgVNhanVien.ReadOnly= true;
-            dgVNhanVien.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgVNhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVNhanVien.DefaultCellStyle.Font = new Font("Arial", 12); // Font dữ liệu
+            dgVNhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Font tiêu đề
             dgVNhanVien.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ

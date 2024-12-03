@@ -55,15 +55,15 @@
             this.panelTitleBar.ForeColor = System.Drawing.Color.White;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 31);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1904, 65);
+            this.panelTitleBar.Size = new System.Drawing.Size(1270, 73);
             this.panelTitleBar.TabIndex = 1;
             // 
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Image = global::QLCF_GUI.Properties.Resources.Logo;
-            this.btnThem.Location = new System.Drawing.Point(787, 6);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Location = new System.Drawing.Point(470, 5);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(330, 60);
             this.btnThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,7 +76,7 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRole.Location = new System.Drawing.Point(13, 35);
+            this.lblRole.Location = new System.Drawing.Point(22, 41);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(70, 24);
             this.lblRole.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.mnSMain.Location = new System.Drawing.Point(0, 0);
             this.mnSMain.Name = "mnSMain";
             this.mnSMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mnSMain.Size = new System.Drawing.Size(1888, 28);
+            this.mnSMain.Size = new System.Drawing.Size(1270, 28);
             this.mnSMain.TabIndex = 3;
             this.mnSMain.Text = "Trang Chủ";
             // 
@@ -171,11 +171,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panel_body.BackgroundImage = global::QLCF_GUI.Properties.Resources.NhanVien;
             this.panel_body.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel_body.Location = new System.Drawing.Point(0, 100);
+            this.panel_body.Location = new System.Drawing.Point(0, 110);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1904, 990);
+            this.panel_body.Size = new System.Drawing.Size(1281, 350);
             this.panel_body.TabIndex = 4;
             // 
             // frmTrangChu
@@ -183,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1888, 1041);
+            this.ClientSize = new System.Drawing.Size(1270, 602);
             this.Controls.Add(this.panel_body);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.mnSMain);

@@ -60,5 +60,20 @@ namespace QLCF_GUI
             txt_username.Focus();
             txt_username.TabIndex = 0;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tự động phục hồi cơ sở dữ liệu
+                userbll.RestoreDb();
+                MessageBox.Show("Khôi phục cơ sở dữ liệu thành công! Hãy đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi phục hồi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

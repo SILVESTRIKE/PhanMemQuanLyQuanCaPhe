@@ -61,3 +61,12 @@ D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\
 D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
 D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
 D:\hufi\hk5\.Net\clone\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.dll
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DAL.pdb
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.dll
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\bin\Debug\QLCF_DTO.pdb
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.AssemblyReference.cache
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.CoreCompileInputs.cache
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.csproj.Up2Date
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.dll
+D:\CNNET\DoAnNet\PhanMemQuanLyQuanCaPhe\DoANQLCF\Quản Lí CaFe\QLCF_DAL\obj\Debug\QLCF_DAL.pdb

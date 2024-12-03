@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnThongkeDoanhSoNhanVien = new System.Windows.Forms.Button();
+            this.btnBackUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVThongKe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             // 
             this.dTNgayKT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dTNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTNgayKT.Location = new System.Drawing.Point(80, 100);
+            this.dTNgayKT.Location = new System.Drawing.Point(80, 109);
             this.dTNgayKT.Margin = new System.Windows.Forms.Padding(2);
             this.dTNgayKT.Name = "dTNgayKT";
             this.dTNgayKT.Size = new System.Drawing.Size(316, 33);
@@ -117,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(14, 105);
+            this.label5.Location = new System.Drawing.Point(15, 114);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 26);
@@ -175,13 +176,26 @@
             this.btnThongkeDoanhSoNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnThongkeDoanhSoNhanVien.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongkeDoanhSoNhanVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongkeDoanhSoNhanVien.Location = new System.Drawing.Point(839, 53);
+            this.btnThongkeDoanhSoNhanVien.Location = new System.Drawing.Point(985, 53);
             this.btnThongkeDoanhSoNhanVien.Name = "btnThongkeDoanhSoNhanVien";
             this.btnThongkeDoanhSoNhanVien.Size = new System.Drawing.Size(407, 45);
             this.btnThongkeDoanhSoNhanVien.TabIndex = 14;
             this.btnThongkeDoanhSoNhanVien.Text = "Thống kê Doanh Số Nhân Viên";
             this.btnThongkeDoanhSoNhanVien.UseVisualStyleBackColor = false;
             this.btnThongkeDoanhSoNhanVien.Click += new System.EventHandler(this.btnThongkeDoanhSoNhanVien_Click);
+            // 
+            // btnBackUp
+            // 
+            this.btnBackUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnBackUp.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBackUp.Location = new System.Drawing.Point(985, 103);
+            this.btnBackUp.Name = "btnBackUp";
+            this.btnBackUp.Size = new System.Drawing.Size(407, 45);
+            this.btnBackUp.TabIndex = 13;
+            this.btnBackUp.Text = "Sao lưu dữ liệu hôm nay";
+            this.btnBackUp.UseVisualStyleBackColor = false;
+            this.btnBackUp.Click += new System.EventHandler(this.btnBackUp_Click);
             // 
             // frmThongKe
             // 
@@ -190,6 +204,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1404, 512);
             this.Controls.Add(this.btnThongkeDoanhSoNhanVien);
+            this.Controls.Add(this.btnBackUp);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.cboNgayThangNam);
             this.Controls.Add(this.label7);
@@ -227,5 +242,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnThongkeDoanhSoNhanVien;
+        private System.Windows.Forms.Button btnBackUp;
     }
 }

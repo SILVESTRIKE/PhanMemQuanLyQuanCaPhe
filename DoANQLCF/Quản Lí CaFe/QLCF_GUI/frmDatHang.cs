@@ -34,8 +34,8 @@ namespace QLCF_GUI
         private void frmDatHang_Load(object sender, EventArgs e)
         {
             // Cài đặt font chữ
-            dgVMon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgVMon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVMon.DefaultCellStyle.Font = new Font("Arial", 14); // Font dữ liệu
+            dgVMon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold); // Font tiêu đề
             dgVMon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ

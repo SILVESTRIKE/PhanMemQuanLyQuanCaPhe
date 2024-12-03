@@ -59,5 +59,9 @@ namespace QLCF_BLL
                 return false;
             }
         }
+        public void RestoreDb()
+        {
+            ngdungDAL.RestoreDatabase();
+        }
     }
 }

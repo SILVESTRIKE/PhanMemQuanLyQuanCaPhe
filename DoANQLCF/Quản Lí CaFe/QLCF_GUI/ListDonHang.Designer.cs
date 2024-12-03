@@ -105,11 +105,11 @@
             this.btnLuuGiaTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnLuuGiaTri.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuGiaTri.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLuuGiaTri.Location = new System.Drawing.Point(1057, 531);
+            this.btnLuuGiaTri.Location = new System.Drawing.Point(1042, 530);
             this.btnLuuGiaTri.Name = "btnLuuGiaTri";
-            this.btnLuuGiaTri.Size = new System.Drawing.Size(186, 45);
+            this.btnLuuGiaTri.Size = new System.Drawing.Size(397, 45);
             this.btnLuuGiaTri.TabIndex = 31;
-            this.btnLuuGiaTri.Text = "Lưu Giá Trị";
+            this.btnLuuGiaTri.Text = "LƯU HÓA ĐƠN";
             this.btnLuuGiaTri.UseVisualStyleBackColor = false;
             this.btnLuuGiaTri.Click += new System.EventHandler(this.btnLuuGiaTri_Click);
             // 
@@ -122,7 +122,7 @@
             this.dgvCT.Name = "dgvCT";
             this.dgvCT.RowHeadersWidth = 51;
             this.dgvCT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCT.Size = new System.Drawing.Size(362, 367);
+            this.dgvCT.Size = new System.Drawing.Size(397, 407);
             this.dgvCT.TabIndex = 32;
             // 
             // dgvCongThuc
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1414, 596);
+            this.ClientSize = new System.Drawing.Size(1451, 596);
             this.Controls.Add(this.dgvCongThuc);
             this.Controls.Add(this.dgvCT);
             this.Controls.Add(this.btnLuuGiaTri);

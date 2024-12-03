@@ -46,8 +46,8 @@ namespace QLCF_GUI
             InitializeComponent();
             var nv = Session.CurrentUser;
             dgVCongThuc.ReadOnly = true;
-            dgVCongThuc.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgVCongThuc.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVCongThuc.DefaultCellStyle.Font = new Font("Arial", 12); // Font dữ liệu
+            dgVCongThuc.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Font tiêu đề
             dgVCongThuc.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ

@@ -29,8 +29,8 @@ namespace QLCF_GUI
             LoadDataGridView();
             txt_IDLictruc.Text = string.Empty;
 
-            dgvLichTruc.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgvLichTruc.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgvLichTruc.DefaultCellStyle.Font = new Font("Arial", 12); // Font dữ liệu
+            dgvLichTruc.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Font tiêu đề
             dgvLichTruc.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ

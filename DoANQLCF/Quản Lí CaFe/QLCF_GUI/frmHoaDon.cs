@@ -31,8 +31,8 @@ namespace QLCF_GUI
             InitializeComponent();
             this.ListCTHoaDon = chiTietHoaDon;
             dgVHoaDon.ReadOnly = true;
-            dgVHoaDon.DefaultCellStyle.Font = new Font("Arial", 16); // Font dữ liệu
-            dgVHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold); // Font tiêu đề
+            dgVHoaDon.DefaultCellStyle.Font = new Font("Arial", 12); // Font dữ liệu
+            dgVHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Font tiêu đề
             dgVHoaDon.RowTemplate.Height = 80; // Đặt chiều cao dòng (đơn vị: pixel)
 
             // Loại bỏ đường kẻ
