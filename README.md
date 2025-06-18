@@ -1,6 +1,6 @@
-ĐỒ ÁN MÔN CÔNG NGHỆ .NET
----
 # **Phần Mềm Quản Lý Quán Cà Phê**
+---
+## Chương I. Giới thiệu
 ### I. Nội dung
 Đề tài "Xây dựng ứng dụng quản lý quán cà phê bằng " tập trung vào việc phát triển một hệ thống phần mềm nhằm hỗ trợ quản lý toàn diện các hoạt động của quán cà phê, bao gồm quản lý nhân viên, thực đơn, ca trực, bán hàng, và kho nguyên liệu. Mục tiêu của hệ thống là giúp tự động hóa quy trình vận hành hàng ngày, đảm bảo việc lưu trữ và truy xuất thông tin nhanh chóng, chính xác. Ứng dụng sẽ cung cấp các chức năng chính như thêm, sửa, xóa thông tin nhân viên, quản lý ca làm việc, tạo hóa đơn, xử lý thanh toán, quản lý kho và nhập xuất nguyên liệu. Hệ thống yêu cầu giao diện người dùng thân thiện, dễ sử dụng, bảo mật dữ liệu và phân quyền rõ ràng cho người dùng. Về mặt công nghệ, hệ thống sẽ được xây dựng bằng ngôn ngữ lập trình C# trên nền tảng .NET, sử dụng SQL Server để lưu trữ dữ liệu, và công cụ ADO.NET để tương tác với cơ sở dữ liệu. Phạm vi của ứng dụng không chỉ áp dụng cho một quán cà phê đơn lẻ mà có thể mở rộng cho chuỗi quán trong tương lai, với tiềm năng tích hợp các hệ thống thanh toán và mở rộng thêm nhiều chức năng khác. Nhờ hệ thống này, quán cà phê có thể giảm thiểu sai sót, tiết kiệm thời gian và chi phí, đồng thời tăng cường hiệu quả quản lý.
 ### II. Lý do chọn đề tài
